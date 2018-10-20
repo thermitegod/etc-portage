@@ -1,0 +1,4 @@
+#lto fat obj work aroud undef .o files
+CFLAGS="${CFLAGS} -ffat-lto-objects"
+CXXFLAGS="${CFLAGS}"
+LDFLAGS="${CFLAGS} ${LDFLAGS}"

@@ -1,0 +1,14 @@
+INSTALL_MASK="
+${INSTALL_MASK}
+/usr/bin/i3-config-wizard
+/usr/bin/i3-dmenu-desktop
+/usr/bin/i3-migrate-config-to-v4
+/usr/bin/i3-with-shmlog
+/usr/bin/i3-dump-log
+/usr/share/man/man1/i3-config-wizard.1.xz
+/usr/share/man/man1/i3-dmenu-desktop.1.xz
+/usr/share/man/man1/i3-dump-log.1.xz
+/usr/share/man/man1/i3-migrate-config-to-v4.1.xz
+/etc/i3/config.keycodes
+"
+PKG_INSTALL_MASK="${INSTALL_MASK}"

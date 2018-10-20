@@ -1,0 +1,7 @@
+INSTALL_MASK="
+${INSTALL_MASK}
+/usr/share/gimp/2.0/themes/0*
+/usr/share/gimp/2.0/icons/Symbolic*
+/usr/share/gimp/2.0/icons/Color
+"
+PKG_INSTALL_MASK="${INSTALL_MASK}"

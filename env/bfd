@@ -1,0 +1,2 @@
+#set linker to bfd
+LD=""

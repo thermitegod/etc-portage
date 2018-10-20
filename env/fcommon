@@ -1,0 +1,4 @@
+#reenable common, only needed if -fno-common is in default CFLAGS
+FLAGS="${CFLAGS} -fcommon"
+CXXFLAGS="${CFLAGS}"
+LDFLAGS="${LDFLAGS} ${CFLAGS}"

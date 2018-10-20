@@ -1,0 +1,34 @@
+# 9999 packages
+media-video/mpv **
+app-misc/radeontop **
+x11-misc/spacefm-ng **
+media-video/ffmpeg **
+app-editors/neovim **
+media-libs/mesa **
+x11-libs/libdrm **
+net-misc/grive **
+app-portage/smart-live-rebuild **
+x11-misc/compton **
+sys-apps/net-tools **
+media-libs/libaom **
+app-misc/radeon-profile **
+app-misc/radeon-profile-daemon **
+
+#virt
+app-emulation/virt-manager **
+app-emulation/libvirt **
+dev-python/libvirt-python **
+app-emulation/qemu **
+
+#zsh
+app-shells/fast-syntax-highlighting **
+app-shells/auto-fu-zsh **
+
+#zfs
+sys-fs/zfs **
+sys-fs/zfs-auto-snapshot **
+
+#unmask newest
+sys-devel/gcc **
+#I know what you are thinking, dont.
+#=sys-libs/glibc-2.28 **
