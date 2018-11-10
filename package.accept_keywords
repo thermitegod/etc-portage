@@ -14,11 +14,15 @@ media-libs/libaom **
 app-misc/radeon-profile **
 app-misc/radeon-profile-daemon **
 
+#wayland
+dev-libs/sway **
+dev-libs/wlc **
+
 #virt
 app-emulation/virt-manager **
 app-emulation/libvirt **
 dev-python/libvirt-python **
-app-emulation/qemu **
+#app-emulation/qemu **
 
 #zsh
 app-shells/fast-syntax-highlighting **
