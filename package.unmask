@@ -1,14 +1,6 @@
-#>=www-client/chromium-60.0.3107.4
-#=www-client/chromium-69.0.3464.0
-
->=net-libs/nodejs-10.6.0
-
 >=net-misc/iputils-20161105
->=x11-terms/terminator-1.91
 =media-video/mpv-9999
-=media-video/ffmpeg-9999
->=media-libs/vulkan-loader-1.1.77.0
 >=dev-lang/lua-5.3.3-r1
 =app-eselect/eselect-lua-1
-
 >=dev-libs/openssl-1.1.1
+>=dev-libs/libressl-2.8.2
