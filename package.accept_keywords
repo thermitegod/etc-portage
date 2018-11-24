@@ -11,12 +11,9 @@ app-portage/smart-live-rebuild **
 x11-misc/compton **
 sys-apps/net-tools **
 media-libs/libaom **
+media-libs/dav1d **
 app-misc/radeon-profile **
 app-misc/radeon-profile-daemon **
-
-#wayland
-dev-libs/sway **
-dev-libs/wlc **
 
 #virt
 app-emulation/virt-manager **

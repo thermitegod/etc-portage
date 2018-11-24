@@ -28,17 +28,13 @@ gnome-base/gconf
 =media-video/mkvtoolnix-28.2.0
 >media-fonts/noto-20170403
 >=media-fonts/noto-cjk-20170602
->=media-sound/mpd-0.21
 
 #app-admin/sudo::gentoo
 sys-apps/less::gentoo
 x11-libs/gtk+::gentoo
 net-misc/openvswitch::gentoo
-=net-misc/openvswitch-2.10.0-r1
-dev-qt/qtsql::gentoo
+#dev-qt/qtsql::gentoo
 
 dev-lua/lpeg::lua
 dev-lua/mpack::lua
-
-#=sys-kernel/gentoo-sources-4.18.0
 

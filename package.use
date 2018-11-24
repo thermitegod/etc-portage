@@ -51,7 +51,7 @@ dev-util/lldb -ncurses
 sys-libs/glibc -multiarch
 
 #media
-media-libs/mesa vulkan gles2 gles1 -opencl -classic
+media-libs/mesa vulkan -gles2 -gles1 -opencl -classic
 media-libs/vulkan-loader layers
 media-sound/alsa-utils -libsamplerate
 media-sound/mpd -cue -flac -fifo -ipv6 -curl -network -eventfd -signalfd -tcpd -mad -expat -unicode -zlib -bzip2
@@ -72,7 +72,7 @@ media-gfx/feh -curl
 x11-libs/cairo xcb
 x11-libs/libdrm video_cards_radeon libkms
 x11-libs/libxcb xkb
-x11-misc/spacefm-ng gtk2
+x11-misc/spacefm-ng gtk2 -gtk3
 x11-misc/xdg-utils -perl
 x11-base/xorg-server suid -minimal
 dev-qt/qtmultimedia -alsa
@@ -156,7 +156,7 @@ www-apps/rutorrent vhosts
 #chromium
 www-client/google-chrome-unstable -plugins
 #www-client/chromium jumbo-build custom-cflags -system-icu system-ffmpeg -system-libvpx -suid -hangouts
-www-client/chromium jumbo-build custom-cflags system-icu system-ffmpeg -system-libvpx -suid -hangouts -cups
+www-client/chromium jumbo-build custom-cflags -system-icu -system-ffmpeg -system-libvpx -suid -hangouts
 net-libs/nodejs inspector libressl ssl bundled-ssl npm -snapshot
 media-libs/libvpx -highbitdepth
 x11-libs/gtk+:3 -atk-bridge
@@ -165,13 +165,13 @@ media-libs/openh264 -plugin
 sys-libs/zlib minizip
 
 #qemu
-app-emulation/qemu virgl spice gtk usb vhost-net -filecaps -static -ncurses -vnc -jpeg -png -gtk2 -curl -bzip2
+app-emulation/qemu virgl spice gtk usb vhost-net -filecaps -usbredir -static -ncurses -vnc -jpeg -png -gtk2 -curl -bzip2
 app-emulation/libvirt zfs -virtualbox -virt-network -macvtap -vepa
 app-emulation/libvirt-glib python introspection
 sys-libs/libosinfo introspection
 app-emulation/virt-manager gtk
 net-misc/spice-gtk gtk3 usbredir introspection gstaudio gstvideo
-media-libs/gst-plugins-base -ogg
+media-libs/gst-plugins-base gbm -ogg
 net-libs/gtk-vnc gtk3 introspection -python
 x11-libs/gtk+ introspection
 dev-libs/atk introspection
