@@ -1,40 +1,42 @@
 #potterware
-net-dns/avahi
-sys-auth/nss-mdns
-media-sound/pulseaudio
-sys-apps/ifplugd
-net-analyzer/ifmetric
 dev-libs/libdaemon
 media-sound/pavumeter
+media-sound/pulseaudio
+net-analyzer/ifmetric
+net-dns/avahi
 net-libs/libasyncns
 net-p2p/syrep
+sys-apps/ifplugd
+sys-apps/systemd
+sys-auth/nss-mdns
 sys-auth/nss-myhostname
 sys-auth/pam_dotfile
 www-apache/mod_dnssd
-sys-apps/systemd
 #systemd infested
-sys-fs/udev
 gnome-base/gconf
+sys-fs/udev
 >=www-misc/profile-sync-daemon-6.31
 
-#www-client/chromium::gentoo
-#>www-client/chromium-69.0.3497.100
-
+#mask version
 =app-misc/fslint-9999
-=media-gfx/mcomix-9999
->=net-news/newsboat-2.11
 >=mail-client/neomutt-20180512
-=sys-boot/refind-0.11.3
-=media-video/mkvtoolnix-28.2.0
 >media-fonts/noto-20170403
 >=media-fonts/noto-cjk-20170602
+=media-gfx/mcomix-9999
+=media-video/mkvtoolnix-28.2.0
+>=net-news/newsboat-2.11
+=sys-boot/refind-0.11.3
 
+#mask repo
 #app-admin/sudo::gentoo
-sys-apps/less::gentoo
-x11-libs/gtk+::gentoo
-net-misc/openvswitch::gentoo
-#dev-qt/qtsql::gentoo
-
 dev-lua/lpeg::lua
 dev-lua/mpack::lua
+#dev-qt/qtsql::gentoo
+net-misc/openvswitch::gentoo
+sys-apps/less::gentoo
+x11-libs/gtk+::gentoo
+
+#for the never ending problems with chrom*
+#www-client/chromium::gentoo
+#>www-client/chromium-69.0.3497.100
 

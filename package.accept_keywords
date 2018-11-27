@@ -1,29 +1,29 @@
 # 9999 packages
-media-video/mpv **
-app-misc/radeontop **
-x11-misc/spacefm-ng **
-media-video/ffmpeg **
 app-editors/neovim **
-media-libs/mesa **
-x11-libs/libdrm **
-net-misc/grive **
-app-portage/smart-live-rebuild **
-x11-misc/compton **
-sys-apps/net-tools **
-media-libs/libaom **
-media-libs/dav1d **
 app-misc/radeon-profile **
 app-misc/radeon-profile-daemon **
+app-misc/radeontop **
+app-portage/smart-live-rebuild **
+media-libs/dav1d **
+media-libs/libaom **
+media-libs/mesa **
+media-video/ffmpeg **
+media-video/mpv **
+net-misc/grive **
+sys-apps/net-tools **
+x11-libs/libdrm **
+x11-misc/compton **
+x11-misc/spacefm-ng **
 
 #virt
-app-emulation/virt-manager **
 app-emulation/libvirt **
-dev-python/libvirt-python **
 #app-emulation/qemu **
+app-emulation/virt-manager **
+dev-python/libvirt-python **
 
 #zsh
-app-shells/fast-syntax-highlighting **
 app-shells/auto-fu-zsh **
+app-shells/fast-syntax-highlighting **
 
 #zfs
 sys-fs/zfs **
