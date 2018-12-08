@@ -1,59 +1,59 @@
-dev-libs/libpcre pcre16 -pcre32
-dev-libs/libpcre2 pcre16 -pcre32
-sys-devel/gettext -ncurses
-dev-libs/glib -mime -utils -dbus
 dev-lang/python:2.7 -ncurses -sqlite
+dev-libs/glib -mime -utils -dbus
+dev-libs/libpcre2 pcre16 -pcre32
+dev-libs/libpcre pcre16 -pcre32
+sys-devel/gettext -ncurses
 
 #net
-sys-apps/iproute2 -iptables
-net-misc/iputils -arping
-sys-apps/net-tools -arp
-virtual/ssh -minimal
-net-misc/curl adns -threads
-sys-apps/iproute2 elf -minimal
 mail-mta/nullmailer -ssl
+net-misc/curl adns -threads
+net-misc/iputils -arping
+sys-apps/iproute2 elf -minimal
+sys-apps/iproute2 -iptables
+sys-apps/net-tools -arp
 sys-apps/openrc newnet
+virtual/ssh -minimal
 
 #toolchain
-sys-devel/gcc -graphite -fortran
-sys-devel/binutils cxx
 dev-util/cmake system-jsoncpp -ncurses
-sys-devel/llvm gold libffi -llvm_targets_NVPTX -llvm_targets_AMDGPU -llvm_targets_BPF -libedit
+sys-devel/binutils cxx
 sys-devel/clang default-compiler-rt default-libcxx -static-analyzer -llvm_targets_AMDGPU -llvm_targets_NVPTX -llvm_targets_BPF
 sys-devel/clang-runtime libcxx -sanitize
-sys-libs/libcxx libunwind libcxxabi -libcxxrt
+sys-devel/gcc -graphite -fortran
+sys-devel/llvm gold libffi -llvm_targets_NVPTX -llvm_targets_AMDGPU -llvm_targets_BPF -libedit
 sys-libs/glibc -multiarch
+sys-libs/libcxx libunwind libcxxabi -libcxxrt
 
 #media
+media-libs/libmediainfo -curl
 media-video/ffmpeg -x265 -opus zlib -vpx -libdrm -libaom -opencl -postproc -bzip2
 media-video/mediainfo -curl
-media-libs/libmediainfo -curl
 
 #sys
-sys-libs/ncurses unicode -gpm -minimal
 sys-apps/util-linux static-libs -cramfs -tty-helpers
+sys-libs/ncurses unicode -gpm -minimal
 
 #portage
 app-portage/layman sync-plugin-portage
 sys-apps/portage ipc gentoo-dev -rsync-verify
 
 #tools
-app-editors/neovim python -clipboard -nvimpager
-dev-vcs/git webdav pcre-jit -perl
-sys-apps/less -less-select -lesspipe
-app-shells/bash -mem-scramble -net
-sys-process/fcron -mta
-sys-process/lsof rpc
 app-arch/unzip natspec
 app-arch/zip natspec
+app-editors/neovim python -clipboard -nvimpager
+app-shells/bash -mem-scramble -net
 dev-lang/perl ithreads
+dev-vcs/git webdav pcre-jit -perl
+sys-apps/less -less-select -lesspipe
+sys-process/fcron -mta
+sys-process/lsof rpc
 
 #rtorrent
-net-p2p/rtorrent xmlrpc -daemon
+app-eselect/eselect-php fpm
+dev-lang/php fpm gd cgi xmlrpc xmlreader xmlwriter zip sockets iconv ldap pdo pcntl libedit -mysql -mysqli
 #dev-libs/boost python
 #net-libs/libtorrent-rasterbar -geoip
-dev-lang/php fpm gd cgi xmlrpc xmlreader xmlwriter zip sockets iconv ldap pdo pcntl libedit -mysql -mysqli
 net-nds/openldap -syslog -tcpd
-app-eselect/eselect-php fpm
-www-servers/lighttpd webdav php pcre -minimal -gdbm -mysql
+net-p2p/rtorrent xmlrpc -daemon
 www-apps/rutorrent vhosts
+www-servers/lighttpd webdav php pcre -minimal -gdbm -mysql
