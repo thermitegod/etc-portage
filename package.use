@@ -7,7 +7,7 @@ dev-lang/python:3.7 readline
 dev-lang/ruby -rdoc
 dev-libs/boost nls
 dev-libs/glib utils dbus
-dev-libs/libpcre2 pcre16 -pcre32
+dev-libs/libpcre2 pcre16 pcre32
 dev-libs/libpcre pcre16 -pcre32
 dev-libs/libxml2 python
 dev-libs/nss -nss-pem
@@ -17,6 +17,7 @@ sys-apps/baselayout split-usr
 sys-apps/openrc netifrc newnet
 sys-apps/smartmontools update_drivedb
 sys-boot/refind -ext2
+sys-devel/distcc gtk
 sys-devel/gettext -ncurses
 
 #net
@@ -87,6 +88,8 @@ x11-misc/i3status -filecaps
 x11-misc/spacefm gtk2 -gtk3
 x11-misc/spacefm-ng gtk2 -gtk3
 x11-misc/xdg-utils -perl
+x11-terms/mrxvt -jpeg -png
+x11-terms/rxvt-unicode blink 256-color xft
 
 #mpv
 media-libs/libass fontconfig
@@ -165,7 +168,7 @@ x11-libs/gtk+:3 -atk-bridge
 #qemu
 app-emulation/libvirt-glib python introspection
 app-emulation/libvirt zfs -virtualbox -virt-network -macvtap -vepa
-app-emulation/qemu virgl spice gtk usb vhost-net -filecaps -usbredir -static -ncurses -vnc -jpeg -png -gtk2 -curl -bzip2
+app-emulation/qemu virgl spice gtk usb vhost-net -fdt -filecaps -usbredir -static -ncurses -vnc -jpeg -png -gtk2 -curl -bzip2
 app-emulation/spice gstreamer
 app-emulation/virt-manager gtk
 dev-libs/atk introspection
@@ -230,10 +233,3 @@ x11-libs/fltk xft
 #media-gfx/krita vc -raw
 #media-libs/phonon -vlc
 #sys-auth/consolekit policykit
-
-### thinkpad
-#app-laptop/tlp tlp_suggests
-#dev-python/pyparsing python_targets_python2_7
-#media-libs/mesa -gcrypt -bindist classic -dri3 -bindist
-#net-wireless/wpa_supplicant wps readline
-#x11-base/xorg-drivers -video_cards_vesa -video_cards_fbdev

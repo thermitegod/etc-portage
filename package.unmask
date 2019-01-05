@@ -8,5 +8,4 @@
 >=dev-lang/php-7.3.0_rc6
 >=virtual/httpd-php-7.3
 
-#>=www-client/chromium-60.0.3107.4
-#=www-client/chromium-69.0.3464.0
+>=www-client/chromium-60.0.3107.4
