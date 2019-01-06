@@ -46,7 +46,7 @@ dev-util/cmake system-jsoncpp -ncurses
 dev-util/lldb -ncurses
 sys-devel/binutils cxx
 sys-devel/clang default-compiler-rt default-libcxx llvm_targets_AMDGPU -llvm_targets_NVPTX
-sys-devel/clang-runtime libcxx -sanitize
+sys-devel/clang-runtime libcxx sanitize
 sys-devel/gcc graphite fortran
 sys-devel/llvm gold libffi -llvm_targets_NVPTX -ncurses
 sys-libs/glibc -multiarch

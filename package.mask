@@ -19,17 +19,11 @@ sys-fs/udev
 
 #mask version
 =app-misc/fslint-9999
->=mail-client/neomutt-20180512
 >media-fonts/noto-20170403
 >=media-fonts/noto-cjk-20170602
 =media-gfx/mcomix-9999
-=media-video/mkvtoolnix-28.2.0
->=net-news/newsboat-2.11
-=sys-boot/refind-0.11.3
-=sys-kernel/linux-firmware-20181218
 
 #mask repo
-#app-admin/sudo::gentoo
 dev-lua/lpeg::lua
 dev-lua/mpack::lua
 #dev-qt/qtsql::gentoo
