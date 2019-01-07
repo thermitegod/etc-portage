@@ -19,6 +19,7 @@ sys-apps/smartmontools update_drivedb
 sys-boot/refind -ext2
 sys-devel/distcc gtk
 sys-devel/gettext -ncurses
+app-arch/zstd -lz4
 
 #net
 dev-libs/openssl tls-heartbeat
