@@ -1,7 +1,5 @@
 # 9999 packages
 app-editors/neovim **
-app-misc/radeon-profile **
-app-misc/radeon-profile-daemon **
 app-misc/radeontop **
 app-portage/smart-live-rebuild **
 media-libs/dav1d **
@@ -22,12 +20,14 @@ dev-util/spirv-headers **
 dev-util/spirv-tools **
 
 #virt
-app-emulation/libvirt **
+#app-emulation/libvirt **
 #app-emulation/qemu **
-app-emulation/virt-manager **
-dev-python/libvirt-python **
+#app-emulation/virt-manager **
+#dev-python/libvirt-python **
 
-#zsh
+#sh
+app-shells/bash **
+sys-libs/readline **
 app-shells/auto-fu-zsh **
 app-shells/fast-syntax-highlighting **
 

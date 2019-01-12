@@ -24,6 +24,7 @@ sys-fs/udev
 =media-gfx/mcomix-9999
 
 #mask repo
+app-cdr/cdrtools::mv
 dev-lua/lpeg::lua
 dev-lua/mpack::lua
 #dev-qt/qtsql::gentoo

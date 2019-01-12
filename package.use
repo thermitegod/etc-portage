@@ -17,9 +17,9 @@ sys-apps/baselayout split-usr
 sys-apps/openrc netifrc newnet
 sys-apps/smartmontools update_drivedb
 sys-boot/refind -ext2
-sys-devel/distcc gtk
 sys-devel/gettext -ncurses
-app-arch/zstd -lz4
+sys-firmware/ipxe -usb
+app-crypt/gnupg -usb
 
 #net
 dev-libs/openssl tls-heartbeat
@@ -29,10 +29,9 @@ net-firewall/iptables nftables conntrack
 net-ftp/lftp verify-file
 net-libs/gnutls -openssl
 net-mail/mailutils -clients
-net-misc/curl adns -threads
+net-misc/curl -adns
 net-misc/iputils -arping
 net-print/cups-filters -foomatic -postscript
-net-print/cups usb
 net-vpn/ipsec-tools stats nat
 sys-apps/iproute2 elf -minimal
 sys-apps/net-tools -arp
@@ -46,30 +45,32 @@ net-misc/openvswitch -modules
 dev-util/cmake system-jsoncpp -ncurses
 dev-util/lldb -ncurses
 sys-devel/binutils cxx
-sys-devel/clang default-compiler-rt default-libcxx llvm_targets_AMDGPU -llvm_targets_NVPTX
+sys-devel/clang default-compiler-rt default-libcxx
 sys-devel/clang-runtime libcxx sanitize
 sys-devel/gcc graphite fortran
-sys-devel/llvm gold libffi -llvm_targets_NVPTX -ncurses
+sys-devel/llvm gold libffi -ncurses
 sys-libs/glibc -multiarch
 sys-libs/libcxx libunwind libcxxabi -libcxxrt
 
 #media
 media-fonts/mplus-outline-fonts ipafont
+media-gfx/exiv2 -xmp
 media-gfx/feh -curl
 media-gfx/imagemagick q32 cxx
 media-gfx/jp2a -curl
-media-libs/freetype harfbuzz -png -bzip2
+media-libs/freetype harfbuzz -png
 media-libs/imlib2 shm
 media-libs/libmediainfo -curl
 media-libs/libvpx postproc svc
 media-libs/mesa -gles2 -gles1 -opencl -classic
 media-libs/taglib boost
+media-libs/tiff zlib
 media-libs/vulkan-loader layers
 media-sound/alsa-utils -libsamplerate
-media-sound/mpd -cue -flac -fifo -ipv6 -curl -network -eventfd -signalfd -tcpd -mad -expat -unicode -zlib -bzip2
+media-sound/mpd -cue -flac -fifo -ipv6 -curl -network -eventfd -signalfd -tcpd -mad -expat -unicode
 media-sound/ncmpcpp taglib -visualizer
-media-video/ffmpeg x265 opus zlib vpx libdrm libaom -opencl -postproc -bzip2
-media-video/libav x265 opus bzip zlib -postproc
+media-video/ffmpeg x265 opus vpx libdrm libaom zlib -opencl -postproc
+media-video/libav x265 opus bzip -postproc
 media-video/mediainfo -curl
 
 #X/gui
@@ -82,7 +83,6 @@ www-client/w3m imlib
 x11-base/xorg-server suid -minimal
 x11-libs/cairo xcb
 x11-libs/libdrm video_cards_radeon libkms
-x11-libs/libXfont2 -bzip2
 x11-libs/libxcb xkb
 x11-misc/compton -pcre
 x11-misc/i3status -filecaps
@@ -126,6 +126,7 @@ sys-fs/zfs-auto-snapshot -default-exclude
 sys-process/fcron -mta
 sys-process/latencytop gtk
 sys-process/lsof rpc
+sys-devel/gdb lzma
 
 #kernel
 sys-apps/util-linux tty-helpers static-libs -cramfs
@@ -136,6 +137,8 @@ sys-kernel/gentoo-sources symlink
 sys-kernel/git-sources symlink
 sys-kernel/linux-firmware savedconfig
 virtual/linux-sources firmware
+sys-apps/kexec-tools lzma zlib
+sys-apps/kmod lzma zlib
 
 #inxi
 sys-apps/inxi hddtemp
@@ -148,7 +151,7 @@ media-sound/shntool flac
 
 #rtorrent
 app-eselect/eselect-php fpm
-dev-lang/php fpm gd cgi xmlrpc xmlreader xmlwriter zip sockets iconv ldap pdo pcntl -mysql -mysqli
+dev-lang/php fpm gd cgi xmlrpc xmlreader xmlwriter zip sockets iconv ldap pdo pcntl zlib -mysql -mysqli
 #dev-libs/boost python
 #net-libs/libtorrent-rasterbar -geoip
 net-nds/openldap -syslog -tcpd
@@ -167,9 +170,10 @@ www-client/google-chrome-unstable -plugins
 x11-libs/gtk+:3 -atk-bridge
 
 #qemu
+app-cdr/cdrtools schily-tools
 app-emulation/libvirt-glib python introspection
 app-emulation/libvirt zfs -virtualbox -virt-network -macvtap -vepa
-app-emulation/qemu virgl spice gtk usb vhost-net -fdt -filecaps -usbredir -static -ncurses -vnc -jpeg -png -gtk2 -curl -bzip2
+app-emulation/qemu virgl spice gtk vhost-net -fdt -filecaps -usbredir -ncurses -vnc -jpeg -png -curl
 app-emulation/spice gstreamer
 app-emulation/virt-manager gtk
 dev-libs/atk introspection
@@ -181,7 +185,7 @@ sys-libs/libosinfo introspection
 x11-libs/gdk-pixbuf introspection
 x11-libs/gtk+ introspection
 x11-libs/pango introspection
-x11-libs/vte introspection
+x11-libs/vte crypt introspection
 
 #gource
 dev-libs/tinyxml -stl
@@ -221,16 +225,3 @@ sci-mathematics/octave X gui readline
 virtual/blas int64
 virtual/lapack int64
 x11-libs/fltk xft
-
-#kicad
-#dev-libs/boost context
-#sci-electronics/kicad -minimal -python
-
-#krita
-#dev-libs/glib dbus
-#kde-frameworks/kauth -policykit
-#kde-frameworks/kio -handbook -kwallet
-#kde-frameworks/sonnet -hunspell
-#media-gfx/krita vc -raw
-#media-libs/phonon -vlc
-#sys-auth/consolekit policykit

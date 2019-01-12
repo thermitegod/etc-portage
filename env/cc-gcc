@@ -1,12 +1,9 @@
 #gcc
-#CC="gcc -std=c11"
-#CXX="g++ -std=c++14"
 CC="gcc"
 CXX="g++"
 CPP="cpp"
 AR="ar"
 NM="nm"
-
 RANLIB="/bin/true"
 LD="/usr/bin/ld.lld" #LLVM lld
 #LD="/usr/bin/ld.gold"
