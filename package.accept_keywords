@@ -9,12 +9,11 @@ media-libs/shaderc **
 media-video/ffmpeg **
 media-video/mpv **
 net-misc/grive **
-sys-apps/net-tools **
 x11-libs/libdrm **
 x11-misc/compton **
-x11-misc/spacefm-ng **
 x11-misc/spacefm **
 
+#vulkan
 dev-util/glslang **
 dev-util/spirv-headers **
 dev-util/spirv-tools **

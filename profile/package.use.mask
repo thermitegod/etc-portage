@@ -3,5 +3,6 @@ www-client/chromium -system-icu -system-libvpx -system-ffmpeg
 x11-base/xorg-server -suid
 dev-libs/elfutils -threads
 media-libs/imlib2 -cpu_flags_x86_mmx
+dev-vcs/git -pcre-jit
 #app-arch/p7zip -static
 #app-shells/bash readline

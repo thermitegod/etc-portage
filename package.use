@@ -75,6 +75,7 @@ media-video/mediainfo -curl
 
 #X/gui
 dev-libs/keybinder python introspection
+dev-python/PyQt5 widgets gui
 dev-qt/qtgui -libinput
 dev-qt/qtmultimedia -alsa
 dev-qt/qtscript scripttools
@@ -83,18 +84,20 @@ www-client/w3m imlib
 x11-base/xorg-server suid -minimal
 x11-libs/cairo xcb
 x11-libs/libdrm video_cards_radeon libkms
+x11-libs/libvdpau dri
 x11-libs/libxcb xkb
 x11-misc/compton -pcre
 x11-misc/i3status -filecaps
 x11-misc/spacefm gtk2 -gtk3
 x11-misc/spacefm-ng gtk2 -gtk3
 x11-misc/xdg-utils -perl
+x11-terms/kitty imagemagick
 x11-terms/mrxvt -jpeg -png
 x11-terms/rxvt-unicode blink 256-color xft
 
 #mpv
 media-libs/libass fontconfig
-media-video/mpv zsh-completion zlib -jpeg -libmpv -drm -uchardet -xscreensaver -xv
+media-video/mpv cli zsh-completion zlib -jpeg -libmpv -drm -uchardet -xscreensaver -xv
 
 #portage
 app-portage/eix optimization strong-optimization
@@ -111,7 +114,9 @@ app-emulation/lxc -templates
 app-shells/bash -mem-scramble -net
 app-text/lesspipe -djvu -dvi2tty -ghostscript -gpg -elinks -html2text -links -lynx -rpm2targz -unzip
 dev-lang/perl ithreads
+dev-util/perf clang
 dev-util/strace elfutils
+dev-util/fatrace powertop
 dev-vcs/git webdav pcre-jit -perl
 net-analyzer/nmap -nping
 net-misc/openssh -X
@@ -127,6 +132,7 @@ sys-process/fcron -mta
 sys-process/latencytop gtk
 sys-process/lsof rpc
 sys-devel/gdb lzma
+sys-process/audit python
 
 #kernel
 sys-apps/util-linux tty-helpers static-libs -cramfs
@@ -151,7 +157,7 @@ media-sound/shntool flac
 
 #rtorrent
 app-eselect/eselect-php fpm
-dev-lang/php fpm gd cgi xmlrpc xmlreader xmlwriter zip sockets iconv ldap pdo pcntl zlib -mysql -mysqli
+dev-lang/php fpm gd cgi xmlrpc xmlreader xmlwriter zip sockets iconv ldap pdo pcntl zlib cli -mysql -mysqli
 #dev-libs/boost python
 #net-libs/libtorrent-rasterbar -geoip
 net-nds/openldap -syslog -tcpd
@@ -168,6 +174,10 @@ sys-libs/zlib minizip
 www-client/chromium jumbo-build custom-cflags -system-icu -system-ffmpeg -system-libvpx -suid -hangouts
 www-client/google-chrome-unstable -plugins
 x11-libs/gtk+:3 -atk-bridge
+
+#selinux
+sys-libs/libselinux pcre2
+dev-libs/libpcre2 static-libs
 
 #qemu
 app-cdr/cdrtools schily-tools
