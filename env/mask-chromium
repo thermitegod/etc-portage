@@ -1,8 +1,0 @@
-INSTALL_MASK="
-${INSTALL_MASK}
-/usr/bin/chromium-browser
-/usr/lib64/chromium-browser/chromedriver
-/usr/bin/chromedriver
-/etc/chromium
-"
-PKG_INSTALL_MASK="${INSTALL_MASK}"

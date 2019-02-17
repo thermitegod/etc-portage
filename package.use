@@ -2,7 +2,6 @@ app-admin/sudo -sendmail
 app-crypt/pinentry -qt5
 app-text/xmlto text
 dev-lang/lua -deprecated
-dev-lang/python:3.6 readline
 dev-lang/python:3.7 readline
 dev-lang/ruby -rdoc
 dev-libs/boost nls
@@ -19,15 +18,15 @@ sys-apps/smartmontools update_drivedb
 sys-boot/refind -ext2
 sys-devel/gettext -ncurses
 sys-firmware/ipxe -usb
-app-crypt/gnupg -usb
+app-crypt/gnupg -usb -smartcard
 
 #net
-dev-libs/openssl tls-heartbeat
+dev-libs/openssl -tls-heartbeat
 mail-client/neomutt lmdb gpgme -pgp_classic -gpg
 net-dns/dnsmasq dnssec -dumpfile
 net-firewall/iptables nftables conntrack
 net-ftp/lftp verify-file
-net-libs/gnutls -openssl
+net-libs/gnutls -openssl -sslv2 -sslv3
 net-mail/mailutils -clients
 net-misc/curl -adns
 net-misc/iputils -arping
@@ -44,10 +43,12 @@ net-misc/openvswitch -modules
 #toolchain
 dev-util/cmake system-jsoncpp -ncurses
 dev-util/lldb -ncurses
-sys-devel/binutils cxx
+sys-devel/binutils cxx default-gold
 sys-devel/clang default-compiler-rt default-libcxx
 sys-devel/clang-runtime libcxx sanitize
-sys-devel/gcc graphite fortran
+sys-libs/compiler-rt-sanitizers -libfuzzer
+sys-libs/libomp hwloc offload ompt
+sys-devel/gcc graphite fortran nptl
 sys-devel/llvm gold libffi -ncurses
 sys-libs/glibc -multiarch
 sys-libs/libcxx libunwind libcxxabi -libcxxrt
@@ -57,12 +58,13 @@ media-fonts/mplus-outline-fonts ipafont
 media-gfx/exiv2 -xmp
 media-gfx/feh -curl
 media-gfx/imagemagick q32 cxx
+media-gfx/graphicsmagick q32 cxx
 media-gfx/jp2a -curl
 media-libs/freetype harfbuzz -png
 media-libs/imlib2 shm
 media-libs/libmediainfo -curl
 media-libs/libvpx postproc svc
-media-libs/mesa -gles2 -gles1 -opencl -classic
+media-libs/mesa vulkan -gles2 -gles1 -opencl -classic
 media-libs/taglib boost
 media-libs/tiff zlib
 media-libs/vulkan-loader layers
@@ -75,6 +77,7 @@ media-video/mediainfo -curl
 
 #X/gui
 dev-libs/keybinder python introspection
+dev-python/pillow zlib
 dev-python/PyQt5 widgets gui
 dev-qt/qtgui -libinput
 dev-qt/qtmultimedia -alsa
@@ -84,6 +87,7 @@ www-client/w3m imlib
 x11-base/xorg-server suid -minimal
 x11-libs/cairo xcb
 x11-libs/libdrm video_cards_radeon libkms
+x11-libs/libnotify introspection
 x11-libs/libvdpau dri
 x11-libs/libxcb xkb
 x11-misc/compton -pcre
@@ -97,7 +101,7 @@ x11-terms/rxvt-unicode blink 256-color xft
 
 #mpv
 media-libs/libass fontconfig
-media-video/mpv cli zsh-completion zlib -jpeg -libmpv -drm -uchardet -xscreensaver -xv
+media-video/mpv vulkan cli zsh-completion zlib -jpeg -libmpv -drm -uchardet -xscreensaver -xv
 
 #portage
 app-portage/eix optimization strong-optimization
@@ -107,19 +111,23 @@ sys-apps/portage ipc gentoo-dev -rsync-verify
 #tools
 app-admin/sysstat lm_sensors
 app-arch/advancecomp -png
+app-arch/p7zip clang
 app-arch/unzip natspec
 app-arch/zip natspec
 app-editors/neovim python -nvimpager
 app-emulation/lxc -templates
+app-emulation/lxd -tools
 app-shells/bash -mem-scramble -net
 app-text/lesspipe -djvu -dvi2tty -ghostscript -gpg -elinks -html2text -links -lynx -rpm2targz -unzip
+app-text/mupdf -javascript
 dev-lang/perl ithreads
 dev-util/perf clang
-dev-util/strace elfutils
+dev-util/strace aio elfutils
 dev-util/fatrace powertop
 dev-vcs/git webdav pcre-jit -perl
 net-analyzer/nmap -nping
 net-misc/openssh -X
+sys-apps/busybox -static
 sys-apps/irqbalance -tui
 sys-apps/less -less-select
 sys-apps/lshw -sqlite
@@ -128,6 +136,7 @@ sys-block/parted readline
 sys-devel/gdb -server -python
 sys-fs/squashfs-tools -zstd
 sys-fs/zfs-auto-snapshot -default-exclude
+sys-process/cronie inotify -anacron
 sys-process/fcron -mta
 sys-process/latencytop gtk
 sys-process/lsof rpc
@@ -183,7 +192,7 @@ dev-libs/libpcre2 static-libs
 app-cdr/cdrtools schily-tools
 app-emulation/libvirt-glib python introspection
 app-emulation/libvirt zfs -virtualbox -virt-network -macvtap -vepa
-app-emulation/qemu virgl spice gtk vhost-net -fdt -filecaps -usbredir -ncurses -vnc -jpeg -png -curl
+app-emulation/qemu aio virgl spice gtk vhost-net -fdt -filecaps -usbredir -ncurses -vnc -jpeg -png -curl
 app-emulation/spice gstreamer
 app-emulation/virt-manager gtk
 dev-libs/atk introspection
@@ -197,12 +206,6 @@ x11-libs/gtk+ introspection
 x11-libs/pango introspection
 x11-libs/vte crypt introspection
 
-#gource
-dev-libs/tinyxml -stl
-media-fonts/freefont -X
-media-libs/libsdl2 -alsa -joystick -sound -udev -sound
-media-libs/sdl2-image -gif -tiff
-
 #samba
 net-fs/samba -gnutls -system-mitkrb5 -gpg
 sys-libs/ldb -lmdb
@@ -215,23 +218,23 @@ media-libs/gegl -ffmpeg
 media-libs/libmypaint gegl
 
 #opendjk
-app-text/poppler cxx
+app-text/poppler cxx -jpeg2k
 dev-java/icedtea-bin headless-awt -alsa -gtk -webstart
 dev-java/icedtea gtk shenandoah -headless-awt -alsa -source -webstart
-
-#libreoffice
-app-crypt/gpgme cxx
-app-office/libreoffice -gtk -pdfimport
-app-text/libwpd tools
-dev-libs/rasqal -crypt -mhash
-dev-libs/xmlsec nss -gcrypt -gnutls
 
 #octave
 sci-libs/blas-reference int64
 sci-libs/cholmod lapack -minimal
 sci-libs/lapack-reference int64 -deprecated
 sci-libs/openblas int64
-sci-mathematics/octave X gui readline
+sci-mathematics/octave X gui readline graphicsmagick -imagemagick -gnuplot
 virtual/blas int64
 virtual/lapack int64
 x11-libs/fltk xft
+
+#libreoffice
+#app-crypt/gpgme cxx
+#app-office/libreoffice -gtk -pdfimport
+#app-text/libwpd tools
+#dev-libs/rasqal -crypt -mhash
+#dev-libs/xmlsec nss -gcrypt -gnutls

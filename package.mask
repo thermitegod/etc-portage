@@ -32,6 +32,8 @@ net-misc/openvswitch::gentoo
 sys-apps/less::gentoo
 x11-libs/gtk+::gentoo
 
+sys-boot/grub::poly-c
+
 #for the never ending problems with chrom*
 #www-client/chromium::gentoo
 #>www-client/chromium-69.0.3497.100
