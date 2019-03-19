@@ -2,17 +2,16 @@ app-admin/sudo -sendmail
 app-crypt/pinentry -qt5
 app-text/xmlto text
 dev-lang/lua -deprecated
-dev-lang/python:3.7 readline
+dev-lang/python readline
 dev-lang/ruby -rdoc
 dev-libs/boost nls
-dev-libs/glib utils dbus
+dev-libs/glib utils
 dev-libs/libpcre2 pcre16 pcre32
-dev-libs/libpcre pcre16 -pcre32
+dev-libs/libpcre pcre16 pcre32
 dev-libs/libxml2 python
 dev-libs/nss -nss-pem
 dev-python/numpy -lapack
 gnome-base/gvfs -http -udev
-sys-apps/baselayout split-usr
 sys-apps/openrc netifrc newnet
 sys-apps/smartmontools update_drivedb
 sys-boot/refind -ext2
@@ -20,8 +19,11 @@ sys-devel/gettext -ncurses
 sys-firmware/ipxe -usb
 app-crypt/gnupg -usb -smartcard
 
+dev-python/numpy lapack
+app-misc/ca-certificates cacert
+sci-libs/scipy sparse
+
 #net
-dev-libs/openssl -tls-heartbeat
 mail-client/neomutt lmdb gpgme -pgp_classic -gpg
 net-dns/dnsmasq dnssec -dumpfile
 net-firewall/iptables nftables conntrack
@@ -48,7 +50,7 @@ sys-devel/clang default-compiler-rt default-libcxx
 sys-devel/clang-runtime libcxx sanitize
 sys-libs/compiler-rt-sanitizers -libfuzzer
 sys-libs/libomp hwloc offload ompt
-sys-devel/gcc graphite fortran nptl
+sys-devel/gcc graphite
 sys-devel/llvm gold libffi -ncurses
 sys-libs/glibc -multiarch
 sys-libs/libcxx libunwind libcxxabi -libcxxrt
@@ -64,16 +66,16 @@ media-libs/freetype harfbuzz -png
 media-libs/imlib2 shm
 media-libs/libmediainfo -curl
 media-libs/libvpx postproc svc
-media-libs/mesa vulkan -gles2 -gles1 -opencl -classic
-media-libs/taglib boost
+media-libs/mesa vulkan vulkan-overlay lm_sensors -gles2 -gles1 -opencl -classic
 media-libs/tiff zlib
 media-libs/vulkan-loader layers
-media-sound/alsa-utils -libsamplerate
 media-sound/mpd -cue -flac -fifo -ipv6 -curl -network -eventfd -signalfd -tcpd -mad -expat -unicode
 media-sound/ncmpcpp taglib -visualizer
 media-video/ffmpeg x265 opus vpx libdrm libaom zlib -opencl -postproc
 media-video/libav x265 opus bzip -postproc
 media-video/mediainfo -curl
+
+media-gfx/feh exif
 
 #X/gui
 dev-libs/keybinder python introspection
@@ -93,11 +95,11 @@ x11-libs/libxcb xkb
 x11-misc/compton -pcre
 x11-misc/i3status -filecaps
 x11-misc/spacefm gtk2 -gtk3
-x11-misc/spacefm-ng gtk2 -gtk3
 x11-misc/xdg-utils -perl
-x11-terms/kitty imagemagick
 x11-terms/mrxvt -jpeg -png
 x11-terms/rxvt-unicode blink 256-color xft
+
+net-ftp/gftp gtk
 
 #mpv
 media-libs/libass fontconfig
@@ -133,7 +135,7 @@ sys-apps/less -less-select
 sys-apps/lshw -sqlite
 sys-auth/pambase nullok
 sys-block/parted readline
-sys-devel/gdb -server -python
+sys-devel/gdb source-highlight -server -python
 sys-fs/squashfs-tools -zstd
 sys-fs/zfs-auto-snapshot -default-exclude
 sys-process/cronie inotify -anacron
@@ -142,6 +144,8 @@ sys-process/latencytop gtk
 sys-process/lsof rpc
 sys-devel/gdb lzma
 sys-process/audit python
+
+app-admin/sysklogd logrotate
 
 #kernel
 sys-apps/util-linux tty-helpers static-libs -cramfs
@@ -180,19 +184,16 @@ media-libs/libwebp swap-16bit-csp
 media-libs/openh264 -plugin
 net-libs/nodejs inspector libressl ssl bundled-ssl npm -snapshot
 sys-libs/zlib minizip
-www-client/chromium jumbo-build custom-cflags -system-icu -system-ffmpeg -system-libvpx -suid -hangouts
+www-client/chromium jumbo-build custom-cflags -suid -hangouts
 www-client/google-chrome-unstable -plugins
-x11-libs/gtk+:3 -atk-bridge
 
 #selinux
 sys-libs/libselinux pcre2
-dev-libs/libpcre2 static-libs
 
 #qemu
-app-cdr/cdrtools schily-tools
 app-emulation/libvirt-glib python introspection
 app-emulation/libvirt zfs -virtualbox -virt-network -macvtap -vepa
-app-emulation/qemu aio virgl spice gtk vhost-net -fdt -filecaps -usbredir -ncurses -vnc -jpeg -png -curl
+app-emulation/qemu aio virgl spice gtk vhost-net -fdt -usbredir -ncurses -vnc -jpeg -png -curl
 app-emulation/spice gstreamer
 app-emulation/virt-manager gtk
 dev-libs/atk introspection
@@ -202,12 +203,12 @@ net-libs/gtk-vnc gtk3 introspection -python
 net-misc/spice-gtk gtk3 usbredir introspection gstaudio gstvideo
 sys-libs/libosinfo introspection
 x11-libs/gdk-pixbuf introspection
-x11-libs/gtk+ introspection
+x11-libs/gtk+ introspection -adwaita-icon-theme -atk-bridge
 x11-libs/pango introspection
 x11-libs/vte crypt introspection
 
 #samba
-net-fs/samba -gnutls -system-mitkrb5 -gpg
+net-fs/samba gnutls -system-mitkrb5 -gpg
 sys-libs/ldb -lmdb
 sys-libs/tdb python
 sys-libs/tevent python
@@ -219,7 +220,6 @@ media-libs/libmypaint gegl
 
 #opendjk
 app-text/poppler cxx -jpeg2k
-dev-java/icedtea-bin headless-awt -alsa -gtk -webstart
 dev-java/icedtea gtk shenandoah -headless-awt -alsa -source -webstart
 
 #octave

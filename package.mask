@@ -15,13 +15,14 @@ www-apache/mod_dnssd
 #systemd infested
 gnome-base/gconf
 sys-fs/udev
->=www-misc/profile-sync-daemon-6.31
+
+#for the never ending problems with chrom*
+#www-client/chromium::gentoo
+#>www-client/chromium-69.0.3497.100
 
 #mask version
-=app-misc/fslint-9999
 >media-fonts/noto-20170403
 >=media-fonts/noto-cjk-20170602
-=media-gfx/mcomix-9999
 
 #mask repo
 app-cdr/cdrtools::mv
@@ -33,8 +34,30 @@ sys-apps/less::gentoo
 x11-libs/gtk+::gentoo
 
 sys-boot/grub::poly-c
+sys-apps/gawk::poly-c
 
-#for the never ending problems with chrom*
-#www-client/chromium::gentoo
-#>www-client/chromium-69.0.3497.100
+=sys-apps/debianutils-4.8.6.1 #kernel installs without verion number
+=sys-apps/sandbox-2.16 #error: Unable to determine LIBC PATH (/lib64/libc.so.6")
+
+#>=sys-kernel/gentoo-sources-4.20.12
+
+>=dev-qt/qtcore-5.12.1
+>=dev-qt/qtnetwork-5.12.1
+>=dev-qt/qtxml-5.12.1
+>=dev-qt/qtsql-5.12.1
+>=dev-qt/qttest-5.12.1
+>=dev-qt/qtconcurrent-5.12.1
+>=dev-qt/qtdbus-5.12.1
+>=dev-qt/linguist-tools-5.12.1
+>=dev-qt/qtgui-5.12.1
+>=dev-qt/qtwidgets-5.12.1
+>=dev-qt/qtmultimedia-5.12.1
+>=dev-qt/qtscript-5.12.1
+>=dev-qt/qtprintsupport-5.12.1
+>=dev-qt/qtopengl-5.12.1
+>=dev-qt/qthelp-5.12.1-r1
+>=dev-qt/qtxmlpatterns-5.12.1
+>=dev-qt/qtdeclarative-5.12.1
+>=dev-qt/qtscxml-5.12.1
+
 
