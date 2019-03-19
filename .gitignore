@@ -1,1 +1,4 @@
 patches/*
+savedconfig/sys-apps
+savedconfig/sys-firmware
+savedconfig/x11-terms
