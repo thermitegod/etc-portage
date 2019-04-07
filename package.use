@@ -1,5 +1,6 @@
 app-admin/sudo -sendmail
 app-crypt/pinentry -qt5
+app-misc/ca-certificates cacert
 app-text/xmlto text
 dev-lang/lua -deprecated
 dev-lang/python readline
@@ -11,7 +12,6 @@ dev-libs/libpcre pcre16 pcre32
 dev-libs/libxml2 python
 dev-libs/nss -nss-pem
 dev-python/numpy -lapack
-gnome-base/gvfs -http -udev
 sys-apps/openrc netifrc newnet
 sys-apps/smartmontools update_drivedb
 sys-boot/refind -ext2
@@ -20,7 +20,6 @@ sys-firmware/ipxe -usb
 app-crypt/gnupg -usb -smartcard
 
 dev-python/numpy lapack
-app-misc/ca-certificates cacert
 sci-libs/scipy sparse
 
 #net
@@ -38,10 +37,6 @@ sys-apps/iproute2 elf -minimal
 sys-apps/net-tools -arp
 virtual/ssh -minimal
 
-#openvswitch
-dev-python/twisted conch -soap
-net-misc/openvswitch -modules
-
 #toolchain
 dev-util/cmake system-jsoncpp -ncurses
 dev-util/lldb -ncurses
@@ -51,6 +46,7 @@ sys-devel/clang-runtime libcxx sanitize
 sys-libs/compiler-rt-sanitizers -libfuzzer
 sys-libs/libomp hwloc offload ompt
 sys-devel/gcc graphite
+sys-devel/gcc:7.4.0 cxx -fortran -graphite -openmp -sanitize
 sys-devel/llvm gold libffi -ncurses
 sys-libs/glibc -multiarch
 sys-libs/libcxx libunwind libcxxabi -libcxxrt
@@ -58,7 +54,7 @@ sys-libs/libcxx libunwind libcxxabi -libcxxrt
 #media
 media-fonts/mplus-outline-fonts ipafont
 media-gfx/exiv2 -xmp
-media-gfx/feh -curl
+media-gfx/feh exif -curl
 media-gfx/imagemagick q32 cxx
 media-gfx/graphicsmagick q32 cxx
 media-gfx/jp2a -curl
@@ -71,11 +67,9 @@ media-libs/tiff zlib
 media-libs/vulkan-loader layers
 media-sound/mpd -cue -flac -fifo -ipv6 -curl -network -eventfd -signalfd -tcpd -mad -expat -unicode
 media-sound/ncmpcpp taglib -visualizer
-media-video/ffmpeg x265 opus vpx libdrm libaom zlib -opencl -postproc
+media-video/ffmpeg x265 dav1d opus vpx libdrm libaom zlib -opencl -postproc
 media-video/libav x265 opus bzip -postproc
 media-video/mediainfo -curl
-
-media-gfx/feh exif
 
 #X/gui
 dev-libs/keybinder python introspection
@@ -99,10 +93,9 @@ x11-misc/xdg-utils -perl
 x11-terms/mrxvt -jpeg -png
 x11-terms/rxvt-unicode blink 256-color xft
 
-net-ftp/gftp gtk
-
 #mpv
 media-libs/libass fontconfig
+media-libs/libplacebo glslang
 media-video/mpv vulkan cli zsh-completion zlib -jpeg -libmpv -drm -uchardet -xscreensaver -xv
 
 #portage
@@ -111,6 +104,7 @@ app-portage/layman sync-plugin-portage
 sys-apps/portage ipc gentoo-dev -rsync-verify
 
 #tools
+app-admin/sysklogd logrotate
 app-admin/sysstat lm_sensors
 app-arch/advancecomp -png
 app-arch/p7zip clang
@@ -144,8 +138,6 @@ sys-process/latencytop gtk
 sys-process/lsof rpc
 sys-devel/gdb lzma
 sys-process/audit python
-
-app-admin/sysklogd logrotate
 
 #kernel
 sys-apps/util-linux tty-helpers static-libs -cramfs
@@ -187,9 +179,6 @@ sys-libs/zlib minizip
 www-client/chromium jumbo-build custom-cflags -suid -hangouts
 www-client/google-chrome-unstable -plugins
 
-#selinux
-sys-libs/libselinux pcre2
-
 #qemu
 app-emulation/libvirt-glib python introspection
 app-emulation/libvirt zfs -virtualbox -virt-network -macvtap -vepa
@@ -203,7 +192,7 @@ net-libs/gtk-vnc gtk3 introspection -python
 net-misc/spice-gtk gtk3 usbredir introspection gstaudio gstvideo
 sys-libs/libosinfo introspection
 x11-libs/gdk-pixbuf introspection
-x11-libs/gtk+ introspection -adwaita-icon-theme -atk-bridge
+x11-libs/gtk+ introspection adwaita-icon-theme -atk-bridge
 x11-libs/pango introspection
 x11-libs/vte crypt introspection
 
@@ -232,9 +221,18 @@ virtual/blas int64
 virtual/lapack int64
 x11-libs/fltk xft
 
+#firefox
+#www-client/firefox lto clang custom-optimization eme-free hwaccel -pgo -system-libvpx
+#media-libs/libpng apng
+#dev-db/sqlite secure-delete
+#dev-lang/rust system-llvm
+
 #libreoffice
 #app-crypt/gpgme cxx
 #app-office/libreoffice -gtk -pdfimport
 #app-text/libwpd tools
 #dev-libs/rasqal -crypt -mhash
 #dev-libs/xmlsec nss -gcrypt -gnutls
+
+#selinux
+#sys-libs/libselinux pcre2

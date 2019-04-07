@@ -21,10 +21,12 @@ sys-fs/udev
 #>www-client/chromium-69.0.3497.100
 
 #mask version
+=sys-apps/debianutils-4.8.6.1 #kernel installs without verion number
 >media-fonts/noto-20170403
 >=media-fonts/noto-cjk-20170602
 
 #mask repo
+sys-fs/squashfs-tools::mv
 app-cdr/cdrtools::mv
 dev-lua/lpeg::lua
 dev-lua/mpack::lua
@@ -32,15 +34,10 @@ dev-lua/mpack::lua
 net-misc/openvswitch::gentoo
 sys-apps/less::gentoo
 x11-libs/gtk+::gentoo
-
 sys-boot/grub::poly-c
 sys-apps/gawk::poly-c
 
-=sys-apps/debianutils-4.8.6.1 #kernel installs without verion number
-=sys-apps/sandbox-2.16 #error: Unable to determine LIBC PATH (/lib64/libc.so.6")
-
-#>=sys-kernel/gentoo-sources-4.20.12
-
+#not building
 >=dev-qt/qtcore-5.12.1
 >=dev-qt/qtnetwork-5.12.1
 >=dev-qt/qtxml-5.12.1
@@ -59,5 +56,4 @@ sys-apps/gawk::poly-c
 >=dev-qt/qtxmlpatterns-5.12.1
 >=dev-qt/qtdeclarative-5.12.1
 >=dev-qt/qtscxml-5.12.1
-
 

@@ -1,12 +1,9 @@
 #clang
-#CC="/usr/lib/llvm/5/bin/clang -std=c11"
-#CXX="/usr/lib/llvm/5/bin/clang++ -stdlib=libc++ -std=c++14"
-
-#CC="/usr/lib/llvm/5/bin/clang"
-#CXX="/usr/lib/llvm/5/bin/clang++ -stdlib=libc++"
-#CPP="/usr/lib/llvm/5/bin/clang-cpp"
-#AR="/usr/lib/llvm/5/bin/llvm-ar"
-#NM="/usr/lib/llvm/5/bin/llvm-nm"
-
-#RANLIB="/bin/true"
-#LD="/usr/bin/ld.gold"
+LLVM="8"
+CC="/usr/lib/llvm/${LLVM}/bin/clang-${LLVM}"
+CXX="/usr/lib/llvm/${LLVM}/bin/clang++-${LLVM} -stdlib=libc++"
+CPP="/usr/lib/llvm/${LLVM}/bin/clang-cpp"
+AR="/usr/lib/llvm/${LLVM}/bin/llvm-ar"
+NM="/usr/lib/llvm/${LLVM}/bin/llvm-nm"
+RANLIB="/usr/lib/llvm/${LLVM}/bin/llvm-ranlib"
+LD="/usr/bin/ld.lld"

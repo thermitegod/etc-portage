@@ -2,5 +2,4 @@ dev-libs/elfutils -threads
 dev-vcs/git -pcre-jit
 media-libs/imlib2 -cpu_flags_x86_mmx
 sys-fs/zfs -kernel-builtin
-#www-client/chromium -system-icu -system-libvpx -system-ffmpeg
 x11-base/xorg-server -suid

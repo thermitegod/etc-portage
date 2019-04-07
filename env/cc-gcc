@@ -5,5 +5,4 @@ CPP="cpp"
 AR="ar"
 NM="nm"
 RANLIB="/bin/true"
-LD="/usr/bin/ld.lld" #LLVM lld
-#LD="/usr/bin/ld.gold"
+LD="/usr/bin/ld.lld"

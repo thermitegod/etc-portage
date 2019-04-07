@@ -11,17 +11,21 @@ x11-misc/compton **
 x11-libs/libdrm **
 x11-misc/spacefm **
 
+dev-vcs/git **
+
 #rc
 >=net-fs/samba-4.10.0_rc3 **
+#=dev-lang/luajit-2.1.0_beta3 **
 
 #vulkan
-dev-util/vulkan-headers **
-media-libs/vulkan-layers **
+#dev-util/vulkan-headers **
+#media-libs/vulkan-layers **
 media-libs/vulkan-loader **
 dev-util/glslang **
 media-libs/shaderc **
 dev-util/spirv-headers **
 dev-util/spirv-tools **
+media-libs/libplacebo **
 
 #virt
 #app-emulation/libvirt **
@@ -40,4 +44,4 @@ sys-fs/zfs-auto-snapshot **
 #unmask newest
 sys-devel/gcc **
 #I know what you are thinking, dont.
-=sys-libs/glibc-2.29 **
+=sys-libs/glibc-2.29-r1 **

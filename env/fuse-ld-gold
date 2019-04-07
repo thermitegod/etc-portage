@@ -1,4 +1,0 @@
-#workaround
-CFLAGS="${CFLAGS} -fuse-ld=gold"
-CXXFLAGS="${CFLAGS}"
-LDFLAGS="${LDFLAGS} ${CFLAGS}"
