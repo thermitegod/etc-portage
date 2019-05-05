@@ -21,9 +21,10 @@ sys-fs/udev
 #>www-client/chromium-69.0.3497.100
 
 #mask version
-=sys-apps/debianutils-4.8.6.1 #kernel installs without verion number
->media-fonts/noto-20170403
+=sys-apps/debianutils-4.8.6.1 #kernel installs without version number
+>media-fonts/noto-20170403 #newer version is shit
 >=media-fonts/noto-cjk-20170602
+=dev-libs/protobuf-3.7.1
 
 #mask repo
 sys-fs/squashfs-tools::mv
@@ -31,13 +32,15 @@ app-cdr/cdrtools::mv
 dev-lua/lpeg::lua
 dev-lua/mpack::lua
 #dev-qt/qtsql::gentoo
-net-misc/openvswitch::gentoo
 sys-apps/less::gentoo
 x11-libs/gtk+::gentoo
 sys-boot/grub::poly-c
 sys-apps/gawk::poly-c
+dev-util/gtk-doc-am::poly-c
+x11-libs/gtk+::poly-c
 
-#not building
+#errors with, find: ‘config.tests/common’: No such file or directory
+#just kill me
 >=dev-qt/qtcore-5.12.1
 >=dev-qt/qtnetwork-5.12.1
 >=dev-qt/qtxml-5.12.1

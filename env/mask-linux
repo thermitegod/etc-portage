@@ -1,8 +1,6 @@
+#do not install arch sources for non x86
 INSTALL_MASK="
-
 ${INSTALL_MASK}
-
-/usr/src/linux-*/tools/testing/selftests/powerpc
 
 /usr/src/linux-*/arch/a*
 /usr/src/linux-*/arch/b*

@@ -88,7 +88,7 @@ x11-libs/libvdpau dri
 x11-libs/libxcb xkb
 x11-misc/compton -pcre
 x11-misc/i3status -filecaps
-x11-misc/spacefm gtk2 -gtk3
+x11-misc/spacefm gtk2 -gtk3 -startup-notification
 x11-misc/xdg-utils -perl
 x11-terms/mrxvt -jpeg -png
 x11-terms/rxvt-unicode blink 256-color xft
@@ -125,7 +125,7 @@ net-analyzer/nmap -nping
 net-misc/openssh -X
 sys-apps/busybox -static
 sys-apps/irqbalance -tui
-sys-apps/less -less-select
+sys-apps/less -less-select -lesspipe
 sys-apps/lshw -sqlite
 sys-auth/pambase nullok
 sys-block/parted readline
@@ -209,13 +209,13 @@ media-libs/libmypaint gegl
 
 #opendjk
 app-text/poppler cxx -jpeg2k
-dev-java/icedtea gtk shenandoah -headless-awt -alsa -source -webstart
+dev-java/icedtea gtk shenandoah -alsa -webstart -source
+dev-java/openjdk -alsa -webstart
 
 #octave
 sci-libs/blas-reference int64
 sci-libs/cholmod lapack -minimal
 sci-libs/lapack-reference int64 -deprecated
-sci-libs/openblas int64
 sci-mathematics/octave X gui readline graphicsmagick -imagemagick -gnuplot
 virtual/blas int64
 virtual/lapack int64

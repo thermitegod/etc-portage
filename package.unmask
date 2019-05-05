@@ -6,7 +6,6 @@
 >=dev-libs/icu-63.1
 >=dev-libs/openssl-1.1.1
 >=net-libs/nodejs-10.6.0
->=net-misc/iputils-20161105
 >=virtual/httpd-php-7.3
 >=dev-lang/lua-5.3.5
 
