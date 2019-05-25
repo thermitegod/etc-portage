@@ -26,6 +26,11 @@ sys-fs/udev
 >=media-fonts/noto-cjk-20170602
 =dev-libs/protobuf-3.7.1
 
+>=dev-libs/libfilezilla-0.16.0
+>=net-ftp/filezilla-3.42.0
+
+>=sys-kernel/gentoo-sources-5.1.0
+
 #mask repo
 sys-fs/squashfs-tools::mv
 app-cdr/cdrtools::mv
