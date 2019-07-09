@@ -1,5 +1,5 @@
 # 9999 packages
-app-editors/neovim **
+#app-editors/neovim **
 app-misc/radeontop **
 media-libs/dav1d **
 media-libs/libaom **
@@ -35,7 +35,7 @@ app-shells/auto-fu-zsh **
 app-shells/fast-syntax-highlighting **
 
 #zfs
-sys-fs/zfs **
+#sys-fs/zfs **
 sys-fs/zfs-auto-snapshot **
 
 #unmask newest

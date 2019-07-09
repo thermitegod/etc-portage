@@ -24,44 +24,26 @@ sys-fs/udev
 =sys-apps/debianutils-4.8.6.1 #kernel installs without version number
 >media-fonts/noto-20170403 #newer version is shit
 >=media-fonts/noto-cjk-20170602
-=dev-libs/protobuf-3.7.1
 
->=dev-libs/libfilezilla-0.16.0
->=net-ftp/filezilla-3.42.0
-
->=sys-kernel/gentoo-sources-5.1.0
+>=sys-kernel/gentoo-sources-5.2.0
+=www-client/google-chrome-unstable-77.0.3833.0
+=app-emulation/virt-manager-2.2.0 #vms start, 'open' does nothing, no tracebacks
 
 #mask repo
+sys-libs/zlib::thermite
+
 sys-fs/squashfs-tools::mv
 app-cdr/cdrtools::mv
+
 dev-lua/lpeg::lua
 dev-lua/mpack::lua
+
 #dev-qt/qtsql::gentoo
 sys-apps/less::gentoo
 x11-libs/gtk+::gentoo
+
 sys-boot/grub::poly-c
 sys-apps/gawk::poly-c
 dev-util/gtk-doc-am::poly-c
 x11-libs/gtk+::poly-c
-
-#errors with, find: ‘config.tests/common’: No such file or directory
-#just kill me
->=dev-qt/qtcore-5.12.1
->=dev-qt/qtnetwork-5.12.1
->=dev-qt/qtxml-5.12.1
->=dev-qt/qtsql-5.12.1
->=dev-qt/qttest-5.12.1
->=dev-qt/qtconcurrent-5.12.1
->=dev-qt/qtdbus-5.12.1
->=dev-qt/linguist-tools-5.12.1
->=dev-qt/qtgui-5.12.1
->=dev-qt/qtwidgets-5.12.1
->=dev-qt/qtmultimedia-5.12.1
->=dev-qt/qtscript-5.12.1
->=dev-qt/qtprintsupport-5.12.1
->=dev-qt/qtopengl-5.12.1
->=dev-qt/qthelp-5.12.1-r1
->=dev-qt/qtxmlpatterns-5.12.1
->=dev-qt/qtdeclarative-5.12.1
->=dev-qt/qtscxml-5.12.1
 
