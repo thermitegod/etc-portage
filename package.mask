@@ -15,12 +15,11 @@ www-apache/mod_dnssd
 #systemd infested
 gnome-base/gconf
 sys-fs/udev
->=www-misc/profile-sync-daemon-6.31
 
 #app-admin/sudo::gentoo
 dev-lua/lpeg::lua
 dev-lua/mpack::lua
-#dev-qt/qtsql::gentoo
-net-misc/openvswitch::gentoo
 sys-apps/less::gentoo
-x11-libs/gtk+::gentoo
+sys-apps/gawk::poly-c
+dev-util/gtk-doc-am::poly-c
+

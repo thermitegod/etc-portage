@@ -1,2 +1,0 @@
-#
-EXTRA_ECONF="--enable-gold=default"

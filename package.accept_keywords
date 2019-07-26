@@ -1,10 +1,8 @@
-# 9999 packages
-
 #zsh
 app-shells/fast-syntax-highlighting **
-app-shells/auto-fu-zsh **
 
 #unmask newest
 sys-devel/gcc **
 #I know what you are thinking, dont.
-#=sys-libs/glibc-2.28 **
+#=sys-libs/glibc-2.29-r1 **
+
