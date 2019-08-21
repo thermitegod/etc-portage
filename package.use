@@ -3,7 +3,7 @@ app-crypt/pinentry -qt5
 app-misc/ca-certificates cacert
 app-text/xmlto text
 dev-lang/lua -deprecated
-dev-lang/python:2.7 -ipv6 -ncurses -readline -sqlite
+dev-lang/python:2.7 -ipv6 -readline
 dev-lang/python:3.7 readline
 dev-lang/ruby -rdoc
 dev-libs/boost nls context numpy
@@ -24,6 +24,8 @@ dev-libs/liblinear blas
 sci-libs/scipy sparse
 sys-libs/minizip -ssl
 app-crypt/gpgme -qt5
+
+media-libs/gstreamer introspection
 
 #net
 mail-client/neomutt lmdb gpgme -pgp_classic -gpg
@@ -50,7 +52,7 @@ sys-libs/compiler-rt-sanitizers -libfuzzer
 sys-libs/libomp hwloc offload ompt
 sys-devel/gcc lto graphite
 sys-devel/llvm gold libffi -ncurses
-sys-libs/glibc -multiarch
+sys-libs/glibc -custom-cflags -multiarch
 sys-libs/libcxx libunwind libcxxabi -libcxxrt
 
 #media
@@ -64,11 +66,11 @@ media-libs/freetype harfbuzz -png
 media-libs/imlib2 shm
 media-libs/libmediainfo -curl
 media-libs/mesa vulkan vulkan-overlay lm_sensors gles2 -gles1 -opencl -classic #gles2 is for wayland
-media-libs/vulkan-loader layers
+media-libs/vulkan-loader -layers
 media-sound/apulse sdk
 media-sound/mpd -cue -flac -fifo -ipv6 -curl -network -eventfd -signalfd -tcpd -mad -unicode -zlib
 media-sound/ncmpcpp taglib -visualizer
-media-video/ffmpeg x265 dav1d opus vpx libdrm libaom -opencl -postproc -svg
+media-video/ffmpeg x265 dav1d opus vpx libdrm libaom hardcoded-tables -opencl -postproc -svg
 media-video/libav x265 opus bzip -postproc
 media-video/mediainfo -curl
 
@@ -109,6 +111,7 @@ app-arch/advancecomp -png
 app-arch/p7zip clang
 app-arch/unzip natspec
 app-arch/zip natspec
+app-arch/zstd -lz4
 app-editors/neovim python -nvimpager
 app-emulation/lxc -templates
 app-emulation/lxd -dnsmasq -tools
@@ -116,7 +119,7 @@ app-shells/bash readline -mem-scramble -net
 app-text/lesspipe -djvu -dvi2tty -ghostscript -gpg -elinks -html2text -links -lynx -rpm2targz -unzip
 app-text/mupdf -javascript
 dev-lang/perl ithreads
-dev-util/perf -clang #fixs build, will still be builds w/ clang
+dev-util/perf -clang #fixs build, will still be built w/ clang
 dev-util/strace aio elfutils
 dev-util/fatrace powertop
 dev-vcs/git webdav pcre-jit -perl
@@ -134,6 +137,14 @@ sys-process/fcron -mta
 sys-process/latencytop gtk
 sys-process/lsof rpc
 sys-process/audit python
+
+
+#fwupd
+sys-apps/fwupd nvme uefi
+dev-libs/libgusb introspection
+net-libs/libsoup introspection
+dev-lang/spidermonkey -custom-cflags -custom-optimization
+sys-auth/consolekit policykit cgroups
 
 
 dev-lang/go system-bootstrap
@@ -164,7 +175,7 @@ media-sound/vorbis-tools flac
 
 #rtorrent
 app-eselect/eselect-php fpm
-dev-lang/php fpm gd cgi xmlrpc xmlreader xmlwriter zip sockets iconv ldap pdo pcntl cli -mysql -mysqli
+dev-lang/php fpm gd cgi xmlrpc xmlreader xmlwriter zip sockets iconv ldap pdo pcntl cli -flatfile -mysql -mysqli
 #dev-libs/boost python
 #net-libs/libtorrent-rasterbar -geoip
 net-nds/openldap sasl -syslog -tcpd
@@ -194,9 +205,11 @@ net-libs/gtk-vnc gtk3 introspection -python
 net-misc/spice-gtk gtk3 usbredir introspection gstaudio gstvideo
 sys-libs/libosinfo introspection
 x11-libs/gdk-pixbuf introspection
+x11-libs/gtksourceview introspection
 x11-libs/gtk+ introspection adwaita-icon-theme -colord -atk-bridge
 x11-libs/pango introspection
 x11-libs/vte crypt introspection
+sys-auth/polkit introspection
 
 #samba
 net-fs/samba gnutls -system-mitkrb5 -gpg

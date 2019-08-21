@@ -25,9 +25,18 @@ sys-fs/udev
 >media-fonts/noto-20170403 #newer version is shit
 >=media-fonts/noto-cjk-20170602
 
->=sys-kernel/gentoo-sources-5.2.0
-=www-client/google-chrome-unstable-77.0.3833.0
-=app-emulation/virt-manager-2.2.0 #vms start, 'open' does nothing, no tracebacks
+#=net-misc/spice-gtk-0.37-r2
+
+>=sys-kernel/gentoo-sources-5.3.0
+>=sys-kernel/linux-headers-5.2
+
+=sys-kernel/genkernel-4.0.0_beta13
+=sys-kernel/genkernel-4.0.0_beta14
+=sys-kernel/genkernel-4.0.0_beta15
+=sys-kernel/genkernel-4.0.0_beta16
+=sys-kernel/genkernel-4.0.0_beta17
+=sys-kernel/genkernel-4.0.0_beta18
+=sys-kernel/genkernel-4.0.0_beta19
 
 #mask repo
 sys-libs/zlib::thermite
@@ -46,4 +55,6 @@ sys-boot/grub::poly-c
 sys-apps/gawk::poly-c
 dev-util/gtk-doc-am::poly-c
 x11-libs/gtk+::poly-c
+sys-apps/baselayout::poly-c
+
 
