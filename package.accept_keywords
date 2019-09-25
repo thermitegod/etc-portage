@@ -3,19 +3,21 @@
 #app-misc/radeontop **
 #media-libs/dav1d **
 #media-libs/libaom **
-media-libs/mesa **
+
+#x11-libs/libdrm **
+#media-libs/mesa **
+
 media-video/ffmpeg **
 media-video/mpv **
 net-misc/grive **
 #x11-misc/compton **
-x11-libs/libdrm **
 x11-misc/spacefm **
 
 #dev-util/bpftrace **
 
 #vulkan
 dev-util/vulkan-headers **
-media-libs/vulkan-layers **
+#media-libs/vulkan-layers **
 media-libs/vulkan-loader **
 
 dev-util/glslang **
@@ -41,4 +43,4 @@ sys-fs/zfs-auto-snapshot **
 #unmask newest
 sys-devel/gcc **
 #I know what you are thinking, dont.
-=sys-libs/glibc-2.30 **
+=sys-libs/glibc-2.30-r1 **

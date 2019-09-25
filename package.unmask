@@ -1,11 +1,8 @@
-=app-eselect/eselect-lua-1
 =media-video/mpv-9999
 
 >=dev-lang/php-7.3.0_rc6
->=virtual/httpd-php-7.3
 >=dev-libs/openssl-1.1.1
 >=dev-lang/lua-5.3.5
-
 >=www-client/chromium-60.0.3107.4
 
 #=dev-util/lldb-8.0.0_rc5
