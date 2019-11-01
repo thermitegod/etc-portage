@@ -16,15 +16,14 @@ x11-misc/spacefm **
 #dev-util/bpftrace **
 
 #vulkan
-dev-util/vulkan-headers **
-#media-libs/vulkan-layers **
-media-libs/vulkan-loader **
+#dev-util/vulkan-headers **
+#media-libs/vulkan-loader **
 
-dev-util/glslang **
-media-libs/shaderc **
-dev-util/spirv-headers **
-dev-util/spirv-tools **
-media-libs/libplacebo **
+#dev-util/glslang **
+#media-libs/shaderc **
+#dev-util/spirv-headers **
+#dev-util/spirv-tools **
+#media-libs/libplacebo **
 
 #virt
 #app-emulation/libvirt **

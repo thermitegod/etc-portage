@@ -27,16 +27,18 @@ sys-fs/udev
 
 #=net-misc/spice-gtk-0.37-r2
 
->=sys-kernel/gentoo-sources-5.3.0
->=sys-kernel/linux-headers-5.2
+=dev-util/meson-0.52
 
-=sys-kernel/genkernel-4.0.0_beta13
-=sys-kernel/genkernel-4.0.0_beta14
-=sys-kernel/genkernel-4.0.0_beta15
-=sys-kernel/genkernel-4.0.0_beta16
-=sys-kernel/genkernel-4.0.0_beta17
-=sys-kernel/genkernel-4.0.0_beta18
-=sys-kernel/genkernel-4.0.0_beta19
+#>=sys-kernel/gentoo-sources-5.3.0
+#>=sys-kernel/linux-headers-5.2
+
+=sys-kernel/genkernel-4.0.0_beta20
+=sys-kernel/genkernel-4.0.0_beta21
+=sys-kernel/genkernel-4.0.0_beta22
+=sys-kernel/genkernel-4.0.0_beta23
+=sys-kernel/genkernel-4.0.0_beta24
+=sys-kernel/genkernel-4.0.0_beta25
+=sys-kernel/genkernel-4.0.0_beta26
 
 #mask repo
 sys-libs/zlib::thermite
@@ -56,5 +58,22 @@ sys-apps/gawk::poly-c
 dev-util/gtk-doc-am::poly-c
 x11-libs/gtk+::poly-c
 sys-apps/baselayout::poly-c
+media-sound/alsa-utils::poly-c
+dev-libs/openssl::poly-c
 
+#wait for 9.0.1
+=sys-devel/llvm-common-9.0.0
+=sys-devel/clang-common-9.0.0
+=sys-devel/llvm-9.0.0
+=sys-devel/llvmgold-9
+=sys-libs/llvm-libunwind-9.0.0
+=sys-devel/lld-9.0.0
+=sys-libs/libcxxabi-9.0.0
+=sys-libs/libcxx-9.0.0
+=sys-devel/clang-9.0.0
+=sys-libs/compiler-rt-9.0.0
+=sys-libs/compiler-rt-sanitizers-9.0.0
+=sys-libs/libomp-9.0.0
+=sys-devel/clang-runtime-9.0.0
+=dev-util/lldb-9.0.0
 

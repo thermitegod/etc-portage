@@ -6,7 +6,6 @@ sys-devel/binutils
 sys-devel/binutils-config
 sys-devel/gcc
 sys-devel/gcc-config
-sys-kernel/linux-headers
 sys-libs/glibc
 sys-libs/timezone-data
 sys-libs/zlib

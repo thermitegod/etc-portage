@@ -40,7 +40,7 @@ dev-util/cmake system-jsoncpp -ncurses
 dev-util/lldb -ncurses -python
 sys-devel/binutils default-gold
 sys-devel/clang default-compiler-rt default-libcxx z3
-sys-devel/clang-runtime libcxx sanitize
+sys-devel/clang-runtime libcxx -sanitize
 sys-libs/compiler-rt-sanitizers -libfuzzer
 sys-libs/libomp hwloc offload ompt
 sys-devel/gcc lto graphite
@@ -136,7 +136,7 @@ sys-apps/util-linux tty-helpers static-libs -cramfs
 sys-boot/grub libzfs -multislot -themes -fonts -truetype
 sys-fs/zfs kernel-builtin rootfs custom-cflags -test-suite
 sys-kernel/genkernel firmware
-sys-kernel/gentoo-sources symlink
+sys-kernel/gentoo-sources symlink -experimental
 sys-kernel/git-sources symlink
 sys-kernel/linux-firmware savedconfig
 virtual/linux-sources firmware

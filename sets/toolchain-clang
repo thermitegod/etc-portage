@@ -7,7 +7,6 @@ sys-devel/llvm
 sys-devel/llvm-common
 sys-devel/llvmgold
 sys-libs/compiler-rt
-sys-libs/compiler-rt-sanitizers
 sys-libs/libcxx
 sys-libs/libcxxabi
 sys-libs/libomp
@@ -24,5 +23,4 @@ dev-libs/gmp
 dev-libs/mpc
 dev-libs/mpfr
 sys-devel/binutils
-sys-kernel/linux-headers
 sys-libs/zlib

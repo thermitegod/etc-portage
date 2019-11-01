@@ -4,6 +4,7 @@
 >=dev-libs/openssl-1.1.1
 >=dev-lang/lua-5.3.5
 >=www-client/chromium-60.0.3107.4
+>=x11-libs/pango-1.44.6_pre
 
 #=dev-util/lldb-8.0.0_rc5
 #=sys-devel/clang-8.0.0_rc5
