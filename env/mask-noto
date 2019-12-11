@@ -1,3 +1,4 @@
+#mask fonts
 INSTALL_MASK="
 ${INSTALL_MASK}
 /usr/share/fonts/noto/*Thai*

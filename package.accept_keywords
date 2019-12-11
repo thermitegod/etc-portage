@@ -1,45 +1,32 @@
 # 9999 packages
-#app-editors/neovim **
-#app-misc/radeontop **
-#media-libs/dav1d **
-#media-libs/libaom **
-
 #x11-libs/libdrm **
 #media-libs/mesa **
-
 media-video/ffmpeg **
 media-video/mpv **
-net-misc/grive **
-#x11-misc/compton **
 x11-misc/spacefm **
-
-#dev-util/bpftrace **
+net-misc/flexget **
 
 #vulkan
 #dev-util/vulkan-headers **
 #media-libs/vulkan-loader **
+dev-util/glslang **
+media-libs/shaderc **
+dev-util/spirv-headers **
+dev-util/spirv-tools **
+media-libs/libplacebo **
 
-#dev-util/glslang **
-#media-libs/shaderc **
-#dev-util/spirv-headers **
-#dev-util/spirv-tools **
-#media-libs/libplacebo **
-
-#virt
-#app-emulation/libvirt **
-#app-emulation/qemu **
-#app-emulation/virt-manager **
-#dev-python/libvirt-python **
-
-#sh
+#shell
 app-shells/auto-fu-zsh **
 app-shells/fast-syntax-highlighting **
+
+#other
+=sys-process/htop-3.0.0_beta5 **
 
 #zfs
 #sys-fs/zfs **
 sys-fs/zfs-auto-snapshot **
 
 #unmask newest
-sys-devel/gcc **
+#sys-devel/gcc **
 #I know what you are thinking, dont.
-=sys-libs/glibc-2.30-r1 **
+#=sys-libs/glibc-2.30-r2 **

@@ -1,70 +1,66 @@
-app-crypt/pinentry -qt5
-app-misc/ca-certificates cacert
 app-text/xmlto text
-dev-lang/lua -deprecated
-dev-lang/python:2.7 -ipv6 -readline
-dev-lang/python:3.7 readline
-dev-lang/ruby -rdoc
-dev-libs/boost nls context numpy
+app-misc/ca-certificates cacert
+dev-libs/boost nls context
 dev-libs/glib utils
-dev-libs/libpcre2 pcre16 pcre32
-dev-libs/libpcre pcre16 pcre32
+dev-libs/libpcre2 pcre16
 dev-libs/libxml2 python
 dev-libs/nss nss-pem cacert
 dev-python/numpy lapack
 sys-apps/openrc netifrc newnet
 sys-apps/smartmontools update_drivedb
 sys-boot/refind -ext2
-sys-devel/gettext -ncurses
 sys-firmware/ipxe -usb
 app-crypt/gnupg -usb -smartcard
-dev-libs/msgpack boost
-dev-libs/liblinear blas
-app-crypt/gpgme -qt5
-
 media-libs/gstreamer introspection
+sys-apps/lm-sensors contrib #sensord
+
+#langs
+dev-lang/python:2.7 -ipv6 -readline
+dev-lang/python:3.8 ncurses readline
+dev-lang/lua -deprecated
+dev-lang/ruby -rdoc
+dev-lang/go system-bootstrap
 
 #net
 net-firewall/iptables nftables conntrack
-net-libs/gnutls openssl -tls-heartbeat -sslv2 -sslv3
+net-libs/gnutls -tls-heartbeat
 net-mail/mailutils -clients
-net-misc/curl -adns
 net-misc/iputils -arping
-net-print/cups-filters -foomatic -postscript
+net-print/cups-filters -postscript
 sys-apps/iproute2 elf -minimal
 sys-apps/net-tools -arp
 virtual/ssh -minimal
+net-analyzer/netdata -dbengine
+net-analyzer/mtr ncurses
 
 #toolchain
-dev-util/cmake system-jsoncpp -ncurses
-dev-util/lldb -ncurses -python
+dev-util/cmake system-jsoncpp qt5
+dev-util/lldb -python
 sys-devel/binutils default-gold
-sys-devel/clang default-compiler-rt default-libcxx z3
+sys-devel/clang default-compiler-rt default-libcxx
 sys-devel/clang-runtime libcxx -sanitize
 sys-libs/compiler-rt-sanitizers -libfuzzer
 sys-libs/libomp hwloc offload ompt
 sys-devel/gcc lto graphite
-sys-devel/llvm gold libffi -ncurses
+sys-devel/llvm gold libffi
 sys-libs/glibc -custom-cflags -multiarch
 sys-libs/libcxx libunwind libcxxabi -libcxxrt
 
 #media
 media-gfx/exiv2 -xmp
-media-gfx/feh exif -curl
+media-gfx/feh exif
 media-gfx/graphicsmagick q32
-media-gfx/jp2a -curl
 media-gfx/qiv magic exif
 media-libs/freetype harfbuzz -png
 media-libs/imlib2 shm
-media-libs/libmediainfo -curl
 media-libs/mesa vulkan vulkan-overlay gles2 -gles1 -opencl -classic #gles2 is for wayland
 media-libs/vulkan-loader -layers
 media-sound/apulse sdk
-media-sound/mpd -cue -flac -fifo -ipv6 -curl -network -eventfd -signalfd -tcpd -mad -unicode -zlib
+media-sound/mpd -cue -flac -fifo -ipv6 -network -eventfd -signalfd -tcpd -mad -unicode -zlib
 media-sound/ncmpcpp taglib -visualizer
 media-video/ffmpeg x265 dav1d opus vpx libdrm libaom hardcoded-tables -opencl -postproc -svg
-media-video/mediainfo -curl
-
+media-video/mkvtoolnix qt5
+media-sound/alsa-utils ncurses
 
 #X/gui
 dev-qt/qtmultimedia -alsa
@@ -78,6 +74,7 @@ x11-libs/libxcb xkb
 x11-misc/i3status -filecaps
 x11-misc/spacefm gtk2 -gtk3 -startup-notification
 x11-misc/xdg-utils -perl
+app-crypt/pinentry ncurses
 
 #mpv
 media-libs/libass fontconfig
@@ -86,7 +83,7 @@ media-video/mpv vulkan cli zsh-completion -jpeg -libmpv -drm -uchardet -xscreens
 
 #portage
 app-portage/eix optimization strong-optimization
-app-portage/layman sync-plugin-portage
+app-portage/layman sync-plugin-portage -gpg
 sys-apps/portage ipc gentoo-dev -rsync-verify
 
 #tools
@@ -98,14 +95,13 @@ app-arch/zstd -lz4
 app-editors/neovim python -nvimpager
 app-emulation/lxc -templates
 app-emulation/lxd -dnsmasq -tools
-app-shells/bash readline -mem-scramble -net
+app-shells/bash -net
 app-text/mupdf -javascript
 dev-lang/perl ithreads
 dev-util/perf -clang #fixs build, will still be built w/ clang
 dev-util/strace aio elfutils
 dev-util/fatrace powertop
-dev-vcs/git webdav pcre-jit -perl
-net-analyzer/nmap -nping
+dev-vcs/git webdav pcre-jit curl -perl
 net-misc/openssh -X
 sys-apps/busybox static -pam
 sys-apps/irqbalance -tui
@@ -114,22 +110,10 @@ sys-auth/pambase nullok
 sys-block/parted readline
 sys-devel/gdb source-highlight -server -python
 sys-fs/zfs-auto-snapshot -default-exclude
-sys-process/cronie inotify -anacron
+sys-process/cronie -anacron
 sys-process/latencytop gtk
-sys-process/lsof rpc
 sys-process/audit python
-
-#consolekit/polkit
-net-libs/libsoup introspection
-dev-lang/spidermonkey -custom-cflags -custom-optimization
-sys-auth/consolekit policykit cgroups
-sys-auth/polkit introspection
-
-
-dev-lang/go system-bootstrap
-sys-apps/gawk mpfr
-sys-apps/lm-sensors contrib #sensord
-app-misc/screen multiuser
+sys-process/procps ncurses
 
 #kernel
 sys-apps/util-linux tty-helpers static-libs -cramfs
@@ -152,7 +136,7 @@ media-sound/shntool flac wavpack
 media-sound/split2flac wavpack enca
 media-sound/vorbis-tools flac
 
-#rtorrent
+#torrents
 app-eselect/eselect-php fpm
 dev-lang/php fpm gd cgi xmlrpc xmlreader xmlwriter zip sockets iconv ldap pdo pcntl cli -flatfile -mysql -mysqli
 #dev-libs/boost python
@@ -160,20 +144,21 @@ dev-lang/php fpm gd cgi xmlrpc xmlreader xmlwriter zip sockets iconv ldap pdo pc
 net-nds/openldap sasl -syslog -tcpd
 net-p2p/rtorrent xmlrpc -daemon
 www-servers/lighttpd webdav php pcre -minimal -gdbm -mysql
+net-p2p/transmission qt5
 
 #chromium
 media-libs/libvpx postproc svc highbitdepth
 media-libs/libwebp swap-16bit-csp
 media-libs/openh264 -plugin
-net-libs/nodejs inspector libressl ssl bundled-ssl npm -snapshot
+net-libs/nodejs inspector -npm -snapshot
 sys-libs/zlib minizip
-www-client/chromium jumbo-build custom-cflags -tcmalloc -suid -hangouts
+www-client/chromium jumbo-build custom-cflags -tcmalloc -suid -hangouts -system-ffmpeg -system-icu
 www-client/google-chrome-unstable -plugins
 
 #qemu
 app-emulation/libvirt-glib python introspection
 app-emulation/libvirt zfs -firewalld -virt-network -macvtap -vepa -virtualbox
-app-emulation/qemu aio virgl spice gtk vhost-net -xkb -oss -lzo -fdt -usbredir -ncurses -vnc -jpeg -png -curl
+app-emulation/qemu aio virgl spice gtk vhost-net -xkb -oss -lzo -fdt -usbredir -vnc -jpeg -png
 app-emulation/spice gstreamer
 app-emulation/virt-manager gtk
 dev-libs/atk introspection
@@ -194,38 +179,19 @@ sys-libs/ldb -lmdb
 sys-libs/tdb python
 sys-libs/tevent python
 
-#gimp
-media-gfx/gimp smp -alsa
-media-libs/gegl umfpack -ffmpeg
-media-libs/libmypaint gegl
-
 #opendjk
-#dev-java/icedtea-bin headless-awt -alsa -cups -gtk -webstart
 dev-java/icedtea gtk shenandoah -alsa -webstart -source
 
-#octave
-sci-libs/cholmod lapack -minimal
-sci-mathematics/octave X gui readline graphicsmagick -imagemagick -gnuplot
-virtual/blas int64
-virtual/lapack int64
-x11-libs/fltk xft
+#gimp
+#media-gfx/gimp smp -alsa
+#media-libs/gegl umfpack -ffmpeg
+#media-libs/libmypaint gegl
 
 #firefox
 #www-client/firefox lto clang custom-optimization eme-free hwaccel -pgo -system-libvpx
 #media-libs/libpng apng
 #dev-db/sqlite secure-delete
 #dev-lang/rust system-llvm
-
-#libreoffice
-#app-office/libreoffice-bin gnome
-#app-office/libreoffice gtk -pdfimport
-#app-text/libwpd tools
-#dev-libs/rasqal -crypt -mhash
-#dev-libs/xmlsec nss -gcrypt -gnutls
-#app-text/hunspell -ncurses
-#dev-db/mariadb-connector-c -curl
-#media-libs/raptor -curl
-#media-gfx/fontforge -X -gif -jpeg -png -cairo -tiff -svg -python
 
 #selinux
 #sys-libs/libselinux pcre2

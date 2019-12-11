@@ -1,3 +1,4 @@
+#mask non-linux completions
 INSTALL_MASK="
 ${INSTALL_MASK}
 /bin/zsh-*

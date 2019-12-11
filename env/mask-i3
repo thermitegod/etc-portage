@@ -1,3 +1,4 @@
+#mask junk
 INSTALL_MASK="
 ${INSTALL_MASK}
 /usr/bin/i3-config-wizard

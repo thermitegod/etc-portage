@@ -1,3 +1,4 @@
+#do not install cronjobs
 INSTALL_MASK="
 ${INSTALL_MASK}
 /etc/cron*

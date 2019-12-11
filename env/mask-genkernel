@@ -1,0 +1,7 @@
+#/usr/share/genkernel/distfiles is symlinked to global distfile cache
+#no reason to have two copies of multiple source archives
+INSTALL_MASK="
+${INSTALL_MASK}
+/usr/share/genkernel/distfiles
+"
+PKG_INSTALL_MASK="${INSTALL_MASK}"

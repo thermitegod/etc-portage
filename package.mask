@@ -1,79 +1,52 @@
-#potterware
-dev-libs/libdaemon
-media-sound/pavumeter
-media-sound/pulseaudio
-net-analyzer/ifmetric
-net-dns/avahi
-net-libs/libasyncns
-net-p2p/syrep
-sys-apps/ifplugd
-sys-apps/systemd
-sys-auth/nss-mdns
-sys-auth/nss-myhostname
-sys-auth/pam_dotfile
-www-apache/mod_dnssd
-#systemd infested
-gnome-base/gconf
-sys-fs/udev
-
 #for the never ending problems with chrom*
 #www-client/chromium::gentoo
 #>www-client/chromium-69.0.3497.100
 
 #mask version
-=sys-apps/debianutils-4.8.6.1 #kernel installs without version number
+=dev-util/strace-5.4 #elfutils errors
 >media-fonts/noto-20170403 #newer version is shit
->=media-fonts/noto-cjk-20170602
+>=media-fonts/noto-cjk-20170602 #see above
+=sys-libs/libcap-2.28 #build fails at link time
+=dev-libs/libxml2-2.9.10_pre
 
-#=net-misc/spice-gtk-0.37-r2
-
-=dev-util/meson-0.52
-
-#>=sys-kernel/gentoo-sources-5.3.0
-#>=sys-kernel/linux-headers-5.2
-
-=sys-kernel/genkernel-4.0.0_beta20
-=sys-kernel/genkernel-4.0.0_beta21
-=sys-kernel/genkernel-4.0.0_beta22
-=sys-kernel/genkernel-4.0.0_beta23
-=sys-kernel/genkernel-4.0.0_beta24
-=sys-kernel/genkernel-4.0.0_beta25
-=sys-kernel/genkernel-4.0.0_beta26
+#mask newest kernel
+>=sys-kernel/gentoo-sources-5.4.0
+>=sys-kernel/linux-headers-5.4
 
 #mask repo
 sys-libs/zlib::thermite
 
 sys-fs/squashfs-tools::mv
 app-cdr/cdrtools::mv
+dev-lang/python::mv
 
 dev-lua/lpeg::lua
 dev-lua/mpack::lua
 
-#dev-qt/qtsql::gentoo
 sys-apps/less::gentoo
 x11-libs/gtk+::gentoo
 
 sys-boot/grub::poly-c
 sys-apps/gawk::poly-c
-dev-util/gtk-doc-am::poly-c
 x11-libs/gtk+::poly-c
+dev-util/gtk-doc-am::poly-c
 sys-apps/baselayout::poly-c
 media-sound/alsa-utils::poly-c
 dev-libs/openssl::poly-c
+sys-apps/shadow::poly-c
+media-libs/mesa::poly-c
 
 #wait for 9.0.1
-=sys-devel/llvm-common-9.0.0
-=sys-devel/clang-common-9.0.0
-=sys-devel/llvm-9.0.0
-=sys-devel/llvmgold-9
-=sys-libs/llvm-libunwind-9.0.0
-=sys-devel/lld-9.0.0
-=sys-libs/libcxxabi-9.0.0
-=sys-libs/libcxx-9.0.0
-=sys-devel/clang-9.0.0
-=sys-libs/compiler-rt-9.0.0
-=sys-libs/compiler-rt-sanitizers-9.0.0
-=sys-libs/libomp-9.0.0
-=sys-devel/clang-runtime-9.0.0
-=dev-util/lldb-9.0.0
+>=sys-devel/llvm-common-9.0.0
+>=sys-devel/clang-common-9.0.0
+>=sys-devel/llvm-9.0.0
+>=sys-devel/llvmgold-9
+>=sys-libs/llvm-libunwind-9.0.0
+>=sys-devel/lld-9.0.0
+>=sys-libs/libcxxabi-9.0.0
+>=sys-libs/libcxx-9.0.0
+>=sys-devel/clang-9.0.0
+>=sys-libs/compiler-rt-9.0.0
+>=sys-libs/libomp-9.0.0
+>=sys-devel/clang-runtime-9.0.0
 
