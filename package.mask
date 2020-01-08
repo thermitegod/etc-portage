@@ -6,12 +6,16 @@
 =dev-util/strace-5.4 #elfutils errors
 >media-fonts/noto-20170403 #newer version is shit
 >=media-fonts/noto-cjk-20170602 #see above
-=sys-libs/libcap-2.28 #build fails at link time
+>=sys-libs/libcap-2.28 #build fails at link time
 =dev-libs/libxml2-2.9.10_pre
 
 #mask newest kernel
->=sys-kernel/gentoo-sources-5.4.0
->=sys-kernel/linux-headers-5.4
+#>=sys-kernel/gentoo-sources-5.4.0
+#>=sys-kernel/linux-headers-5.4
+
+=net-fs/samba-4.11.4
+=dev-util/perf-5.4.6
+=app-editors/vim-core-8.2.0055
 
 #mask repo
 sys-libs/zlib::thermite
@@ -24,7 +28,8 @@ dev-lua/lpeg::lua
 dev-lua/mpack::lua
 
 sys-apps/less::gentoo
-x11-libs/gtk+::gentoo
+#x11-libs/gtk+::gentoo
+x11-libs/gtk+::mv
 
 sys-boot/grub::poly-c
 sys-apps/gawk::poly-c
@@ -35,6 +40,7 @@ media-sound/alsa-utils::poly-c
 dev-libs/openssl::poly-c
 sys-apps/shadow::poly-c
 media-libs/mesa::poly-c
+sys-apps/portage::poly-c
 
 #wait for 9.0.1
 >=sys-devel/llvm-common-9.0.0

@@ -2,22 +2,28 @@ app-text/xmlto text
 app-misc/ca-certificates cacert
 dev-libs/boost nls context
 dev-libs/glib utils
-dev-libs/libpcre2 pcre16
+dev-libs/libpcre2 pcre16 unicode
 dev-libs/libxml2 python
 dev-libs/nss nss-pem cacert
 dev-python/numpy lapack
-sys-apps/openrc netifrc newnet
 sys-apps/smartmontools update_drivedb
 sys-boot/refind -ext2
 sys-firmware/ipxe -usb
 app-crypt/gnupg -usb -smartcard
 media-libs/gstreamer introspection
 sys-apps/lm-sensors contrib #sensord
+sys-process/htop unicode # build fails otherwise
+app-admin/sysstat lm-sensors
+
+app-text/poppler cxx -jpeg2k
+dev-qt/qtgui egl
+media-fonts/noto cjk
+sys-fs/squashfs-tools -xz
+app-arch/libarchive zstd lz4 -e2fsprogs
 
 #langs
-dev-lang/python:2.7 -ipv6 -readline
+dev-lang/python:2.7 -ipv6 -readline xml
 dev-lang/python:3.8 ncurses readline
-dev-lang/lua -deprecated
 dev-lang/ruby -rdoc
 dev-lang/go system-bootstrap
 
@@ -49,20 +55,24 @@ sys-libs/libcxx libunwind libcxxabi -libcxxrt
 #media
 media-gfx/exiv2 -xmp
 media-gfx/feh exif
-media-gfx/graphicsmagick q32
+media-gfx/graphicsmagick q32 jpeg png
 media-gfx/qiv magic exif
 media-libs/freetype harfbuzz -png
 media-libs/imlib2 shm
-media-libs/mesa vulkan vulkan-overlay gles2 -gles1 -opencl -classic #gles2 is for wayland
+media-libs/jbig2dec -png
+media-libs/libwebp -jepg -png
+media-libs/mesa vulkan vulkan-overlay lm-sensors gles2 -gles1 -opencl -classic #gles2 is for wayland
+media-libs/tiff -jpeg
 media-libs/vulkan-loader -layers
 media-sound/apulse sdk
-media-sound/mpd -cue -flac -fifo -ipv6 -network -eventfd -signalfd -tcpd -mad -unicode -zlib
+media-sound/mpd -dbus -icu -cue -flac -fifo -ipv6 -network -eventfd -signalfd -tcpd -mad -zlib
 media-sound/ncmpcpp taglib -visualizer
 media-video/ffmpeg x265 dav1d opus vpx libdrm libaom hardcoded-tables -opencl -postproc -svg
 media-video/mkvtoolnix qt5
 media-sound/alsa-utils ncurses
 
 #X/gui
+dev-qt/qtgui -gif
 dev-qt/qtmultimedia -alsa
 sys-libs/ncurses unicode -gpm -minimal
 www-client/w3m imlib
@@ -79,7 +89,7 @@ app-crypt/pinentry ncurses
 #mpv
 media-libs/libass fontconfig
 media-libs/libplacebo glslang
-media-video/mpv vulkan cli zsh-completion -jpeg -libmpv -drm -uchardet -xscreensaver -xv
+media-video/mpv luajit vulkan cli zsh-completion -jpeg -libmpv -drm -uchardet -xscreensaver -xv
 
 #portage
 app-portage/eix optimization strong-optimization
@@ -89,8 +99,6 @@ sys-apps/portage ipc gentoo-dev -rsync-verify
 #tools
 app-arch/advancecomp -png
 app-arch/p7zip clang
-app-arch/unzip natspec
-app-arch/zip natspec
 app-arch/zstd -lz4
 app-editors/neovim python -nvimpager
 app-emulation/lxc -templates
@@ -120,7 +128,7 @@ sys-apps/util-linux tty-helpers static-libs -cramfs
 sys-boot/grub libzfs -multislot -themes -fonts -truetype
 sys-fs/zfs kernel-builtin rootfs custom-cflags -test-suite
 sys-kernel/genkernel firmware
-sys-kernel/gentoo-sources symlink -experimental
+sys-kernel/gentoo-sources symlink experimental
 sys-kernel/git-sources symlink
 sys-kernel/linux-firmware savedconfig
 virtual/linux-sources firmware
@@ -138,12 +146,12 @@ media-sound/vorbis-tools flac
 
 #torrents
 app-eselect/eselect-php fpm
-dev-lang/php fpm gd cgi xmlrpc xmlreader xmlwriter zip sockets iconv ldap pdo pcntl cli -flatfile -mysql -mysqli
-#dev-libs/boost python
+#dev-lang/php fpm gd cgi xmlrpc xmlreader xmlwriter zip sockets iconv ldap pdo pcntl cli cjk -flatfile
+dev-lang/php fpm gd cgi xmlrpc xmlreader xmlwriter sockets iconv ldap pcntl libedit pdo json simplexml zlib -phar -flatfile
 #net-libs/libtorrent-rasterbar -geoip
 net-nds/openldap sasl -syslog -tcpd
 net-p2p/rtorrent xmlrpc -daemon
-www-servers/lighttpd webdav php pcre -minimal -gdbm -mysql
+www-servers/lighttpd php pcre -webdav -minimal -gdbm -mysql
 net-p2p/transmission qt5
 
 #chromium
@@ -158,11 +166,11 @@ www-client/google-chrome-unstable -plugins
 #qemu
 app-emulation/libvirt-glib python introspection
 app-emulation/libvirt zfs -firewalld -virt-network -macvtap -vepa -virtualbox
-app-emulation/qemu aio virgl spice gtk vhost-net -xkb -oss -lzo -fdt -usbredir -vnc -jpeg -png
+app-emulation/qemu aio virgl spice gtk vhost-net usb -xkb -oss -lzo -fdt -usbredir -vnc -jpeg -png
 app-emulation/spice gstreamer
 app-emulation/virt-manager gtk
 dev-libs/atk introspection
-media-libs/gst-plugins-base gbm -ogg
+media-libs/gst-plugins-base gbm -ogg -vorbis
 net-libs/glib-networking -libproxy
 net-libs/gtk-vnc gtk3 introspection -python
 net-misc/spice-gtk gtk3 usbredir introspection gstaudio gstvideo
@@ -180,7 +188,7 @@ sys-libs/tdb python
 sys-libs/tevent python
 
 #opendjk
-dev-java/icedtea gtk shenandoah -alsa -webstart -source
+dev-java/icedtea gtk shenandoah -alsa -webstart -source -cups
 
 #gimp
 #media-gfx/gimp smp -alsa
