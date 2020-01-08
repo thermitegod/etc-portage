@@ -1,8 +1,12 @@
 #zsh
 app-shells/fast-syntax-highlighting **
 
+www-apps/rutorrent **
+
+=sys-process/htop-3.0.0_beta5 **
+
 #unmask newest
 sys-devel/gcc **
 #I know what you are thinking, dont.
-#=sys-libs/glibc-2.29-r1 **
+=sys-libs/glibc-2.30-r1 **
 

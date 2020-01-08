@@ -1,21 +1,20 @@
 dev-lang/python:2.7 -ncurses -sqlite
 dev-libs/glib -mime -utils
-dev-libs/libpcre2 pcre16 -pcre32
-dev-libs/libpcre pcre16 -pcre32
+dev-libs/libpcre2 -pcre16 -pcre32
+dev-libs/libpcre -pcre16 -pcre32
 sys-devel/gettext -ncurses
 sys-apps/busybox static -pam
 app-arch/libarchive -e2fsprogs
-app-editors/neovim -jemalloc
 sys-fs/eudev -hwdb -kmod
+sys-apps/shadow -su
 
 #net
 mail-mta/nullmailer -ssl
-net-misc/curl adns -threads
 net-misc/iputils -arping
-sys-apps/iproute2 elf -minimal -iptables
+sys-apps/iproute2 minimal -elf -iptables
 sys-apps/net-tools -arp
-sys-apps/openrc newnet
 virtual/ssh -minimal
+dev-vcs/git curl
 
 #toolchain
 dev-util/cmake system-jsoncpp -ncurses
@@ -23,45 +22,51 @@ sys-devel/binutils cxx default-gold
 sys-devel/clang default-compiler-rt default-libcxx -static-analyzer
 sys-devel/clang-runtime libcxx -sanitize
 #sys-devel/gcc lto -graphite -fortran -sanitize
-sys-devel/gcc lto cxx fortran graphite pgo sanitize #use quickpkg version from main machine
+sys-devel/gcc lto pgo -cxx -fortran -graphite -sanitize
 sys-devel/llvm gold libffi
-sys-libs/glibc -multiarch
+sys-libs/glibc -multiarch -custom-cflags
 sys-libs/libcxx libunwind libcxxabi -libcxxrt
 sys-libs/libomp offload ompt -hwloc
 
 #media
-media-libs/libmediainfo -curl
 media-video/ffmpeg -x265 -opus -vpx -libdrm -libaom -opencl -postproc
-media-video/mediainfo -curl
 
 #sys
 sys-apps/util-linux static-libs -cramfs -tty-helpers
 sys-libs/ncurses unicode -gpm -minimal
 
+#min
+sys-apps/debianutils -installkernel
+app-arch/xz-utils -extra-filters
+sys-process/htop unicode
+
 #portage
-app-portage/portage-utils -qmanifest
+app-portage/portage-utils -qmanifest -qtegrity
 app-portage/layman sync-plugin-portage
-sys-apps/portage ipc gentoo-dev -rsync-verify
+sys-apps/portage ipc -gentoo-dev -rsync-verify
 
 #tools
-app-arch/unzip natspec
-app-arch/zip natspec
-app-editors/neovim python -clipboard -nvimpager
+app-editors/nano -spell
 app-shells/bash -mem-scramble -net
 dev-lang/perl ithreads
-dev-vcs/git webdav pcre-jit -perl
+dev-vcs/git -webdav -pcre-jit -perl
 sys-apps/less -less-select -lesspipe
-sys-process/fcron -mta
 sys-process/cronie -anacron
 sys-process/lsof rpc
-net-misc/curl threads -adns
+net-misc/curl threads -adns -progress-meter
+
+dev-libs/libpcre2 unicode
 
 #rtorrent
 app-eselect/eselect-php fpm
-dev-lang/php fpm gd cgi xmlrpc xmlreader xmlwriter zip sockets iconv ldap pdo pcntl libedit bzip2 zlib json -flatfile -mysql -mysqli -truetype
+#dev-lang/php fpm gd cgi xmlrpc xmlreader xmlwriter -zip sockets iconv ldap pdo pcntl libedit zlib json -phar -flatfile -mysql -mysqli -truetype
+dev-lang/php fpm gd cgi xmlrpc xmlreader xmlwriter sockets iconv ldap pcntl libedit pdo json simplexml zlib -phar -flatfile
 #dev-libs/boost python
 #net-libs/libtorrent-rasterbar -geoip
 net-nds/openldap -syslog
 net-p2p/rtorrent xmlrpc -daemon
 www-apps/rutorrent vhosts
-www-servers/lighttpd webdav php pcre bzip2 zlib -minimal -gdbm -mysql
+dev-libs/xmlrpc-c -curl
+#www-servers/lighttpd webdav php pcre bzip2 zlib -minimal -gdbm -mysql
+www-servers/lighttpd php zlib -webdav -bzip2 -minimal -gdbm -mysql
+

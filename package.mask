@@ -22,4 +22,22 @@ dev-lua/mpack::lua
 sys-apps/less::gentoo
 sys-apps/gawk::poly-c
 dev-util/gtk-doc-am::poly-c
+dev-lang/python::mv
 
+>=sys-libs/libcap-2.28
+
+#broken
+>=sys-devel/llvm-common-9.0.0
+>=sys-devel/clang-common-9.0.0
+>=sys-devel/llvm-9.0.0
+>=sys-devel/llvmgold-9
+>=sys-libs/llvm-libunwind-9.0.0
+>=sys-devel/lld-9.0.0
+>=sys-libs/libcxxabi-9.0.0
+>=sys-libs/libcxx-9.0.0
+>=sys-devel/clang-9.0.0
+>=sys-libs/compiler-rt-9.0.0
+>=sys-libs/compiler-rt-sanitizers-9.0.0
+>=sys-libs/libomp-9.0.0
+>=sys-devel/clang-runtime-9.0.0
+>=dev-util/lldb-9.0.0

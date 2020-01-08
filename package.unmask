@@ -1,7 +1,9 @@
 =app-eselect/eselect-lua-1
 >=dev-lang/lua-5.3.3-r1
 >=dev-lang/php-7.3.0_rc6
->=dev-libs/openssl-1.1.1
 >=net-misc/iputils-20161105
 >=virtual/httpd-php-7.3
+
+>=dev-libs/openssl-1.1.1::gentoo
+>=dev-libs/libressl-3.0.1
 
