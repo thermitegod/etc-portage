@@ -1,0 +1,6 @@
+#mask systemd files
+INSTALL_MASK="
+${INSTALL_MASK}
+/usr/lib/dracut/modules.d/*systemd*
+"
+PKG_INSTALL_MASK="${INSTALL_MASK}"

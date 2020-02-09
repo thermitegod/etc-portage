@@ -1,0 +1,6 @@
+#mask systemd files
+INSTALL_MASK="
+${INSTALL_MASK}
+/usr/share/nvim/runtime/*/systemd.vim
+"
+PKG_INSTALL_MASK="${INSTALL_MASK}"

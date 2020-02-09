@@ -17,5 +17,7 @@ ${INSTALL_MASK}
 /usr/src/linux-*/arch/un*
 /usr/src/linux-*/arch/t*
 /usr/src/linux-*/arch/xt*
+
+/usr/src/linux-*/Documentation/translations
 "
 PKG_INSTALL_MASK="${INSTALL_MASK}"

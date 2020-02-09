@@ -1,28 +1,24 @@
+#system
+app-admin/sysstat lm-sensors
+app-arch/libarchive zstd lz4 -e2fsprogs
+app-crypt/gnupg -usb -smartcard
 app-text/xmlto text
-app-misc/ca-certificates cacert
-dev-libs/boost nls context
+dev-libs/boost nls
 dev-libs/glib utils
 dev-libs/libpcre2 pcre16 unicode
 dev-libs/libxml2 python
-dev-libs/nss nss-pem cacert
-dev-python/numpy lapack
+dev-util/cppcheck qt5
+sys-apps/groff -X
+sys-apps/irqbalance -numa
+sys-apps/lm-sensors contrib
+sys-apps/openrc sysv-utils
 sys-apps/smartmontools update_drivedb
-sys-boot/refind -ext2
 sys-firmware/ipxe -usb
-app-crypt/gnupg -usb -smartcard
-media-libs/gstreamer introspection
-sys-apps/lm-sensors contrib #sensord
-sys-process/htop unicode # build fails otherwise
-app-admin/sysstat lm-sensors
-
-app-text/poppler cxx -jpeg2k
-dev-qt/qtgui egl
-media-fonts/noto cjk
 sys-fs/squashfs-tools -xz
-app-arch/libarchive zstd lz4 -e2fsprogs
+sys-process/htop unicode
+virtual/libcrypt static-libs
 
 #langs
-dev-lang/python:2.7 -ipv6 -readline xml
 dev-lang/python:3.8 ncurses readline
 dev-lang/ruby -rdoc
 dev-lang/go system-bootstrap
@@ -31,6 +27,7 @@ dev-lang/go system-bootstrap
 net-firewall/iptables nftables conntrack
 net-libs/gnutls -tls-heartbeat
 net-mail/mailutils -clients
+net-misc/dhcpcd -udev
 net-misc/iputils -arping
 net-print/cups-filters -postscript
 sys-apps/iproute2 elf -minimal
@@ -38,19 +35,23 @@ sys-apps/net-tools -arp
 virtual/ssh -minimal
 net-analyzer/netdata -dbengine
 net-analyzer/mtr ncurses
+net-irc/weechat -spell -perl -fifo -charset -relay -scripts -trigger -xfer -python -exec
 
 #toolchain
 dev-util/cmake system-jsoncpp qt5
 dev-util/lldb -python
-sys-devel/binutils default-gold
-sys-devel/clang default-compiler-rt default-libcxx
-sys-devel/clang-runtime libcxx -sanitize
-sys-libs/compiler-rt-sanitizers -libfuzzer
-sys-libs/libomp hwloc offload ompt
-sys-devel/gcc lto graphite
-sys-devel/llvm gold libffi
+sys-devel/binutils -gold -default-gold
+sys-devel/clang default-libcxx -default-compiler-rt # rt is broken
+sys-devel/clang-runtime libcxx -compiler-rt -sanitize
+sys-devel/gcc lto graphite -fortran -graphite -sanitize
+sys-devel/llvm gold -libffi
 sys-libs/glibc -custom-cflags -multiarch
 sys-libs/libcxx libunwind libcxxabi -libcxxrt
+sys-libs/libomp hwloc offload ompt
+
+#shells
+app-shells/bash -net
+app-shells/zsh unicode
 
 #media
 media-gfx/exiv2 -xmp
@@ -64,27 +65,33 @@ media-libs/libwebp -jepg -png
 media-libs/mesa vulkan vulkan-overlay lm-sensors gles2 -gles1 -opencl -classic #gles2 is for wayland
 media-libs/tiff -jpeg
 media-libs/vulkan-loader -layers
+media-sound/alsa-utils ncurses
 media-sound/apulse sdk
-media-sound/mpd -dbus -icu -cue -flac -fifo -ipv6 -network -eventfd -signalfd -tcpd -mad -zlib
+media-sound/mpd -dbus -icu -cue -flac -fifo -ipv6 -network -eventfd -signalfd -tcpd -mad -zlib -audiofile
 media-sound/ncmpcpp taglib -visualizer
 media-video/ffmpeg x265 dav1d opus vpx libdrm libaom hardcoded-tables -opencl -postproc -svg
 media-video/mkvtoolnix qt5
-media-sound/alsa-utils ncurses
 
 #X/gui
+app-crypt/pinentry ncurses
+app-text/poppler cxx -jpeg2k
+dev-qt/qtgui egl
 dev-qt/qtgui -gif
 dev-qt/qtmultimedia -alsa
+media-fonts/noto cjk
+media-libs/gstreamer introspection
 sys-libs/ncurses unicode -gpm -minimal
 www-client/w3m imlib
 x11-base/xorg-server suid -minimal
 x11-libs/cairo xcb
+x11-libs/gtk+:2 adwaita-icon-theme cups
+x11-libs/gtk+:3 introspection adwaita-icon-theme cups atk-bridge
 x11-libs/libdrm video_cards_radeon libkms
 x11-libs/libvdpau dri
 x11-libs/libxcb xkb
 x11-misc/i3status -filecaps
-x11-misc/spacefm gtk2 -gtk3 -startup-notification
+x11-misc/spacefm -gtk2 gtk3 -startup-notification
 x11-misc/xdg-utils -perl
-app-crypt/pinentry ncurses
 
 #mpv
 media-libs/libass fontconfig
@@ -100,16 +107,15 @@ sys-apps/portage ipc gentoo-dev -rsync-verify
 app-arch/advancecomp -png
 app-arch/p7zip clang
 app-arch/zstd -lz4
-app-editors/neovim python -nvimpager
+app-editors/neovim -nvimpager
 app-emulation/lxc -templates
 app-emulation/lxd -dnsmasq -tools
-app-shells/bash -net
 app-text/mupdf -javascript
 dev-lang/perl ithreads
 dev-util/perf -clang #fixs build, will still be built w/ clang
 dev-util/strace aio elfutils
 dev-util/fatrace powertop
-dev-vcs/git webdav pcre-jit curl -perl
+dev-vcs/git pcre-jit curl -perl
 net-misc/openssh -X
 sys-apps/busybox static -pam
 sys-apps/irqbalance -tui
@@ -124,7 +130,7 @@ sys-process/audit python
 sys-process/procps ncurses
 
 #kernel
-sys-apps/util-linux tty-helpers static-libs -cramfs
+sys-apps/util-linux tty-helpers static-libs -logger -cramfs
 sys-boot/grub libzfs -multislot -themes -fonts -truetype
 sys-fs/zfs kernel-builtin rootfs custom-cflags -test-suite
 sys-kernel/genkernel firmware
@@ -146,13 +152,12 @@ media-sound/vorbis-tools flac
 
 #torrents
 app-eselect/eselect-php fpm
-#dev-lang/php fpm gd cgi xmlrpc xmlreader xmlwriter zip sockets iconv ldap pdo pcntl cli cjk -flatfile
 dev-lang/php fpm gd cgi xmlrpc xmlreader xmlwriter sockets iconv ldap pcntl libedit pdo json simplexml zlib -phar -flatfile
 #net-libs/libtorrent-rasterbar -geoip
 net-nds/openldap sasl -syslog -tcpd
 net-p2p/rtorrent xmlrpc -daemon
 www-servers/lighttpd php pcre -webdav -minimal -gdbm -mysql
-net-p2p/transmission qt5
+net-p2p/transmission gtk
 
 #chromium
 media-libs/libvpx postproc svc highbitdepth
@@ -160,29 +165,26 @@ media-libs/libwebp swap-16bit-csp
 media-libs/openh264 -plugin
 net-libs/nodejs inspector -npm -snapshot
 sys-libs/zlib minizip
-www-client/chromium jumbo-build custom-cflags -tcmalloc -suid -hangouts -system-ffmpeg -system-icu
-www-client/google-chrome-unstable -plugins
+www-client/chromium custom-cflags -tcmalloc -suid -hangouts -system-ffmpeg -system-icu
 
 #qemu
-app-emulation/libvirt-glib python introspection
+app-emulation/libvirt-glib introspection
 app-emulation/libvirt zfs -firewalld -virt-network -macvtap -vepa -virtualbox
 app-emulation/qemu aio virgl spice gtk vhost-net usb -xkb -oss -lzo -fdt -usbredir -vnc -jpeg -png
 app-emulation/spice gstreamer
 app-emulation/virt-manager gtk
 dev-libs/atk introspection
 media-libs/gst-plugins-base gbm -ogg -vorbis
-net-libs/glib-networking -libproxy
-net-libs/gtk-vnc gtk3 introspection -python
-net-misc/spice-gtk gtk3 usbredir introspection gstaudio gstvideo
+net-libs/gtk-vnc introspection
+net-misc/spice-gtk introspection usbredir
 sys-libs/libosinfo introspection
 x11-libs/gdk-pixbuf introspection
 x11-libs/gtksourceview introspection
-x11-libs/gtk+ introspection adwaita-icon-theme -colord -atk-bridge
 x11-libs/pango introspection
-x11-libs/vte crypt introspection
+x11-libs/vte introspection crypt
 
 #samba
-net-fs/samba gnutls -system-mitkrb5 -gpg
+net-fs/samba -system-mitkrb5
 sys-libs/ldb -lmdb
 sys-libs/tdb python
 sys-libs/tevent python
@@ -194,12 +196,6 @@ dev-java/icedtea gtk shenandoah -alsa -webstart -source -cups
 #media-gfx/gimp smp -alsa
 #media-libs/gegl umfpack -ffmpeg
 #media-libs/libmypaint gegl
-
-#firefox
-#www-client/firefox lto clang custom-optimization eme-free hwaccel -pgo -system-libvpx
-#media-libs/libpng apng
-#dev-db/sqlite secure-delete
-#dev-lang/rust system-llvm
 
 #selinux
 #sys-libs/libselinux pcre2

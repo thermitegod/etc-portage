@@ -1,9 +1,0 @@
-#clang
-LLVM="8"
-CC="/usr/lib/llvm/${LLVM}/bin/clang-${LLVM}"
-CXX="/usr/lib/llvm/${LLVM}/bin/clang++-${LLVM} -stdlib=libc++"
-CPP="/usr/lib/llvm/${LLVM}/bin/clang-cpp"
-AR="/usr/lib/llvm/${LLVM}/bin/llvm-ar"
-NM="/usr/lib/llvm/${LLVM}/bin/llvm-nm"
-RANLIB="/usr/lib/llvm/${LLVM}/bin/llvm-ranlib"
-LD="/usr/bin/ld.lld"

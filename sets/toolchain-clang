@@ -6,7 +6,6 @@ sys-devel/lld
 sys-devel/llvm
 sys-devel/llvm-common
 sys-devel/llvmgold
-sys-libs/compiler-rt
 sys-libs/libcxx
 sys-libs/libcxxabi
 sys-libs/libomp

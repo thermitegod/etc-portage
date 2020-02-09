@@ -1,0 +1,6 @@
+#man pages not installed in /usr/share/man
+INSTALL_MASK="
+${INSTALL_MASK}
+/usr/lib64/icedtea8/man/ja_JP.UTF-8
+"
+PKG_INSTALL_MASK="${INSTALL_MASK}"

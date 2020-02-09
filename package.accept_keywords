@@ -3,13 +3,17 @@
 #media-libs/mesa **
 media-video/ffmpeg **
 media-video/mpv **
-x11-misc/spacefm **
 net-misc/flexget **
+net-misc/youtube-dl **
+x11-misc/spacefm **
+
+media-libs/virglrenderer **
 
 #vulkan
 #dev-util/vulkan-headers **
 #media-libs/vulkan-loader **
-dev-util/glslang **
+
+#dev-util/glslang **
 media-libs/shaderc **
 dev-util/spirv-headers **
 dev-util/spirv-tools **
@@ -29,4 +33,4 @@ sys-fs/zfs-auto-snapshot **
 #unmask newest
 #sys-devel/gcc **
 #I know what you are thinking, dont.
-#=sys-libs/glibc-2.30-r2 **
+<sys-libs/glibc-9999 **
