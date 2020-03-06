@@ -3,7 +3,7 @@ app-admin/sysstat lm-sensors
 app-arch/libarchive zstd lz4 -e2fsprogs
 app-crypt/gnupg -usb -smartcard
 app-text/xmlto text
-dev-libs/boost nls
+dev-libs/boost nls python
 dev-libs/glib utils
 dev-libs/libpcre2 pcre16 unicode
 dev-libs/libxml2 python
@@ -46,7 +46,7 @@ sys-devel/clang-runtime libcxx -compiler-rt -sanitize
 sys-devel/gcc lto graphite -fortran -graphite -sanitize
 sys-devel/llvm gold -libffi
 sys-libs/glibc -custom-cflags -multiarch
-sys-libs/libcxx libunwind libcxxabi -libcxxrt
+sys-libs/libcxx libunwind
 sys-libs/libomp hwloc offload ompt
 
 #shells
@@ -56,13 +56,13 @@ app-shells/zsh unicode
 #media
 media-gfx/exiv2 -xmp
 media-gfx/feh exif
-media-gfx/graphicsmagick q32 jpeg png
+media-gfx/graphicsmagick q32 jpeg png cxx
 media-gfx/qiv magic exif
 media-libs/freetype harfbuzz -png
 media-libs/imlib2 shm
 media-libs/jbig2dec -png
 media-libs/libwebp -jepg -png
-media-libs/mesa vulkan vulkan-overlay lm-sensors gles2 -gles1 -opencl -classic #gles2 is for wayland
+media-libs/mesa vulkan-overlay lm-sensors gles2 -gles1 -opencl -classic #gles2 is for wayland
 media-libs/tiff -jpeg
 media-libs/vulkan-loader -layers
 media-sound/alsa-utils ncurses
@@ -90,13 +90,13 @@ x11-libs/libdrm video_cards_radeon libkms
 x11-libs/libvdpau dri
 x11-libs/libxcb xkb
 x11-misc/i3status -filecaps
-x11-misc/spacefm -gtk2 gtk3 -startup-notification
+x11-misc/spacefm gtk2 -gtk3 -startup-notification
 x11-misc/xdg-utils -perl
 
 #mpv
 media-libs/libass fontconfig
 media-libs/libplacebo glslang
-media-video/mpv luajit vulkan cli zsh-completion -jpeg -libmpv -drm -uchardet -xscreensaver -xv
+media-video/mpv luajit cli zsh-completion -jpeg -libmpv -drm -uchardet -xscreensaver -xv
 
 #portage
 app-portage/eix optimization strong-optimization
@@ -115,14 +115,14 @@ dev-lang/perl ithreads
 dev-util/perf -clang #fixs build, will still be built w/ clang
 dev-util/strace aio elfutils
 dev-util/fatrace powertop
-dev-vcs/git pcre-jit curl -perl
+dev-vcs/git curl -pcre-jit -perl -webdav
 net-misc/openssh -X
 sys-apps/busybox static -pam
 sys-apps/irqbalance -tui
 sys-apps/less -less-select -lesspipe
 sys-auth/pambase nullok
 sys-block/parted readline
-sys-devel/gdb source-highlight -server -python
+sys-devel/gdb source-highlight xxhash -server -python
 sys-fs/zfs-auto-snapshot -default-exclude
 sys-process/cronie -anacron
 sys-process/latencytop gtk

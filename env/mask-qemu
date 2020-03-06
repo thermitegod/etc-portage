@@ -7,9 +7,6 @@ ${INSTALL_MASK}
 /usr/share/qemu/edk2-aarch64-code.fd
 /usr/share/qemu/edk2-arm-code.fd
 /usr/share/qemu/edk2-arm-vars.fd
-/usr/share/qemu/edk2-i386-code.fd
-/usr/share/qemu/edk2-i386-secure-code.fd
-/usr/share/qemu/edk2-i386-vars.fd
 /usr/share/qemu/edk2-licenses.txt
 /usr/share/qemu/openbios-ppc
 /usr/share/qemu/openbios-sparc32

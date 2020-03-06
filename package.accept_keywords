@@ -15,9 +15,11 @@ media-libs/virglrenderer **
 
 #dev-util/glslang **
 media-libs/shaderc **
+dev-util/glslang **
 dev-util/spirv-headers **
 dev-util/spirv-tools **
 media-libs/libplacebo **
+
 
 #shell
 app-shells/auto-fu-zsh **

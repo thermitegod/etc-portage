@@ -6,7 +6,6 @@
 =dev-util/strace-5.4 #elfutils errors
 >media-fonts/noto-20170403 #newer version is shit
 >=media-fonts/noto-cjk-20170602 #see above
->=sys-libs/libcap-2.28 #build fails at link time
 =dev-libs/libxml2-2.9.10_pre
 
 #mask newest kernel
@@ -17,6 +16,7 @@
 =dev-util/perf-5.4.6
 =app-editors/vim-core-8.2.0055
 =sys-boot/grub-2.05_alpha20200110
+=sys-boot/grub-2.05_alpha20200228
 
 #mask repo
 sys-libs/zlib::thermite
