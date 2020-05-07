@@ -6,20 +6,42 @@ media-video/mpv **
 net-misc/flexget **
 net-misc/youtube-dl **
 x11-misc/spacefm **
+#media-libs/virglrenderer **
+net-p2p/mktorrent **
+media-video/ffmpegthumbnailer **
+media-gfx/qiv **
+app-misc/trash-cli **
+media-gfx/mcomix-lite **
+net-misc/grive **
+net-p2p/mktorrent **
+x11-terms/terminator3 **
 
-media-libs/virglrenderer **
+=dev-lang/luajit-2.1.0_beta3 **
+dev-python/cython **
+
+#zlib
+#sys-libs/zlib **
+sys-libs/zlib-ng **
+
+#zfs
+sys-fs/zfs **
 
 #vulkan
 #dev-util/vulkan-headers **
 #media-libs/vulkan-loader **
-
 #dev-util/glslang **
+media-libs/libplacebo **
 media-libs/shaderc **
 dev-util/glslang **
 dev-util/spirv-headers **
 dev-util/spirv-tools **
-media-libs/libplacebo **
 
+#X11
+x11-base/xorg-drivers **
+x11-base/xorg-proto **
+x11-base/xorg-server **
+x11-drivers/xf86-video-amdgpu **
+x11-drivers/xf86-video-ati **
 
 #shell
 app-shells/auto-fu-zsh **

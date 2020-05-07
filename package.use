@@ -1,6 +1,7 @@
 #system
 app-admin/sysstat lm-sensors
 app-arch/libarchive zstd lz4 -e2fsprogs
+app-arch/xz-utils -extra-filters
 app-crypt/gnupg -usb -smartcard
 app-text/xmlto text
 dev-libs/boost nls python
@@ -18,10 +19,10 @@ sys-fs/squashfs-tools -xz
 sys-process/htop unicode
 virtual/libcrypt static-libs
 
+
 #langs
 dev-lang/python:3.8 ncurses readline
 dev-lang/ruby -rdoc
-dev-lang/go system-bootstrap
 
 #net
 net-firewall/iptables nftables conntrack
@@ -35,14 +36,14 @@ sys-apps/net-tools -arp
 virtual/ssh -minimal
 net-analyzer/netdata -dbengine
 net-analyzer/mtr ncurses
+net-misc/curl -ftp -tftp -imap -pop3 -smtp
 net-irc/weechat -spell -perl -fifo -charset -relay -scripts -trigger -xfer -python -exec
 
 #toolchain
-dev-util/cmake system-jsoncpp qt5
 dev-util/lldb -python
 sys-devel/binutils -gold -default-gold
-sys-devel/clang default-libcxx -default-compiler-rt # rt is broken
-sys-devel/clang-runtime libcxx -compiler-rt -sanitize
+sys-devel/clang default-libcxx default-compiler-rt
+sys-devel/clang-runtime libcxx compiler-rt -sanitize
 sys-devel/gcc lto graphite -fortran -graphite -sanitize
 sys-devel/llvm gold -libffi
 sys-libs/glibc -custom-cflags -multiarch
@@ -60,16 +61,15 @@ media-gfx/graphicsmagick q32 jpeg png cxx
 media-gfx/qiv magic exif
 media-libs/freetype harfbuzz -png
 media-libs/imlib2 shm
-media-libs/jbig2dec -png
 media-libs/libwebp -jepg -png
-media-libs/mesa vulkan-overlay lm-sensors gles2 -gles1 -opencl -classic #gles2 is for wayland
+media-libs/mesa vulkan-overlay lm-sensors vaapi gles2 -gles1 -opencl -classic
 media-libs/tiff -jpeg
 media-libs/vulkan-loader -layers
 media-sound/alsa-utils ncurses
 media-sound/apulse sdk
 media-sound/mpd -dbus -icu -cue -flac -fifo -ipv6 -network -eventfd -signalfd -tcpd -mad -zlib -audiofile
 media-sound/ncmpcpp taglib -visualizer
-media-video/ffmpeg x265 dav1d opus vpx libdrm libaom hardcoded-tables -opencl -postproc -svg
+media-video/ffmpeg x265 dav1d opus vpx libdrm libaom hardcoded-tables vaapi -opencl -postproc -svg
 media-video/mkvtoolnix qt5
 
 #X/gui
@@ -105,12 +105,11 @@ sys-apps/portage ipc gentoo-dev -rsync-verify
 
 #tools
 app-arch/advancecomp -png
-app-arch/p7zip clang
+app-arch/p7zip clang rar
 app-arch/zstd -lz4
 app-editors/neovim -nvimpager
 app-emulation/lxc -templates
-app-emulation/lxd -dnsmasq -tools
-app-text/mupdf -javascript
+app-emulation/lxd zfs nftables -iptables -dnsmasq -tools
 dev-lang/perl ithreads
 dev-util/perf -clang #fixs build, will still be built w/ clang
 dev-util/strace aio elfutils
@@ -127,10 +126,11 @@ sys-fs/zfs-auto-snapshot -default-exclude
 sys-process/cronie -anacron
 sys-process/latencytop gtk
 sys-process/audit python
-sys-process/procps ncurses
+sys-process/procps -kill -ncurses
+sys-apps/util-linux su kill tty-helpers -ncurses -static-libs -logger -cramfs
+sys-apps/shadow -su
 
 #kernel
-sys-apps/util-linux tty-helpers static-libs -logger -cramfs
 sys-boot/grub libzfs -multislot -themes -fonts -truetype
 sys-fs/zfs kernel-builtin rootfs custom-cflags -test-suite
 sys-kernel/genkernel firmware
@@ -152,7 +152,7 @@ media-sound/vorbis-tools flac
 
 #torrents
 app-eselect/eselect-php fpm
-dev-lang/php fpm gd cgi xmlrpc xmlreader xmlwriter sockets iconv ldap pcntl libedit pdo json simplexml zlib -phar -flatfile
+dev-lang/php fpm gd cgi xmlrpc xmlreader xmlwriter sockets iconv ldap pcntl libedit pdo json simplexml -phar -flatfile
 #net-libs/libtorrent-rasterbar -geoip
 net-nds/openldap sasl -syslog -tcpd
 net-p2p/rtorrent xmlrpc -daemon
@@ -164,13 +164,13 @@ media-libs/libvpx postproc svc highbitdepth
 media-libs/libwebp swap-16bit-csp
 media-libs/openh264 -plugin
 net-libs/nodejs inspector -npm -snapshot
-sys-libs/zlib minizip
+sys-libs/zlib -minizip
 www-client/chromium custom-cflags -tcmalloc -suid -hangouts -system-ffmpeg -system-icu
 
 #qemu
 app-emulation/libvirt-glib introspection
 app-emulation/libvirt zfs -firewalld -virt-network -macvtap -vepa -virtualbox
-app-emulation/qemu aio virgl spice gtk vhost-net usb -xkb -oss -lzo -fdt -usbredir -vnc -jpeg -png
+app-emulation/qemu aio virgl spice gtk vhost-net usb io-uring -xkb -oss -lzo -fdt -usbredir -vnc -jpeg -png
 app-emulation/spice gstreamer
 app-emulation/virt-manager gtk
 dev-libs/atk introspection
@@ -199,3 +199,4 @@ dev-java/icedtea gtk shenandoah -alsa -webstart -source -cups
 
 #selinux
 #sys-libs/libselinux pcre2
+

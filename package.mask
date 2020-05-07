@@ -3,34 +3,33 @@
 #>www-client/chromium-69.0.3497.100
 
 #mask version
-=dev-util/strace-5.4 #elfutils errors
 >media-fonts/noto-20170403 #newer version is shit
 >=media-fonts/noto-cjk-20170602 #see above
 =dev-libs/libxml2-2.9.10_pre
 
 #mask newest kernel
-#>=sys-kernel/gentoo-sources-5.5.0
-#>=sys-kernel/linux-headers-5.5
+#>=sys-kernel/gentoo-sources-5.6.0
+#>=sys-kernel/linux-headers-5.6
 
-=net-fs/samba-4.11.4
-=dev-util/perf-5.4.6
-=app-editors/vim-core-8.2.0055
-=sys-boot/grub-2.05_alpha20200110
-=sys-boot/grub-2.05_alpha20200228
+=sys-boot/grub-2.05_alpha20200310
 
 #mask repo
 sys-libs/zlib::thermite
 
+#newer build broken
+=media-libs/gstreamer-1.16.2
+=media-libs/gst-plugins-base-1.16.2
+=media-libs/gst-plugins-good-1.16.2
+
 sys-fs/squashfs-tools::mv
 app-cdr/cdrtools::mv
 dev-lang/python::mv
+x11-libs/gtk+::mv
 
 dev-lua/lpeg::lua
 dev-lua/mpack::lua
 
 sys-apps/less::gentoo
-#x11-libs/gtk+::gentoo
-x11-libs/gtk+::mv
 
 sys-boot/grub::poly-c
 sys-apps/gawk::poly-c
@@ -42,7 +41,10 @@ dev-libs/openssl::poly-c
 sys-apps/shadow::poly-c
 media-libs/mesa::poly-c
 sys-apps/portage::poly-c
-
+media-libs/gst-plugins-base::poly-c
+media-libs/gst-plugins-good::poly-c
+app-crypt/gnupg::poly-c
+media-libs/gstreamer::poly-c
 sys-devel/m4::gentoo-clang
 
 #wait for 9.0.1

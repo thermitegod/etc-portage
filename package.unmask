@@ -1,5 +1,12 @@
 >=www-client/chromium-60.0.3107.4
->=dev-python/pytest-5.3.1
-
 >=dev-python/setuptools-45.0.0
+
+=x11-libs/libdrm-2.4.101
+
+>=dev-util/meson-0.54.0
+
+dev-python/pynzb
+dev-python/vulture
+dev-python/guessit
+dev-python/rebulk
 
