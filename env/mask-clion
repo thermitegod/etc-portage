@@ -1,6 +1,7 @@
-#mask systemd files
+#mask junk
 INSTALL_MASK="
 ${INSTALL_MASK}
-/usr/lib/dracut/modules.d/*systemd*
+/opt/clion*/license
+/opt/clion*/Install-Linux-tar.txt
 "
 PKG_INSTALL_MASK="${INSTALL_MASK}"

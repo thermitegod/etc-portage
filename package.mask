@@ -7,9 +7,12 @@
 >=media-fonts/noto-cjk-20170602 #see above
 =dev-libs/libxml2-2.9.10_pre
 
+
+dev-lang/python:3.9
+
 #mask newest kernel
-#>=sys-kernel/gentoo-sources-5.6.0
-#>=sys-kernel/linux-headers-5.6
+>=sys-kernel/gentoo-sources-5.7.0
+>=sys-kernel/linux-headers-5.7
 
 =sys-boot/grub-2.05_alpha20200310
 
@@ -43,9 +46,13 @@ media-libs/mesa::poly-c
 sys-apps/portage::poly-c
 media-libs/gst-plugins-base::poly-c
 media-libs/gst-plugins-good::poly-c
-app-crypt/gnupg::poly-c
 media-libs/gstreamer::poly-c
-sys-devel/m4::gentoo-clang
+app-crypt/gnupg::poly-c
+
+dev-util/meson::poly-c
+
+#build broken
+app-portage/eix::mv
 
 #wait for 9.0.1
 #>=sys-devel/llvm-common-9.0.0

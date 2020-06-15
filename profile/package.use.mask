@@ -5,3 +5,5 @@ sys-boot/gnu-efi -custom-cflags
 sys-fs/zfs -kernel-builtin
 x11-base/xorg-server -suid
 
+dev-java/openjdk-bin -gentoo-vm
+

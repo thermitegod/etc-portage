@@ -1,0 +1,7 @@
+#mask junk
+INSTALL_MASK="
+${INSTALL_MASK}
+/opt/google/chrome-unstable/cron
+/usr/share/gnome-control-center
+"
+PKG_INSTALL_MASK="${INSTALL_MASK}"

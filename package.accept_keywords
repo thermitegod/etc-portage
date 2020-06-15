@@ -6,7 +6,6 @@ media-video/mpv **
 net-misc/flexget **
 net-misc/youtube-dl **
 x11-misc/spacefm **
-#media-libs/virglrenderer **
 net-p2p/mktorrent **
 media-video/ffmpegthumbnailer **
 media-gfx/qiv **
@@ -15,8 +14,9 @@ media-gfx/mcomix-lite **
 net-misc/grive **
 net-p2p/mktorrent **
 x11-terms/terminator3 **
+app-editors/neovim **
 
-=dev-lang/luajit-2.1.0_beta3 **
+#=dev-lang/luajit-2.1.0_beta3 **
 dev-python/cython **
 
 #zlib
@@ -46,6 +46,7 @@ x11-drivers/xf86-video-ati **
 #shell
 app-shells/auto-fu-zsh **
 app-shells/fast-syntax-highlighting **
+app-shells/zsh-syntax-highlighting **
 
 #other
 =sys-process/htop-3.0.0_beta5 **
