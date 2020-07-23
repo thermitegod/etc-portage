@@ -37,9 +37,10 @@ dev-util/spirv-headers **
 dev-util/spirv-tools **
 
 #X11
-x11-base/xorg-drivers **
+#fucking x11 retards caused an abi/api break because they wanted to virtue signal more then they wanted a working program
+#x11-base/xorg-server **
+#x11-base/xorg-drivers **
 x11-base/xorg-proto **
-x11-base/xorg-server **
 x11-drivers/xf86-video-amdgpu **
 x11-drivers/xf86-video-ati **
 
