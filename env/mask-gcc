@@ -1,7 +1,6 @@
-#mask junk
+#does anything even use this
 INSTALL_MASK="
 ${INSTALL_MASK}
-/opt/clion*/license
-/opt/clion*/Install-Linux-tar.txt
+/lib/cpp
 "
 PKG_INSTALL_MASK="${INSTALL_MASK}"

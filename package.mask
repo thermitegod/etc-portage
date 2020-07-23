@@ -10,9 +10,13 @@
 
 dev-lang/python:3.9
 
+#breaks qemu build/runtime
+=sys-libs/liburing-0.7
+
+
 #mask newest kernel
->=sys-kernel/gentoo-sources-5.7.0
->=sys-kernel/linux-headers-5.7
+>=sys-kernel/gentoo-sources-5.8.0
+>=sys-kernel/linux-headers-5.8
 
 =sys-boot/grub-2.05_alpha20200310
 

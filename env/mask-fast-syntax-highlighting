@@ -1,6 +1,0 @@
-#mask systemd files
-INSTALL_MASK="
-${INSTALL_MASK}
-/usr/share/zsh/site-contrib/fast-syntax-highlighting/images
-"
-PKG_INSTALL_MASK="${INSTALL_MASK}"

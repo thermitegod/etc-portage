@@ -18,6 +18,7 @@ app-editors/neovim **
 
 #=dev-lang/luajit-2.1.0_beta3 **
 dev-python/cython **
+dev-lang/perl **
 
 #zlib
 #sys-libs/zlib **

@@ -7,3 +7,5 @@ x11-base/xorg-server -suid
 
 dev-java/openjdk-bin -gentoo-vm
 
+www-client/chromium -system-libvpx
+

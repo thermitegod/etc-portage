@@ -25,13 +25,14 @@ sys-devel/bc -libedit
 app-emulation/lxc -templates -tools
 net-dns/dnsmasq -dumpfile
 
-#fwupd
-#sys-apps/fwupd minimal nvme -elogind
-sys-apps/fwupd nvme
-dev-libs/libjcat gpg pkcs7
+dev-libs/json-c cpu-flags-x86-rdrand
+dev-libs/libffi test-bhaible
 
 #init
 sys-apps/openrc bash sysv-utils
+
+#shit
+dev-lang/rust parallel-compiler nightly system-bootstrap system-llvm
 
 #langs
 dev-lang/perl ithreads
@@ -47,6 +48,7 @@ net-print/cups-filters -postscript
 sys-apps/net-tools -arp
 net-misc/curl -ftp -tftp -imap -pop3 -smtp
 net-irc/weechat -spell -perl -fifo -charset -relay -scripts -trigger -xfer -python -exec
+net-misc/rsync system-zlib xxhash
 
 #nfs
 net-fs/nfs-utils nfsv41 nfsdcld
@@ -76,18 +78,25 @@ media-sound/ncmpcpp taglib
 media-video/ffmpeg x265 dav1d opus vpx libdrm libaom hardcoded-tables -postproc
 media-video/mkvtoolnix qt5
 
-#X/gui
-x11-base/xorg-server elogind -suid
-sys-auth/pambase elogind
-sys-auth/elogind -policykit
-sys-auth/polkit elogind
+#audio
+media-sound/easytag flac opus vorbis wavpack
+media-libs/opusfile -http
+media-libs/libcanberra -gtk
 
+#X/gui
+gui-wm/sway -elogind
+gui-libs/wlroots -elogind
+gui-apps/swayidle -elogind
+x11-base/xorg-server -suid
+sys-auth/elogind -policykit
 app-text/poppler cxx -jpeg2k
 www-client/w3m imlib gpm
 x11-libs/gtk+:3 introspection cups
 x11-libs/libdrm video_cards_radeon
 x11-misc/spacefm gtk2 -gtk3 -startup-notification
 x11-libs/libva utils
+
+x11-terms/terminator -libnotify
 
 #mpv
 media-libs/libplacebo glslang
@@ -109,7 +118,7 @@ net-misc/openssh -X
 sys-apps/busybox static -pam
 sys-apps/irqbalance -tui
 sys-apps/less -less-select -lesspipe
-sys-auth/pambase nullok
+sys-auth/pambase nullok -passwdqc
 sys-block/parted readline
 sys-devel/gdb source-highlight xxhash -server -python
 sys-fs/zfs-auto-snapshot -default-exclude
@@ -141,12 +150,12 @@ media-libs/libvpx postproc svc highbitdepth
 media-libs/libwebp swap-16bit-csp
 media-libs/openh264 -plugin
 net-libs/nodejs inspector -npm -snapshot
-www-client/chromium custom-cflags -closure-compile -tcmalloc -suid -hangouts -system-ffmpeg -system-icu
+www-client/chromium custom-cflags tcmalloc system-icu system-ffmpeg ozone wayland -suid -hangouts -js-type-check
 
 #qemu
 #app-emulation/libvirt-glib introspection
 app-emulation/libvirt zfs -macvtap -vepa
-app-emulation/qemu virgl spice gtk usb io-uring -xkb -oss -fdt -vnc -jpeg -png -ncurses -bzip2 -lzo -zstd
+app-emulation/qemu virgl spice gtk usb io-uring -slirp -xkb -oss -fdt -vnc -jpeg -png -ncurses -bzip2 -lzo -zstd
 app-emulation/spice gstreamer
 app-emulation/virt-manager gtk
 media-libs/gst-plugins-base gbm -ogg -vorbis -pango
