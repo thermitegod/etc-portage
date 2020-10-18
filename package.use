@@ -16,17 +16,26 @@ sys-libs/gdbm berkdb
 net-print/cups usb
 x11-libs/libXfont2 -bzip2
 media-libs/freetype -bzip2 -brotli
-app-arch/unzip natspec -bzip2
-app-arch/zip natspec -bzip2
+app-arch/unzip natspec
+app-arch/zip natspec -crypt
 sys-apps/gawk mpfr
 sys-apps/inxi hddtemp
 sys-devel/bc -libedit
 
 app-emulation/lxc -templates -tools
 net-dns/dnsmasq -dumpfile
-
-dev-libs/json-c cpu-flags-x86-rdrand
+net-analyzer/mtr -gtk -jansson
 dev-libs/libffi test-bhaible
+
+media-gfx/pqiv ffmpeg
+
+app-arch/brotli python
+
+#jpeg-xl ref encoder
+dev-util/google-perftools largepages -debug
+app-doc/doxygena -clang
+app-text/ghostscript-gpl -X -dbus -unicode
+media-libs/jbig2dec -png
 
 #init
 sys-apps/openrc bash sysv-utils
@@ -36,9 +45,12 @@ dev-lang/rust parallel-compiler nightly system-bootstrap system-llvm
 
 #langs
 dev-lang/perl ithreads
+#dev-lang/python:2.7 -gdbm -ipv6 -ncurses -sqlite -ssl -xml
 dev-lang/python:3.8 readline
 dev-lang/python:3.9 readline
 dev-lang/ruby -rdoc
+
+dev-lang/lua -deprecated
 
 #net
 net-firewall/iptables nftables conntrack
@@ -46,9 +58,11 @@ net-mail/mailutils -clients
 net-misc/iputils nettle -arping
 net-print/cups-filters -postscript
 sys-apps/net-tools -arp
-net-misc/curl -ftp -tftp -imap -pop3 -smtp
+net-misc/curl http2 -ftp -tftp -imap -pop3 -smtp
 net-irc/weechat -spell -perl -fifo -charset -relay -scripts -trigger -xfer -python -exec
 net-misc/rsync system-zlib xxhash
+
+net-analyzer/nmap system-lua
 
 #nfs
 net-fs/nfs-utils nfsv41 nfsdcld
@@ -56,11 +70,11 @@ sys-fs/lvm2 -thin
 
 #toolchain
 sys-devel/binutils -gold -default-gold
-sys-devel/clang default-libcxx default-compiler-rt
+sys-devel/clang default-libcxx default-compiler-rt default-lld
 sys-devel/clang-runtime libcxx -sanitize
-sys-devel/gcc lto pgo -fortran -sanitize
+sys-devel/gcc lto pgo -jit -fortran -sanitize
 sys-devel/llvm gold -libffi
-sys-libs/glibc -custom-cflags -multiarch
+sys-libs/glibc custom-cflags -multiarch
 sys-libs/libomp hwloc offload ompt
 sys-apps/hwloc libudev
 
@@ -72,8 +86,8 @@ media-gfx/feh exif
 media-gfx/graphicsmagick q32 cxx
 media-gfx/qiv magic exif
 media-libs/freetype harfbuzz -png
-media-libs/mesa vulkan-overlay lm-sensors osmesa -classic
-media-sound/mpd signalfd eventfd -cue -fifo -ipv6 -network -mad -bzip2 -zlib -audiofile
+media-libs/mesa vulkan-overlay lm-sensors osmesa zink -classic
+media-sound/mpd -signalfd -eventfd -cue -fifo -ipv6 -network -mad -bzip2 -zlib -audiofile
 media-sound/ncmpcpp taglib
 media-video/ffmpeg x265 dav1d opus vpx libdrm libaom hardcoded-tables -postproc
 media-video/mkvtoolnix qt5
@@ -106,9 +120,11 @@ media-video/mpv -jpeg -uchardet -xv
 app-portage/eix optimization strong-optimization -protobuf
 app-portage/layman sync-plugin-portage -gpg
 sys-apps/portage gentoo-dev -rsync-verify
+app-portage/portage-utils -qmanifest -qtegrity
 
 #tools
 app-arch/p7zip clang rar
+app-admin/sysklogd logger logrotate
 app-editors/neovim -nvimpager
 app-emulation/lxd -dnsmasq
 dev-util/perf -clang #fixs build, will still be built w/ clang
@@ -165,9 +181,13 @@ net-misc/spice-gtk usbredir
 dev-java/openjdk-bin -alsa
 
 #gimp
-#media-gfx/gimp smp -alsa
+media-gfx/gimp openexr -alsa -webp
+media-libs/gegl openexr ffmpeg -webp -tiff -svg
 #media-libs/gegl umfpack -ffmpeg
-#media-libs/libmypaint gegl
+media-libs/libmypaint gegl
+media-gfx/exiv2 -xmp
+media-libs/gexiv2 -introspection
+dev-libs/appstream-glib -introspection
 
 #selinux
 #sys-libs/libselinux pcre2

@@ -5,20 +5,24 @@
 #mask version
 >media-fonts/noto-20170403 #newer version is shit
 >=media-fonts/noto-cjk-20170602 #see above
-=dev-libs/libxml2-2.9.10_pre
 
-
-dev-lang/python:3.9
+#java 15
+dev-java/openjdk-bin:15
+virtual/jdk:15
 
 #breaks qemu build/runtime
 =sys-libs/liburing-0.7
 
+media-video/ffmpeg:poly-c
 
 #mask newest kernel
->=sys-kernel/gentoo-sources-5.8.0
->=sys-kernel/linux-headers-5.8
+>=sys-kernel/gentoo-sources-5.10.0
+>=sys-kernel/linux-headers-5.10
 
 =sys-boot/grub-2.05_alpha20200310
+
+=media-sound/mpd-0.22-r1
+=media-sound/mpd-0.22.1
 
 #mask repo
 sys-libs/zlib::thermite
@@ -54,6 +58,8 @@ media-libs/gstreamer::poly-c
 app-crypt/gnupg::poly-c
 
 dev-util/meson::poly-c
+
+net-analyzer/nmap::poly-c
 
 #build broken
 app-portage/eix::mv

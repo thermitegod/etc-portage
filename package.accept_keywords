@@ -1,24 +1,24 @@
 # 9999 packages
-#x11-libs/libdrm **
-#media-libs/mesa **
-media-video/ffmpeg **
+app-editors/neovim **
+app-emulation/virt-manager **
+app-portage/gentoolkit **
+dev-lang/perl **
+dev-python/cython **
+media-gfx/qiv **
+media-video/ffmpegthumbnailer **
 media-video/mpv **
 net-misc/flexget **
-net-misc/youtube-dl **
-x11-misc/spacefm **
-net-p2p/mktorrent **
-media-video/ffmpegthumbnailer **
-media-gfx/qiv **
-app-misc/trash-cli **
-media-gfx/mcomix-lite **
 net-misc/grive **
+net-misc/youtube-dl **
 net-p2p/mktorrent **
 x11-terms/terminator3 **
-app-editors/neovim **
 
-#=dev-lang/luajit-2.1.0_beta3 **
-dev-python/cython **
-dev-lang/perl **
+#media-video/ffmpeg **
+
+# personal projects
+app-misc/trash-cli **
+media-gfx/mcomix-lite **
+x11-misc/spacefm **
 
 #zlib
 #sys-libs/zlib **
@@ -26,16 +26,17 @@ sys-libs/zlib-ng **
 
 #zfs
 sys-fs/zfs **
+sys-fs/zfs-auto-snapshot **
 
 #vulkan
 #dev-util/vulkan-headers **
 #media-libs/vulkan-loader **
 #dev-util/glslang **
-media-libs/libplacebo **
-media-libs/shaderc **
-dev-util/glslang **
-dev-util/spirv-headers **
-dev-util/spirv-tools **
+#media-libs/libplacebo **
+#media-libs/shaderc **
+#dev-util/glslang **
+#dev-util/spirv-headers **
+#dev-util/spirv-tools **
 
 #X11
 #fucking x11 retards caused an abi/api break because they wanted to virtue signal more then they wanted a working program
@@ -44,18 +45,13 @@ dev-util/spirv-tools **
 x11-base/xorg-proto **
 x11-drivers/xf86-video-amdgpu **
 x11-drivers/xf86-video-ati **
+#x11-libs/libdrm **
+#media-libs/mesa **
 
 #shell
 app-shells/auto-fu-zsh **
 app-shells/fast-syntax-highlighting **
 app-shells/zsh-syntax-highlighting **
-
-#other
-=sys-process/htop-3.0.0_beta5 **
-
-#zfs
-#sys-fs/zfs **
-sys-fs/zfs-auto-snapshot **
 
 #unmask newest
 #sys-devel/gcc **
