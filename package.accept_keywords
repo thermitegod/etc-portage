@@ -9,11 +9,15 @@ media-video/ffmpegthumbnailer **
 media-video/mpv **
 net-misc/flexget **
 net-misc/grive **
-net-misc/youtube-dl **
+#net-misc/youtube-dl **
 net-p2p/mktorrent **
 x11-terms/terminator3 **
 
+=dev-lang/luajit-2.1.9999 **
+
 #media-video/ffmpeg **
+
+=media-gfx/gimp-2.99.2 **
 
 # personal projects
 app-misc/trash-cli **

@@ -10,19 +10,19 @@
 dev-java/openjdk-bin:15
 virtual/jdk:15
 
-#breaks qemu build/runtime
-=sys-libs/liburing-0.7
-
 media-video/ffmpeg:poly-c
 
+>=sys-process/htop-3.0.3
+
 #mask newest kernel
->=sys-kernel/gentoo-sources-5.10.0
->=sys-kernel/linux-headers-5.10
+>=sys-kernel/gentoo-sources-5.11.0
+>=sys-kernel/linux-headers-5.11
 
-=sys-boot/grub-2.05_alpha20200310
+>=sys-boot/grub-2.05_alpha20200310
 
-=media-sound/mpd-0.22-r1
-=media-sound/mpd-0.22.1
+>=media-sound/mpd-0.22-r1
+
+=x11-wm/i3-4.19
 
 #mask repo
 sys-libs/zlib::thermite
@@ -57,6 +57,7 @@ media-libs/gst-plugins-good::poly-c
 media-libs/gstreamer::poly-c
 app-crypt/gnupg::poly-c
 
+dev-libs/icu::poly-c
 dev-util/meson::poly-c
 
 net-analyzer/nmap::poly-c

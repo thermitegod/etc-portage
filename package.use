@@ -15,7 +15,6 @@ sys-devel/gettext git
 sys-libs/gdbm berkdb
 net-print/cups usb
 x11-libs/libXfont2 -bzip2
-media-libs/freetype -bzip2 -brotli
 app-arch/unzip natspec
 app-arch/zip natspec -crypt
 sys-apps/gawk mpfr
@@ -26,13 +25,19 @@ app-emulation/lxc -templates -tools
 net-dns/dnsmasq -dumpfile
 net-analyzer/mtr -gtk -jansson
 dev-libs/libffi test-bhaible
-
+sys-libs/timezone-data zic-slim
 media-gfx/pqiv ffmpeg
 
 app-arch/brotli python
+dev-python/urllib3 -brotli
+dev-util/glade python
+
+dev-util/clion custom-jdk
+
+net-misc/dhcpcd privsep
 
 #jpeg-xl ref encoder
-dev-util/google-perftools largepages -debug
+dev-util/google-perftools -largepages -debug
 app-doc/doxygena -clang
 app-text/ghostscript-gpl -X -dbus -unicode
 media-libs/jbig2dec -png
@@ -83,9 +88,9 @@ app-shells/bash -net
 
 #media
 media-gfx/feh exif
-media-gfx/graphicsmagick q32 cxx
+media-gfx/graphicsmagick q32 cxx svg
 media-gfx/qiv magic exif
-media-libs/freetype harfbuzz -png
+media-libs/freetype harfbuzz -bzip2 -brotli
 media-libs/mesa vulkan-overlay lm-sensors osmesa zink -classic
 media-sound/mpd -signalfd -eventfd -cue -fifo -ipv6 -network -mad -bzip2 -zlib -audiofile
 media-sound/ncmpcpp taglib
@@ -105,7 +110,7 @@ x11-base/xorg-server -suid
 sys-auth/elogind -policykit
 app-text/poppler cxx -jpeg2k
 www-client/w3m imlib gpm
-x11-libs/gtk+:3 introspection cups
+x11-libs/gtk+:3 introspection cups -sysprof
 x11-libs/libdrm video_cards_radeon
 x11-misc/spacefm gtk2 -gtk3 -startup-notification
 x11-libs/libva utils
@@ -123,7 +128,7 @@ sys-apps/portage gentoo-dev -rsync-verify
 app-portage/portage-utils -qmanifest -qtegrity
 
 #tools
-app-arch/p7zip clang rar
+app-arch/p7zip clang -rar
 app-admin/sysklogd logger logrotate
 app-editors/neovim -nvimpager
 app-emulation/lxd -dnsmasq
@@ -165,12 +170,12 @@ sys-libs/zlib minizip
 media-libs/libvpx postproc svc highbitdepth
 media-libs/libwebp swap-16bit-csp
 media-libs/openh264 -plugin
-net-libs/nodejs inspector -npm -snapshot
+net-libs/nodejs inspector system-icu -npm -snapshot
 www-client/chromium custom-cflags tcmalloc system-icu system-ffmpeg ozone wayland -suid -hangouts -js-type-check
 
 #qemu
 #app-emulation/libvirt-glib introspection
-app-emulation/libvirt zfs -macvtap -vepa
+app-emulation/libvirt zfs -virt-network -macvtap -vepa
 app-emulation/qemu virgl spice gtk usb io-uring -slirp -xkb -oss -fdt -vnc -jpeg -png -ncurses -bzip2 -lzo -zstd
 app-emulation/spice gstreamer
 app-emulation/virt-manager gtk
@@ -181,13 +186,15 @@ net-misc/spice-gtk usbredir
 dev-java/openjdk-bin -alsa
 
 #gimp
-media-gfx/gimp openexr -alsa -webp
-media-libs/gegl openexr ffmpeg -webp -tiff -svg
-#media-libs/gegl umfpack -ffmpeg
+media-gfx/gimp vector-icons openexr -alsa -webp
+media-libs/gegl openexr ffmpeg svg introspection -webp -tiff
+media-libs/babl introspection
 media-libs/libmypaint gegl
 media-gfx/exiv2 -xmp
 media-libs/gexiv2 -introspection
 dev-libs/appstream-glib -introspection
+
+
 
 #selinux
 #sys-libs/libselinux pcre2

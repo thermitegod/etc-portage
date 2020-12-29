@@ -8,8 +8,10 @@
 #>=dev-util/meson-0.54.0
 
 >=dev-lang/lua-5.3.5-r2
-
+=sys-libs/libcap-ng-0.8.2
 =x11-base/xorg-server-1.20.9
+
+>=app-eselect/eselect-lua-3
 
 dev-python/pynzb
 dev-python/vulture
