@@ -1,40 +1,43 @@
-#system
+#unsorted
 app-admin/sysstat lm-sensors
+app-arch/brotli python
 app-arch/libarchive blake2 nettle -e2fsprogs
 app-arch/tar minimal
+app-arch/unzip natspec
 app-arch/xz-utils -extra-filters
+app-arch/zip natspec -crypt
 app-crypt/gnupg readline user-socket -smartcard
+app-emulation/lxc -templates -tools
 app-text/xmlto text
 dev-libs/boost nls python
+dev-libs/libffi test-bhaible
+dev-libs/libgcrypt o-flag-munging
 dev-libs/libpcre2 pcre16 pcre32
 dev-libs/libpcre pcre16 pcre32
+dev-libs/openssl -tls-heartbeat
+dev-python/urllib3 -brotli
+dev-util/clion custom-jdk
+dev-util/glade python
+media-gfx/pqiv ffmpeg
+net-analyzer/mtr -gtk -jansson
+net-dns/dnsmasq -dumpfile
+net-libs/gnutls -tls-heartbeat
+net-misc/dhcpcd privsep
+net-print/cups usb
+sys-apps/gawk mpfr
 sys-apps/groff -X
+sys-apps/inxi hddtemp
 sys-apps/lm-sensors contrib
-sys-apps/smartmontools update_drivedb
+sys-apps/smartmontools update-drivedb
+sys-devel/bc -libedit
 sys-devel/gettext git
 sys-libs/gdbm berkdb
-net-print/cups usb
-x11-libs/libXfont2 -bzip2
-app-arch/unzip natspec
-app-arch/zip natspec -crypt
-sys-apps/gawk mpfr
-sys-apps/inxi hddtemp
-sys-devel/bc -libedit
-
-app-emulation/lxc -templates -tools
-net-dns/dnsmasq -dumpfile
-net-analyzer/mtr -gtk -jansson
-dev-libs/libffi test-bhaible
 sys-libs/timezone-data zic-slim
-media-gfx/pqiv ffmpeg
+sys-process/htop hwloc lm-sensors
+x11-misc/i3blocks -contrib
 
-app-arch/brotli python
-dev-python/urllib3 -brotli
-dev-util/glade python
 
-dev-util/clion custom-jdk
 
-net-misc/dhcpcd privsep
 
 #jpeg-xl ref encoder
 dev-util/google-perftools -largepages -debug
@@ -50,9 +53,8 @@ dev-lang/rust parallel-compiler nightly system-bootstrap system-llvm
 
 #langs
 dev-lang/perl ithreads
-#dev-lang/python:2.7 -gdbm -ipv6 -ncurses -sqlite -ssl -xml
-dev-lang/python:3.8 readline
 dev-lang/python:3.9 readline
+dev-lang/python:3.10 readline
 dev-lang/ruby -rdoc
 
 dev-lang/lua -deprecated
@@ -66,8 +68,6 @@ sys-apps/net-tools -arp
 net-misc/curl http2 -ftp -tftp -imap -pop3 -smtp
 net-irc/weechat -spell -perl -fifo -charset -relay -scripts -trigger -xfer -python -exec
 net-misc/rsync system-zlib xxhash
-
-net-analyzer/nmap system-lua
 
 #nfs
 net-fs/nfs-utils nfsv41 nfsdcld
@@ -90,9 +90,9 @@ app-shells/bash -net
 media-gfx/feh exif
 media-gfx/graphicsmagick q32 cxx svg
 media-gfx/qiv magic exif
-media-libs/freetype harfbuzz -bzip2 -brotli
+media-libs/freetype harfbuzz
 media-libs/mesa vulkan-overlay lm-sensors osmesa zink -classic
-media-sound/mpd -signalfd -eventfd -cue -fifo -ipv6 -network -mad -bzip2 -zlib -audiofile
+media-sound/mpd -signalfd -eventfd -cue -fifo -ipv6 -network -mad -audiofile
 media-sound/ncmpcpp taglib
 media-video/ffmpeg x265 dav1d opus vpx libdrm libaom hardcoded-tables -postproc
 media-video/mkvtoolnix qt5
@@ -100,7 +100,7 @@ media-video/mkvtoolnix qt5
 #audio
 media-sound/easytag flac opus vorbis wavpack
 media-libs/opusfile -http
-media-libs/libcanberra -gtk
+# media-libs/libcanberra -gtk
 
 #X/gui
 gui-wm/sway -elogind
@@ -110,7 +110,7 @@ x11-base/xorg-server -suid
 sys-auth/elogind -policykit
 app-text/poppler cxx -jpeg2k
 www-client/w3m imlib gpm
-x11-libs/gtk+:3 introspection cups -sysprof
+x11-libs/gtk+:3 introspection cups
 x11-libs/libdrm video_cards_radeon
 x11-misc/spacefm gtk2 -gtk3 -startup-notification
 x11-libs/libva utils
@@ -132,7 +132,6 @@ app-arch/p7zip clang -rar
 app-admin/sysklogd logger logrotate
 app-editors/neovim -nvimpager
 app-emulation/lxd -dnsmasq
-dev-util/perf -clang #fixs build, will still be built w/ clang
 dev-util/strace aio elfutils
 dev-vcs/git curl pcre-jit -perl -webdav
 net-misc/openssh -X
@@ -173,17 +172,22 @@ media-libs/openh264 -plugin
 net-libs/nodejs inspector system-icu -npm -snapshot
 www-client/chromium custom-cflags tcmalloc system-icu system-ffmpeg ozone wayland -suid -hangouts -js-type-check
 
+#pipewire
+media-video/pipewire -jack -ffmpeg -gstreamer
+#media-sound/jack2 -classic
+#media-sound/pulseaudio -ipv6 -tcpd -ssl -webrtc-aec
+media-libs/libsdl2 -jack -alsa -joystick
+#media-sound/alsa-utils -libsamplerate
+media-plugins/alsa-plugins -jack -pulseaudio -mix -usb_stream
+
 #qemu
 #app-emulation/libvirt-glib introspection
 app-emulation/libvirt zfs -virt-network -macvtap -vepa
-app-emulation/qemu virgl spice gtk usb io-uring -slirp -xkb -oss -fdt -vnc -jpeg -png -ncurses -bzip2 -lzo -zstd
+app-emulation/qemu virgl spice gtk usb io-uring -slirp -xkb -oss -fdt -vnc -jpeg -png -ncurses
 app-emulation/spice gstreamer
 app-emulation/virt-manager gtk
 media-libs/gst-plugins-base gbm -ogg -vorbis -pango
 net-misc/spice-gtk usbredir
-
-#opendjk
-dev-java/openjdk-bin -alsa
 
 #gimp
 media-gfx/gimp vector-icons openexr -alsa -webp
@@ -193,9 +197,4 @@ media-libs/libmypaint gegl
 media-gfx/exiv2 -xmp
 media-libs/gexiv2 -introspection
 dev-libs/appstream-glib -introspection
-
-
-
-#selinux
-#sys-libs/libselinux pcre2
 

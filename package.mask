@@ -1,81 +1,17 @@
-#for the never ending problems with chrom*
-#www-client/chromium::gentoo
-#>www-client/chromium-69.0.3497.100
+# Mask Packages/Repos
 
-#mask version
->media-fonts/noto-20170403 #newer version is shit
->=media-fonts/noto-cjk-20170602 #see above
+# newer version is shit
+>media-fonts/noto-20170403
+>=media-fonts/noto-cjk-20170602
 
-#java 15
-dev-java/openjdk-bin:15
-virtual/jdk:15
-
-media-video/ffmpeg:poly-c
-
->=sys-process/htop-3.0.3
+#broken build
+=app-emulation/libvirt-7.0.0
+=dev-python/libvirt-python-7.0.0 # libvirt rdep
 
 #mask newest kernel
 >=sys-kernel/gentoo-sources-5.11.0
 >=sys-kernel/linux-headers-5.11
 
+#other
 >=sys-boot/grub-2.05_alpha20200310
-
->=media-sound/mpd-0.22-r1
-
-=x11-wm/i3-4.19
-
-#mask repo
-sys-libs/zlib::thermite
-
-#newer build broken
-=media-libs/gstreamer-1.16.2
-=media-libs/gst-plugins-base-1.16.2
-=media-libs/gst-plugins-good-1.16.2
-
-sys-fs/squashfs-tools::mv
-app-cdr/cdrtools::mv
-dev-lang/python::mv
-x11-libs/gtk+::mv
-
-dev-lua/lpeg::lua
-dev-lua/mpack::lua
-
-sys-apps/less::gentoo
-
-sys-boot/grub::poly-c
-sys-apps/gawk::poly-c
-x11-libs/gtk+::poly-c
-dev-util/gtk-doc-am::poly-c
-sys-apps/baselayout::poly-c
-media-sound/alsa-utils::poly-c
-dev-libs/openssl::poly-c
-sys-apps/shadow::poly-c
-media-libs/mesa::poly-c
-sys-apps/portage::poly-c
-media-libs/gst-plugins-base::poly-c
-media-libs/gst-plugins-good::poly-c
-media-libs/gstreamer::poly-c
-app-crypt/gnupg::poly-c
-
-dev-libs/icu::poly-c
-dev-util/meson::poly-c
-
-net-analyzer/nmap::poly-c
-
-#build broken
-app-portage/eix::mv
-
-#wait for 9.0.1
-#>=sys-devel/llvm-common-9.0.0
-#>=sys-devel/clang-common-9.0.0
-#>=sys-devel/llvm-9.0.0
-#>=sys-devel/llvmgold-9
-#>=sys-libs/llvm-libunwind-9.0.0
-#>=sys-devel/lld-9.0.0
-#>=sys-libs/libcxxabi-9.0.0
-#>=sys-libs/libcxx-9.0.0
-#>=sys-devel/clang-9.0.0
-#>=sys-libs/compiler-rt-9.0.0
-#>=sys-libs/libomp-9.0.0
-#>=sys-devel/clang-runtime-9.0.0
 

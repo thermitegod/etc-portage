@@ -2,26 +2,20 @@
 app-editors/neovim **
 app-emulation/virt-manager **
 app-portage/gentoolkit **
-dev-lang/perl **
 dev-python/cython **
-media-gfx/qiv **
 media-video/ffmpegthumbnailer **
 media-video/mpv **
 net-misc/flexget **
-net-misc/grive **
-#net-misc/youtube-dl **
 net-p2p/mktorrent **
 x11-terms/terminator3 **
 
-=dev-lang/luajit-2.1.9999 **
-
-#media-video/ffmpeg **
-
-=media-gfx/gimp-2.99.2 **
+#=media-gfx/gimp-2.99.2 **
+<media-gfx/gimp-9999 **
 
 # personal projects
 app-misc/trash-cli **
 media-gfx/mcomix-lite **
+media-gfx/qiv **
 x11-misc/spacefm **
 
 #zlib
@@ -43,7 +37,8 @@ sys-fs/zfs-auto-snapshot **
 #dev-util/spirv-tools **
 
 #X11
-#fucking x11 retards caused an abi/api break because they wanted to virtue signal more then they wanted a working program
+# fucking x11 retards caused an abi/api break because they wanted
+# to virtue signal more then they wanted a working program
 #x11-base/xorg-server **
 #x11-base/xorg-drivers **
 x11-base/xorg-proto **
@@ -53,8 +48,6 @@ x11-drivers/xf86-video-ati **
 #media-libs/mesa **
 
 #shell
-app-shells/auto-fu-zsh **
-app-shells/fast-syntax-highlighting **
 app-shells/zsh-syntax-highlighting **
 
 #unmask newest

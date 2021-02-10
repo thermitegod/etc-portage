@@ -1,6 +1,0 @@
-neovim with luajit-2.1.9999 needs symlink
-/usr/lib/lua -> /usr/lib64/lua
-
-does not search /usr/lib64
-
-
