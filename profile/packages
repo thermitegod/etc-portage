@@ -1,4 +1,2 @@
--*sys-fs/e2fsprogs
--*sys-libs/e2fsprogs-libs
 -*sys-apps/busybox
 

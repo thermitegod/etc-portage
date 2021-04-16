@@ -23,7 +23,6 @@ net-analyzer/mtr -gtk -jansson
 net-dns/dnsmasq -dumpfile
 net-libs/gnutls -tls-heartbeat
 net-misc/dhcpcd privsep
-net-print/cups usb
 sys-apps/gawk mpfr
 sys-apps/groff -X
 sys-apps/inxi hddtemp
@@ -36,14 +35,14 @@ sys-libs/timezone-data zic-slim
 sys-process/htop hwloc lm-sensors
 x11-misc/i3blocks -contrib
 
-
-
+sys-apps/iproute2 libbsd
 
 #jpeg-xl ref encoder
 dev-util/google-perftools -largepages -debug
 app-doc/doxygena -clang
 app-text/ghostscript-gpl -X -dbus -unicode
 media-libs/jbig2dec -png
+media-libs/libavif dav1d gdk-pixbuf
 
 #init
 sys-apps/openrc bash sysv-utils
@@ -63,6 +62,7 @@ dev-lang/lua -deprecated
 net-firewall/iptables nftables conntrack
 net-mail/mailutils -clients
 net-misc/iputils nettle -arping
+net-print/cups usb
 net-print/cups-filters -postscript
 sys-apps/net-tools -arp
 net-misc/curl http2 -ftp -tftp -imap -pop3 -smtp
@@ -110,9 +110,9 @@ x11-base/xorg-server -suid
 sys-auth/elogind -policykit
 app-text/poppler cxx -jpeg2k
 www-client/w3m imlib gpm
-x11-libs/gtk+:3 introspection cups
+x11-libs/gtk+:3 introspection
 x11-libs/libdrm video_cards_radeon
-x11-misc/spacefm gtk2 -gtk3 -startup-notification
+x11-misc/spacefm -gtk2 gtk3 -startup-notification
 x11-libs/libva utils
 
 x11-terms/terminator -libnotify

@@ -5,12 +5,19 @@
 >=media-fonts/noto-cjk-20170602
 
 #broken build
-=app-emulation/libvirt-7.0.0
-=dev-python/libvirt-python-7.0.0 # libvirt rdep
+=dev-util/ctags-20210321.0
+
+#broken dep
+>=dev-python/sqlalchemy-1.4.0 # flexget broken
+
+=app-text/poppler-21.04.0
+
+# breaks lxd
+>=dev-lang/go-1.16.0
 
 #mask newest kernel
->=sys-kernel/gentoo-sources-5.11.0
->=sys-kernel/linux-headers-5.11
+#>=sys-kernel/gentoo-sources-5.11.0
+#>=sys-kernel/linux-headers-5.11
 
 #other
 >=sys-boot/grub-2.05_alpha20200310
