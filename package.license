@@ -1,6 +1,6 @@
 app-arch/unrar unRAR
-dev-util/clion IDEA IDEA_Academic IDEA_Classroom IDEA_OpenSource IDEA_Personal
 net-analyzer/nmap NPSL
 sys-kernel/linux-firmware linux-fw-redistributable no-source-code
 www-client/google-chrome-unstable google-chrome
+app-editors/vscode Microsoft-vscode
 

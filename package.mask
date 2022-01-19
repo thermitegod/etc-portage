@@ -1,24 +1,15 @@
 # Mask Packages/Repos
 
-# newer version is shit
->media-fonts/noto-20170403
->=media-fonts/noto-cjk-20170602
-
 #broken build
-=dev-util/ctags-20210321.0
-
-#broken dep
->=dev-python/sqlalchemy-1.4.0 # flexget broken
-
-=app-text/poppler-21.04.0
-
-# breaks lxd
->=dev-lang/go-1.16.0
-
-#mask newest kernel
-#>=sys-kernel/gentoo-sources-5.11.0
-#>=sys-kernel/linux-headers-5.11
+=app-crypt/rhash-1.4.2
+=app-misc/ca-certificates-20211016.3.72
+=gnome-base/librsvg-2.52.5
 
 #other
->=sys-boot/grub-2.05_alpha20200310
+>=dev-lang/perl-5.34.0-r6
+=sys-libs/efivar-38
+
+#mask newest kernel - zfs
+>=sys-kernel/gentoo-sources-5.17.0
+>=sys-kernel/linux-headers-5.17
 

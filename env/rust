@@ -1,5 +1,0 @@
-#rust trannies cant even make a build system that works
-#LLVM_* inherited from make.conf
-#still req even when using USE=system-bootstrap
-CXX="${LLVM_PATH}/clang++-${LLVM_VER}"
-

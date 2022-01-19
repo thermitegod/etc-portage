@@ -1,22 +1,19 @@
 #unsorted
 app-admin/sysstat lm-sensors
 app-arch/brotli python
-app-arch/libarchive blake2 nettle -e2fsprogs
 app-arch/tar minimal
 app-arch/unzip natspec
 app-arch/xz-utils -extra-filters
 app-arch/zip natspec -crypt
 app-crypt/gnupg readline user-socket -smartcard
-app-emulation/lxc -templates -tools
+app-containers/lxc io-uring -templates -tools
 app-text/xmlto text
 dev-libs/boost nls python
 dev-libs/libffi test-bhaible
 dev-libs/libgcrypt o-flag-munging
-dev-libs/libpcre2 pcre16 pcre32
-dev-libs/libpcre pcre16 pcre32
-dev-libs/openssl -tls-heartbeat
+dev-libs/libpcre2 pcre16 pcre32 -bzip2 -zlib
+dev-libs/libpcre pcre16 pcre32 -bzip2 -zlib
 dev-python/urllib3 -brotli
-dev-util/clion custom-jdk
 dev-util/glade python
 media-gfx/pqiv ffmpeg
 net-analyzer/mtr -gtk -jansson
@@ -36,27 +33,45 @@ sys-process/htop hwloc lm-sensors
 x11-misc/i3blocks -contrib
 
 sys-apps/iproute2 libbsd
+net-libs/gtk-vnc vala
+app-arch/zstd lz4
+app-arch/libarchive lz4 lzo blake2 -nettle
+media-video/ffmpegthumbnailer jpeg png
+media-libs/libwebp -jpeg -png
+sys-apps/hwloc svg
+app-text/poppler -splash
+x11-libs/gdk-pixbuf jpeg
+media-libs/lcms jpeg
 
-#jpeg-xl ref encoder
+dev-python/pillow webp
+app-admin/sysklogd logrotate
+
+dev-python/sqlalchemy asyncio
+
+dev-qt/qtgui -wayland
+
+#terminal segfaults when enabled,
+#there could more but this is as far as i got
+dev-libs/libffi -exec-static-trampoline
+
+#jpeg-xl
 dev-util/google-perftools -largepages -debug
 app-doc/doxygena -clang
 app-text/ghostscript-gpl -X -dbus -unicode
-media-libs/jbig2dec -png
 media-libs/libavif dav1d gdk-pixbuf
+media-libs/dav1d xxhash
 
 #init
 sys-apps/openrc bash sysv-utils
 
-#shit
-dev-lang/rust parallel-compiler nightly system-bootstrap system-llvm
-
 #langs
-dev-lang/perl ithreads
-dev-lang/python:3.9 readline
-dev-lang/python:3.10 readline
+dev-lang/perl ithreads minimal
+dev-lang/python:3.10 lto
 dev-lang/ruby -rdoc
-
 dev-lang/lua -deprecated
+
+#shitlang
+dev-lang/rust-bin rls rust-src rustfmt
 
 #net
 net-firewall/iptables nftables conntrack
@@ -75,63 +90,61 @@ sys-fs/lvm2 -thin
 
 #toolchain
 sys-devel/binutils -gold -default-gold
-sys-devel/clang default-libcxx default-compiler-rt default-lld
+sys-devel/clang default-libcxx default-compiler-rt default-lld llvm-libunwind
 sys-devel/clang-runtime libcxx -sanitize
-sys-devel/gcc lto pgo -jit -fortran -sanitize
-sys-devel/llvm gold -libffi
+sys-devel/gcc lto -pgo -jit -fortran -sanitize -custom-cflags
+sys-devel/llvm gold libffi
 sys-libs/glibc custom-cflags -multiarch
 sys-libs/libomp hwloc offload ompt
 sys-apps/hwloc libudev
+sys-libs/libomp -ompt
 
 #shells
 app-shells/bash -net
 
 #media
 media-gfx/feh exif
-media-gfx/graphicsmagick q32 cxx svg
+media-gfx/graphicsmagick jpeg png cxx
 media-gfx/qiv magic exif
-media-libs/freetype harfbuzz
+media-libs/freetype harfbuzz png -bzip2
 media-libs/mesa vulkan-overlay lm-sensors osmesa zink -classic
-media-sound/mpd -signalfd -eventfd -cue -fifo -ipv6 -network -mad -audiofile
-media-sound/ncmpcpp taglib
-media-video/ffmpeg x265 dav1d opus vpx libdrm libaom hardcoded-tables -postproc
-media-video/mkvtoolnix qt5
+media-sound/mpd pipewire -signalfd -eventfd -cue -fifo -ipv6 -network -mad -audiofile
+media-sound/ncmpcpp taglib lto
+media-video/ffmpeg opus libdrm hardcoded-tables -svg -postproc
+media-video/mkvtoolnix gui
 
 #audio
 media-sound/easytag flac opus vorbis wavpack
 media-libs/opusfile -http
-# media-libs/libcanberra -gtk
 
 #X/gui
 gui-wm/sway -elogind
+gui-libs/gtk ffmpeg
 gui-libs/wlroots -elogind
 gui-apps/swayidle -elogind
 x11-base/xorg-server -suid
-sys-auth/elogind -policykit
+sys-auth/elogind -policykit -cgroup-hybrid
 app-text/poppler cxx -jpeg2k
 www-client/w3m imlib gpm
 x11-libs/gtk+:3 introspection
 x11-libs/libdrm video_cards_radeon
-x11-misc/spacefm -gtk2 gtk3 -startup-notification
+x11-misc/spacefm -startup-notification
 x11-libs/libva utils
-
 x11-terms/terminator -libnotify
 
 #mpv
+media-video/mpv lua_single_target_lua5-1 -lua_single_target_lua5-4 -jpeg -uchardet -xv
 media-libs/libplacebo glslang
-media-video/mpv -jpeg -uchardet -xv
 
 #portage
 app-portage/eix optimization strong-optimization -protobuf
 app-portage/layman sync-plugin-portage -gpg
 sys-apps/portage gentoo-dev -rsync-verify
+sys-apps/portage -native-extensions # installing files broken [Error 22] / try to debug later
 app-portage/portage-utils -qmanifest -qtegrity
 
 #tools
 app-arch/p7zip clang -rar
-app-admin/sysklogd logger logrotate
-app-editors/neovim -nvimpager
-app-emulation/lxd -dnsmasq
 dev-util/strace aio elfutils
 dev-vcs/git curl pcre-jit -perl -webdav
 net-misc/openssh -X
@@ -147,6 +160,19 @@ sys-process/procps -kill
 sys-apps/util-linux su kill tty-helpers readline -logger -cramfs
 sys-apps/shadow -su
 
+#neovim
+#upstream has a hard requirement on lua 5.1
+app-editors/neovim lua_single_target_lua5-1 -lua_single_target_lua5-4 -nvimpager
+dev-lua/LuaBitOp lua_single_target_lua5-1 -lua_single_target_lua5-4
+dev-lua/lpeg lua_single_target_lua5-1 -lua_single_target_lua5-4
+dev-lua/luv lua_single_target_lua5-1 -lua_single_target_lua5-4
+dev-lua/mpack lua_single_target_lua5-1 -lua_single_target_lua5-4
+
+#lxd
+dev-libs/raft lz4 zfs
+dev-util/xdelta lzma
+sys-fs/squashfs-tools lzma
+
 #kernel
 sys-boot/grub libzfs -themes -fonts
 sys-fs/zfs kernel-builtin rootfs custom-cflags
@@ -159,42 +185,38 @@ virtual/linux-sources firmware
 app-eselect/eselect-php fpm
 dev-lang/php fpm gd cgi xmlrpc xmlreader xmlwriter sockets ldap pcntl pdo -phar -flatfile
 #net-libs/libtorrent-rasterbar -geoip
-net-nds/openldap sasl -syslog -tcpd
+net-nds/openldap sasl -syslog
 net-p2p/rtorrent xmlrpc -daemon
 www-servers/lighttpd php pcre -webdav -mysql
 net-p2p/transmission gtk
 
-#chromium
-sys-libs/zlib minizip
-media-libs/libvpx postproc svc highbitdepth
-media-libs/libwebp swap-16bit-csp
-media-libs/openh264 -plugin
-net-libs/nodejs inspector system-icu -npm -snapshot
-www-client/chromium custom-cflags tcmalloc system-icu system-ffmpeg ozone wayland -suid -hangouts -js-type-check
-
 #pipewire
-media-video/pipewire -jack -ffmpeg -gstreamer
-#media-sound/jack2 -classic
-#media-sound/pulseaudio -ipv6 -tcpd -ssl -webrtc-aec
-media-libs/libsdl2 -jack -alsa -joystick
-#media-sound/alsa-utils -libsamplerate
-media-plugins/alsa-plugins -jack -pulseaudio -mix -usb_stream
+media-video/pipewire pipewire-alsa
 
 #qemu
-#app-emulation/libvirt-glib introspection
 app-emulation/libvirt zfs -virt-network -macvtap -vepa
-app-emulation/qemu virgl spice gtk usb io-uring -slirp -xkb -oss -fdt -vnc -jpeg -png -ncurses
+app-emulation/qemu virgl spice gtk usb io-uring fdt -slirp -xkb -oss -vnc -ncurses -png -jpeg
 app-emulation/spice gstreamer
 app-emulation/virt-manager gtk
 media-libs/gst-plugins-base gbm -ogg -vorbis -pango
 net-misc/spice-gtk usbredir
 
 #gimp
-media-gfx/gimp vector-icons openexr -alsa -webp
-media-libs/gegl openexr ffmpeg svg introspection -webp -tiff
+media-gfx/gimp vector-icons openexr -alsa
+media-libs/gegl -openexr -ffmpeg svg introspection
 media-libs/babl introspection
 media-libs/libmypaint gegl
 media-gfx/exiv2 -xmp
 media-libs/gexiv2 -introspection
 dev-libs/appstream-glib -introspection
+
+#vscode
+app-crypt/gcr gtk
+
+#cppcheck
+dev-util/cppcheck qt5
+dev-libs/gmp cxx
+
+#zlib-ng
+sys-libs/zlib compat
 

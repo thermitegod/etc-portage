@@ -2,14 +2,16 @@
 app-editors/neovim **
 app-emulation/virt-manager **
 app-portage/gentoolkit **
-dev-python/cython **
+media-libs/libjxl **
 media-video/ffmpegthumbnailer **
 media-video/mpv **
 net-misc/flexget **
 net-p2p/mktorrent **
-x11-terms/terminator3 **
+sys-libs/liburing **
 
-#=media-gfx/gimp-2.99.2 **
+dev-python/cython **
+
+#gimp 3.0
 <media-gfx/gimp-9999 **
 
 # personal projects
@@ -19,31 +21,21 @@ media-gfx/qiv **
 x11-misc/spacefm **
 
 #zlib
-#sys-libs/zlib **
+sys-libs/zlib **
 sys-libs/zlib-ng **
 
 #zfs
 sys-fs/zfs **
 sys-fs/zfs-auto-snapshot **
 
-#vulkan
-#dev-util/vulkan-headers **
-#media-libs/vulkan-loader **
-#dev-util/glslang **
-#media-libs/libplacebo **
-#media-libs/shaderc **
-#dev-util/glslang **
-#dev-util/spirv-headers **
-#dev-util/spirv-tools **
-
 #X11
 # fucking x11 retards caused an abi/api break because they wanted
 # to virtue signal more then they wanted a working program
 #x11-base/xorg-server **
 #x11-base/xorg-drivers **
-x11-base/xorg-proto **
-x11-drivers/xf86-video-amdgpu **
-x11-drivers/xf86-video-ati **
+#x11-base/xorg-proto **
+#x11-drivers/xf86-video-amdgpu **
+#x11-drivers/xf86-video-ati **
 #x11-libs/libdrm **
 #media-libs/mesa **
 
@@ -54,3 +46,4 @@ app-shells/zsh-syntax-highlighting **
 #sys-devel/gcc **
 #I know what you are thinking, dont.
 <sys-libs/glibc-9999 **
+

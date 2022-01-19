@@ -12,3 +12,5 @@ dev-java/openjdk-bin -gentoo-vm
 
 www-client/chromium -system-libvpx
 
+sys-libs/libxcrypt -system -split-usr compat
+
