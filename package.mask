@@ -9,7 +9,10 @@
 >=dev-lang/perl-5.34.0-r6
 =sys-libs/efivar-38
 
+#download broken
+=dev-python/flask-compress-1.11
+
 #mask newest kernel - zfs
->=sys-kernel/gentoo-sources-5.17.0
->=sys-kernel/linux-headers-5.17
+#>=sys-kernel/gentoo-sources-5.17.0
+#>=sys-kernel/linux-headers-5.17
 

@@ -32,7 +32,7 @@ sys-libs/timezone-data zic-slim
 sys-process/htop hwloc lm-sensors
 x11-misc/i3blocks -contrib
 
-sys-apps/iproute2 libbsd
+sys-apps/iproute2 ipv6 libbsd
 net-libs/gtk-vnc vala
 app-arch/zstd lz4
 app-arch/libarchive lz4 lzo blake2 -nettle
@@ -55,6 +55,7 @@ dev-qt/qtgui -wayland
 dev-libs/libffi -exec-static-trampoline
 
 #jpeg-xl
+media-libs/libjxl gdk-pixbuf
 dev-util/google-perftools -largepages -debug
 app-doc/doxygena -clang
 app-text/ghostscript-gpl -X -dbus -unicode

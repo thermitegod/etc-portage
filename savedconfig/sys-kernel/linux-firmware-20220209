@@ -1,4 +1,5 @@
 # Remove files that shall not be installed from this list.
+amd-ucode/microcode_amd_fam19h.bin
 amd-ucode/microcode_amd_fam17h.bin
 amdgpu/polaris10_vce.bin
 amdgpu/polaris10_uvd.bin

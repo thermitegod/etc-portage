@@ -4,12 +4,15 @@ app-emulation/virt-manager **
 app-portage/gentoolkit **
 media-libs/libjxl **
 media-video/ffmpegthumbnailer **
-media-video/mpv **
 net-misc/flexget **
 net-p2p/mktorrent **
 sys-libs/liburing **
 
 dev-python/cython **
+
+#mpv
+media-libs/libplacebo **
+media-video/mpv **
 
 #gimp 3.0
 <media-gfx/gimp-9999 **
