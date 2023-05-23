@@ -1,0 +1,3 @@
+#some packages do not like other linkers
+LD="/usr/bin/ld.bfd"	# GNU
+

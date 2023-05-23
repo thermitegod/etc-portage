@@ -2,6 +2,7 @@
 dev-util/cmake
 sys-devel/clang
 sys-devel/clang-runtime
+sys-devel/clang-toolchain-symlinks
 sys-devel/lld
 sys-devel/llvm
 sys-devel/llvm-common
@@ -11,5 +12,3 @@ sys-libs/libcxx
 sys-libs/libcxxabi
 sys-libs/llvm-libunwind
 
-#other
-sys-apps/hwloc

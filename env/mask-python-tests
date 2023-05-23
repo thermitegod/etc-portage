@@ -1,6 +1,0 @@
-#mask test files
-INSTALL_MASK="
-${INSTALL_MASK}
-/usr/lib/python*/site-packages/*/tests
-"
-PKG_INSTALL_MASK="${INSTALL_MASK}"

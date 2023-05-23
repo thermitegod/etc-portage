@@ -1,3 +1,7 @@
-# Don't force glibc to provide libcrypt
-sys-libs/glibc -crypt
+# force enable hardening flags
+*/* pie
+*/* ssp
+
+# force verify-sig
+# */* verify-sig
 

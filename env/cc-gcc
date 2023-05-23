@@ -1,8 +1,41 @@
-#gcc
-CC="/usr/bin/gcc"
-CXX="/usr/bin/g++"
-CPP="/usr/bin/cpp"
-AR="/usr/bin/ar"
-NM="/usr/bin/nm"
-RANLIB="/usr/bin/ranlib"
-LD="/usr/bin/ld.lld"
+# cc-gcc
+
+ENV_UNSET="${ENV_UNSET} CC CXX LD AR AS CPP NM STRIP RANLIB OBJCOPY STRINGS OBJDUMP READELF ADDR2LINE"
+
+# compiler
+# CC="/usr/bin/gcc"
+# CXX="/usr/bin/g++"
+# LD="/usr/bin/ld.bfd"
+
+# use binutils
+# AR="/usr/bin/ar"
+# AS="/usr/bin/as"
+# CPP="/usr/bin/cpp"
+# NM="/usr/bin/nm"
+# STRIP="/usr/bin/strip"
+# RANLIB="/usr/bin/ranlib"
+# OBJCOPY="/usr/bin/objcopy"
+# STRINGS="/usr/bin/strings"
+# OBJDUMP="/usr/bin/objdump"
+# READELF="/usr/bin/readelf"
+# ADDR2LINE="/usr/bin/addr2line"
+
+# cpu uarch
+UARCH="znver1"
+
+#=sys-devel/gcc:10 fails with -flto=thin, <sys-devel/gcc:10 had no problem with
+#this and would just do -flto instead. need to swich whenever building pkgs that
+#require gcc. tried to use package.env and env/ but $CFLAGS still get imported,
+#luckily almost all pkgs are built w/ clang
+#LTO=""              # None
+GCC_LTO="-flto=32"   # GCC
+#LTO="-flto=thin"    # LLVM
+
+#COMMON_FLAGS="-O2 -pipe -mtune=${UARCH} -march=${UARCH} -fomit-frame-pointer ${LTO}"
+COMMON_FLAGS="${COMMON_FLAGS}"
+CFLAGS="${COMMON_FLAGS} ${GCC_LTO}"
+CXXFLAGS="${COMMON_FLAGS} ${GCC_LTO}"
+FCFLAGS="${COMMON_FLAGS} ${GCC_LTO}"
+FFLAGS="${COMMON_FLAGS} ${GCC_LTO}"
+LDFLAGS="${COMMON_FLAGS} ${GCC_LTO} -Wl,--as-needed"
+

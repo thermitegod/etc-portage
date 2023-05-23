@@ -1,6 +1,0 @@
-#do not install cronjobs
-INSTALL_MASK="
-${INSTALL_MASK}
-/etc/cron*
-"
-PKG_INSTALL_MASK="${INSTALL_MASK}"

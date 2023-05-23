@@ -1,4 +1,0 @@
-#disable
-CFLAGS="${CFLAGS} -funwind-tables" # -fno-asynchronous-unwind-tables"
-CXXFLAGS="${CFLAGS}"
-LDFLAGS="${LDFLAGS} ${CFLAGS}"

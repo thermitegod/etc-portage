@@ -2,6 +2,7 @@
 #I am using a custom stater script that sets config dirs
 INSTALL_MASK="
 ${INSTALL_MASK}
+/usr/bin/code
 /usr/bin/vscode
 
 /opt/vscode/locales/am.pak
@@ -60,3 +61,4 @@ ${INSTALL_MASK}
 "
 
 PKG_INSTALL_MASK="${INSTALL_MASK}"
+

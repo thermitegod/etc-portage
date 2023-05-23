@@ -1,9 +1,0 @@
-#mask fonts
-INSTALL_MASK="
-${INSTALL_MASK}
-/usr/share/fonts/noto-cjk/NotoSansCJK*
-/usr/share/fonts/noto-cjk/NotoSansMonoCJKsc*
-/usr/share/fonts/noto-cjk/NotoSansMonoCJKkr*
-/usr/share/fonts/noto-cjk/NotoSansMonoCJKtc*
-"
-PKG_INSTALL_MASK="${INSTALL_MASK}"

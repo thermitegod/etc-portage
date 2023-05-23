@@ -1,6 +1,5 @@
-#mask junk
 INSTALL_MASK="
 ${INSTALL_MASK}
-/usr/share/gtk-doc/html/*/*.html
+/usr/bin/bashbug
 "
 PKG_INSTALL_MASK="${INSTALL_MASK}"

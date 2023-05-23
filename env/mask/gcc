@@ -1,0 +1,6 @@
+#does anything even use this symlink, not that I have found
+INSTALL_MASK="
+${INSTALL_MASK}
+/usr/lib/cpp
+"
+PKG_INSTALL_MASK="${INSTALL_MASK}"

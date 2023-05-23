@@ -1,14 +1,8 @@
 # 9999 packages
-app-editors/neovim **
-app-emulation/virt-manager **
 app-portage/gentoolkit **
 media-libs/libjxl **
 media-video/ffmpegthumbnailer **
-net-misc/flexget **
-net-p2p/mktorrent **
-sys-libs/liburing **
-
-dev-python/cython **
+sys-fs/zfs **
 
 #mpv
 media-libs/libplacebo **
@@ -18,35 +12,10 @@ media-video/mpv **
 <media-gfx/gimp-9999 **
 
 # personal projects
-app-misc/trash-cli **
 media-gfx/mcomix-lite **
 media-gfx/qiv **
 x11-misc/spacefm **
 
-#zlib
-sys-libs/zlib **
-sys-libs/zlib-ng **
-
-#zfs
-sys-fs/zfs **
-sys-fs/zfs-auto-snapshot **
-
-#X11
-# fucking x11 retards caused an abi/api break because they wanted
-# to virtue signal more then they wanted a working program
-#x11-base/xorg-server **
-#x11-base/xorg-drivers **
-#x11-base/xorg-proto **
-#x11-drivers/xf86-video-amdgpu **
-#x11-drivers/xf86-video-ati **
-#x11-libs/libdrm **
-#media-libs/mesa **
-
-#shell
-app-shells/zsh-syntax-highlighting **
-
-#unmask newest
-#sys-devel/gcc **
-#I know what you are thinking, dont.
+#sys-devel/gcc
 <sys-libs/glibc-9999 **
 

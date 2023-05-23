@@ -1,18 +1,13 @@
 # Mask Packages/Repos
 
 #broken build
-=app-crypt/rhash-1.4.2
-=app-misc/ca-certificates-20211016.3.72
-=gnome-base/librsvg-2.52.5
+=sys-apps/pciutils-3.10.0
 
 #other
->=dev-lang/perl-5.34.0-r6
-=sys-libs/efivar-38
-
-#download broken
-=dev-python/flask-compress-1.11
+sys-libs/zlib::thermite
+dev-python/cython::thermite
 
 #mask newest kernel - zfs
-#>=sys-kernel/gentoo-sources-5.17.0
-#>=sys-kernel/linux-headers-5.17
+#>=sys-kernel/gentoo-sources-6.2.0
+#>=sys-kernel/linux-headers-6.2
 

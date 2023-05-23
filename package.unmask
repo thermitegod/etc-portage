@@ -1,4 +1,4 @@
 >=dev-libs/openssl-3.0.0
-
->=media-video/ffmpeg-5.0
+>=media-video/ffmpeg-5.1.2-r1
+>=sys-apps/util-linux-2.39
 

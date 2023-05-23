@@ -1,0 +1,9 @@
+# debug-debugsyms
+CFLAGS="${CFLAGS} -ggdb"
+CXXFLAGS="${CXXFLAGS} -ggdb"
+
+# Not using FEATURES=compressdebug, have ZFS file compression
+# If FEATURES=nostrip splitdebug won't do anything, disable nostrip
+FEATURES="${FEATURES} splitdebug -nostrip"
+#FEATURES="${FEATURES} splitdebug compressdebug -nostrip"
+

@@ -1,1 +1,0 @@
-FEATURES="${FEATURES} test test-fail-continue"

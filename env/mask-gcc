@@ -1,6 +1,0 @@
-#does anything even use this
-INSTALL_MASK="
-${INSTALL_MASK}
-/lib/cpp
-"
-PKG_INSTALL_MASK="${INSTALL_MASK}"

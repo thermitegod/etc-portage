@@ -1,1 +1,3 @@
+# debug-installsource
 FEATURES="${FEATURES} installsources"
+

@@ -1,4 +1,0 @@
-#disable
-CFLAGS="${CFLAGS} -fno-openmp"
-CXXFLAGS="${CFLAGS}"
-LDFLAGS="${LDFLAGS} ${CFLAGS}"
