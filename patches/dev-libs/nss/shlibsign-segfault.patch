@@ -1,0 +1,31 @@
+commit d0c8939f06a4ed7ad7575fc913eb5621e2825807
+Author: thermitegod <43489010+thermitegod@users.noreply.github.com>
+Date:   Mon Jun 5 17:23:21 2023 -0700
+
+    Disable shlibsign, all it does is segfault for me
+    
+    will still segfault during the ebuild postinst phase, but i am ignoring
+    that.
+    
+    dmesg log entry.
+    
+    [330849.815197] shlibsign[994341]: segfault at 0 ip 0000000000000000 sp 00007ffea1eedb18 error 14 in shlibsign[5594ab941000+4000] likely on CPU 29 (core 13, socket 0)
+    [330849.815224] Code: Unable to access opcode bytes at 0xffffffffffffffd6.
+    [330849.899431] shlibsign[994413]: segfault at 0 ip 0000000000000000 sp 00007ffe329b1f38 error 14 in shlibsign[558cd497a000+4000] likely on CPU 26 (core 10, socket 0)
+    [330849.899454] Code: Unable to access opcode bytes at 0xffffffffffffffd6.
+    [330849.901263] shlibsign[994426]: segfault at 0 ip 0000000000000000 sp 00007ffc7a9f9298 error 14 in shlibsign[564dce967000+4000] likely on CPU 26 (core 10, socket 0)
+    [330849.901286] Code: Unable to access opcode bytes at 0xffffffffffffffd6.
+    [330849.922049] shlibsign[994463]: segfault at 0 ip 0000000000000000 sp 00007ffcf8a7ce98 error 14 in shlibsign[55cfaa0f8000+4000] likely on CPU 10 (core 10, socket 0)
+    [330849.922074] Code: Unable to access opcode bytes at 0xffffffffffffffd6.
+
+diff --git a/cmd/shlibsign/sign.sh b/cmd/shlibsign/sign.sh
+index d8bd837..8c4351c 100644
+--- a/cmd/shlibsign/sign.sh
++++ b/cmd/shlibsign/sign.sh
+@@ -46,6 +46,5 @@ WIN*)
+     ADDON_PATH=${1}/lib:${4}:$ADDON_PATH
+     export ADDON_PATH
+     echo "${2}"/shlibsign -v -i "${5}"
+-    "${2}"/shlibsign -v -i "${5}"
+     ;;
+ esac
