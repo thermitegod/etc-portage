@@ -2,7 +2,6 @@
 app-arch/tar minimal
 app-arch/zip natspec -crypt
 app-arch/unzip natspec
-app-arch/xz-utils -extra-filters
 app-crypt/gnupg -smartcard
 app-text/xmlto text
 dev-libs/libpcre2 pcre16 pcre32
@@ -10,30 +9,41 @@ sys-apps/lm-sensors contrib
 sys-libs/timezone-data zic-slim
 sys-process/htop hwloc lm-sensors
 sys-apps/iproute2 libbsd
-app-arch/libarchive expat blake2 nettle
-dev-util/perf -gtk
-app-shells/bash pgo
+app-arch/libarchive expat blake2 nettle lzma -e2fsprogs
+dev-util/perf clang -gtk
 dev-libs/nss -utils
+net-libs/libproxy duktape
+sys-apps/grep -egrep-fgrep
+dev-libs/libbpf static-libs
+net-libs/gnutls pkcs11 tools
+sys-apps/kmod -python
+sys-apps/smartmontools -caps -daemon
+dev-lang/nasm lto
+dev-util/bpftool llvm
+app-arch/7zip uasm
 
 #cpp
-dev-cpp/benchmark lto
+dev-cpp/benchmark lto -tools
+
+#systemd
+sys-apps/systemd -kernel-install
 
 #jpeg-xl
 media-libs/libjxl gdk-pixbuf
-media-libs/libavif dav1d gdk-pixbuf
 media-libs/dav1d xxhash
 
 #langs
 dev-lang/lua -deprecated
-dev-lang/python lto pgo
+dev-lang/python lto jit
 dev-lang/perl ithreads minimal
-dev-lang/ruby -rdoc
+dev-lang/ruby jit -rdoc
 dev-lang/rust-bin clippy rustfmt rust-src rust-analyzer
+virtual/rust rustfmt
 
 #net
-net-firewall/iptables nftables
+net-firewall/iptables -nftables
 net-misc/curl http2 -ftp -tftp -imap -pop3 -smtp
-net-irc/weechat -man -spell -perl -fifo -charset -relay -scripts -trigger -xfer -python -exec
+net-irc/weechat -man -spell -perl -fifo -charset -relay -scripts -trigger -xfer -exec
 net-misc/rsync system-zlib xxhash
 
 #cups
@@ -41,46 +51,51 @@ net-print/cups usb
 net-print/cups-filters -postscript
 
 #nfs
-net-fs/nfs-utils nfsv41 nfsdcld
-#sys-fs/lvm2 -lvm -thin
+net-fs/nfs-utils -nfsv3
 
 #toolchain
-sys-devel/gcc lto pgo fortran sanitize default-stack-clash-protection default-znow
+sys-devel/gcc lto fortran sanitize default-stack-clash-protection default-znow
 sys-devel/gettext git
 
 #clang toolchain
-sys-devel/clang-runtime sanitize compiler-rt #libcxx
+sys-devel/clang-runtime sanitize compiler-rt libcxx
 sys-devel/clang-common default-lld default-compiler-rt stricter
-sys-libs/libomp -llvm_targets_AMDGPU
-#sys-libs/llvm-libunwind static-libs
+sys-devel/llvm z3
+#sys-libs/libomp -llvm_targets_AMDGPU
 sys-libs/libunwind static-libs debug-frame libatomic
-app-arch/xz-utils static-libs # libunwind
-sys-libs/zlib static-libs # libunwind
+app-arch/xz-utils static-libs # needed for libunwind
+sys-libs/zlib static-libs # needed for libunwind
 
 #media
 media-gfx/feh exif
 media-gfx/nomacs -plugins -tiff
 media-gfx/qiv magic exif
 media-gfx/qimgv exif
-media-libs/freetype harfbuzz -bzip2
+media-libs/freetype harfbuzz brotli
 media-libs/mesa vulkan vulkan-overlay lm-sensors zink
 media-sound/mpd expat -signalfd -eventfd -cue -fifo -network -mad -audiofile
 media-sound/ncmpcpp taglib lto
-media-video/ffmpeg opus libdrm hardcoded-tables -svg -postproc
-media-video/mkvtoolnix gui
+media-video/ffmpeg opus libdrm hardcoded-tables shaderc -svg -postproc -fftools_*
+media-video/mkvtoolnix gui qt6
+
+dev-libs/quazip qt6
+x11-themes/adwaita-qt qt6
+dev-util/cppcheck qt6
 
 #X/GUI
 x11-themes/arc-theme -gtk2
+x11-libs/gdk-pixbuf gif
 
-#Wayland
-gui-wm/sway grimshot tray
+#wayland
+gui-wm/sway grimshot tray # -X
+#gui-libs/wlroots -X
 gui-apps/waybar network -mpd -tray
 x11-misc/i3blocks -contrib
 media-fonts/fontawesome ttf -otf
 app-misc/jq -oniguruma
 
 #mpv
-media-video/mpv lua_single_target_lua5-1 drm -archive -egl -libmpv -xv
+media-video/mpv drm -archive -egl -libmpv -xv
 media-libs/libplacebo glslang
 
 #portage
@@ -88,55 +103,43 @@ sys-apps/portage gentoo-dev native-extensions -rsync-verify
 app-portage/gemato pretty-log
 
 #tools
-app-arch/p7zip -natspec # broken
-dev-util/strace aio
+dev-debug/strace aio
 dev-vcs/git curl -perl -webdav
 net-misc/openssh -X
 sys-process/procps modern-top -kill
 sys-apps/shadow -su
-sys-apps/util-linux kill magic su -tty-helpers -logger -cramfs -hardlink
-
-#neovim
-#upstream has a hard requirement on lua 5.1
-app-editors/neovim lto lua_single_target_lua5-1 -lua_single_target_lua5-4 -nvimpager
-dev-lua/LuaBitOp lua_single_target_lua5-1 -lua_single_target_lua5-4
-dev-lua/lpeg lua_single_target_lua5-1 -lua_single_target_lua5-4
-dev-lua/luv lua_single_target_lua5-1 -lua_single_target_lua5-4
-dev-lua/mpack lua_single_target_lua5-1 -lua_single_target_lua5-4
+sys-apps/util-linux kill magic su uuidd -tty-helpers -logger -cramfs -hardlink
 
 #kernel
-sys-boot/grub libzfs -themes -fonts
-sys-fs/zfs kernel-builtin rootfs custom-cflags # python
+sys-fs/zfs kernel-builtin rootfs custom-cflags
 sys-kernel/gentoo-sources symlink experimental
 sys-kernel/git-sources symlink
 sys-kernel/linux-firmware savedconfig
 virtual/linux-sources firmware
-
-#torrents
-#app-eselect/eselect-php fpm
-#dev-lang/php fpm gd cgi xmlrpc xmlreader xmlwriter sockets ldap pcntl pdo -phar -flatfile
-#net-libs/libtorrent-rasterbar -geoip
-#net-nds/openldap sasl -syslog
-#net-p2p/rtorrent xmlrpc -daemon
-#www-servers/lighttpd php pcre -webdav -mysql
+sys-kernel/installkernel -dracut -systemd
 
 #pipewire
 media-video/pipewire extra pipewire-alsa sound-server gsettings
+media-video/wireplumber lua_single_target_lua5-4
 media-sound/pulseaudio -daemon
 
 #qemu
-app-emulation/libvirt zfs -virt-network
+app-emulation/libvirt zfs virt-network
 app-emulation/qemu spice usb io-uring virgl -ncurses -oss -vnc -jpeg -png -slirp
 app-emulation/virt-manager gui
 net-misc/spice-gtk usbredir
-
-#gimp
-media-gfx/gimp vector-icons -alsa
-media-libs/libmypaint gegl
-
-#cppcheck
-dev-util/cppcheck qt5 -z3
+net-dns/dnsmasq script -dumpfile
 
 #docker
 app-containers/containerd -cri
+
+#flatpak
+dev-util/ostree curl archive
+
+#firefox
+www-client/firefox lto openh264 -telemetry
+media-libs/libvpx postproc
+net-libs/ngtcp2 gnutls
+media-libs/libaom -examples
+net-libs/nodejs -npm
 

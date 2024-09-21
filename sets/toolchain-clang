@@ -1,5 +1,5 @@
 #clang toolchain
-dev-util/cmake
+dev-build/cmake
 sys-devel/clang
 sys-devel/clang-runtime
 sys-devel/clang-toolchain-symlinks

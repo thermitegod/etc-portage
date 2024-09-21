@@ -1,0 +1,2 @@
+# Fix LLVM 17 linker errors
+LDFLAGS="${COMMON_FLAGS} ${GCC_LTO} -Wl,--undefined-version"

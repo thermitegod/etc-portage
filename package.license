@@ -1,8 +1,11 @@
 app-arch/unrar unRAR
+dev-lang/uasm Watcom-1.0
 net-analyzer/nmap NPSL
+app-editors/vscode Microsoft-vscode
+sys-apps/rivalcfg WTFPL
 sys-kernel/linux-firmware linux-fw-redistributable no-source-code
 www-client/google-chrome google-chrome
 www-client/google-chrome-beta google-chrome
 www-client/google-chrome-unstable google-chrome
-app-editors/vscode Microsoft-vscode
+
 

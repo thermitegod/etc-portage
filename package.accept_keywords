@@ -1,8 +1,17 @@
 # 9999 packages
-app-portage/gentoolkit **
-media-libs/libjxl **
-media-video/ffmpegthumbnailer **
-sys-fs/zfs **
+#app-portage/gentoolkit **
+#media-libs/libjxl **
+#media-video/ffmpegthumbnailer **
+#sys-fs/zfs **
+
+# get _rc versions
+<sys-fs/zfs-9999 **
+<sys-fs/zfs-kmod-9999 **
+
+#=sys-fs/zfs-2.2.0_rc3 **
+#=sys-fs/zfs-kmod-2.2.0_rc3 **
+
+media-libs/libjpeg-turbo **
 
 #mpv
 media-libs/libplacebo **
@@ -17,5 +26,6 @@ media-gfx/qiv **
 x11-misc/spacefm **
 
 #sys-devel/gcc
+#<sys-devel/gcc-14.1.9999 **
 <sys-libs/glibc-9999 **
 
