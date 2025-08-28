@@ -1,23 +1,16 @@
 # 9999 packages
-#app-portage/gentoolkit **
-#media-libs/libjxl **
-#media-video/ffmpegthumbnailer **
+gui-apps/grimshot **
 #sys-fs/zfs **
 
 # get _rc versions
-<sys-fs/zfs-9999 **
-<sys-fs/zfs-kmod-9999 **
+#<sys-fs/zfs-9999 **
+#<sys-fs/zfs-kmod-9999 **
 
-#=sys-fs/zfs-2.2.0_rc3 **
-#=sys-fs/zfs-kmod-2.2.0_rc3 **
+# mpv
+#media-libs/libplacebo **
+#media-video/mpv **
 
-media-libs/libjpeg-turbo **
-
-#mpv
-media-libs/libplacebo **
-media-video/mpv **
-
-#gimp 3.0
+# gimp 3.0
 <media-gfx/gimp-9999 **
 
 # personal projects
@@ -25,7 +18,7 @@ media-gfx/mcomix-lite **
 media-gfx/qiv **
 x11-misc/spacefm **
 
-#sys-devel/gcc
+# Toolchain
 #<sys-devel/gcc-14.1.9999 **
 <sys-libs/glibc-9999 **
 

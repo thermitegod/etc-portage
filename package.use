@@ -21,6 +21,10 @@ sys-apps/smartmontools -caps -daemon
 dev-lang/nasm lto
 dev-util/bpftool llvm
 app-arch/7zip uasm
+sys-libs/libnvme io-uring
+
+media-libs/tiff libdeflate
+sys-libs/libblockdev smart
 
 #cpp
 dev-cpp/benchmark lto -tools
@@ -33,10 +37,10 @@ media-libs/libjxl gdk-pixbuf
 media-libs/dav1d xxhash
 
 #langs
+dev-lang/python tail-call-interp
 dev-lang/lua -deprecated
-dev-lang/python lto jit
-dev-lang/perl ithreads minimal
-dev-lang/ruby jit -rdoc
+dev-lang/perl minimal
+dev-lang/ruby jit
 dev-lang/rust-bin clippy rustfmt rust-src rust-analyzer
 virtual/rust rustfmt
 
@@ -54,13 +58,14 @@ net-print/cups-filters -postscript
 net-fs/nfs-utils -nfsv3
 
 #toolchain
-sys-devel/gcc lto fortran sanitize default-stack-clash-protection default-znow
+sys-devel/gcc lto fortran sanitize
 sys-devel/gettext git
+sys-devel/binutils xxhash
 
 #clang toolchain
-sys-devel/clang-runtime sanitize compiler-rt libcxx
-sys-devel/clang-common default-lld default-compiler-rt stricter
-sys-devel/llvm z3
+llvm-core/clang-runtime sanitize compiler-rt default-compiler-rt default-lld libcxx # offload
+llvm-core/clang-common default-lld default-compiler-rt stricter
+llvm-core/llvm z3 -debug
 #sys-libs/libomp -llvm_targets_AMDGPU
 sys-libs/libunwind static-libs debug-frame libatomic
 app-arch/xz-utils static-libs # needed for libunwind
@@ -75,20 +80,23 @@ media-libs/freetype harfbuzz brotli
 media-libs/mesa vulkan vulkan-overlay lm-sensors zink
 media-sound/mpd expat -signalfd -eventfd -cue -fifo -network -mad -audiofile
 media-sound/ncmpcpp taglib lto
-media-video/ffmpeg opus libdrm hardcoded-tables shaderc -svg -postproc -fftools_*
+media-video/ffmpeg opus shaderc -svg -postproc
 media-video/mkvtoolnix gui qt6
 
 dev-libs/quazip qt6
 x11-themes/adwaita-qt qt6
-dev-util/cppcheck qt6
 
 #X/GUI
+gui-libs/gtk accessibility
 x11-themes/arc-theme -gtk2
 x11-libs/gdk-pixbuf gif
+dev-qt/qtbase accessibility
+dev-qt/qtgui accessibility
+dev-qt/qtwayland accessibility
 
 #wayland
-gui-wm/sway grimshot tray # -X
-#gui-libs/wlroots -X
+gui-wm/sway grimshot tray -X
+gui-libs/wlroots -X
 gui-apps/waybar network -mpd -tray
 x11-misc/i3blocks -contrib
 media-fonts/fontawesome ttf -otf
@@ -104,7 +112,7 @@ app-portage/gemato pretty-log
 
 #tools
 dev-debug/strace aio
-dev-vcs/git curl -perl -webdav
+dev-vcs/git curl keyring -perl -webdav
 net-misc/openssh -X
 sys-process/procps modern-top -kill
 sys-apps/shadow -su
@@ -125,21 +133,34 @@ media-sound/pulseaudio -daemon
 
 #qemu
 app-emulation/libvirt zfs virt-network
-app-emulation/qemu spice usb io-uring virgl -ncurses -oss -vnc -jpeg -png -slirp
+app-emulation/qemu usb io-uring virgl spice -ncurses -oss -vnc -jpeg -png -slirp
 app-emulation/virt-manager gui
-net-misc/spice-gtk usbredir
 net-dns/dnsmasq script -dumpfile
+net-misc/spice-gtk usbredir
 
 #docker
 app-containers/containerd -cri
 
-#flatpak
-dev-util/ostree curl archive
+# Kirita
+media-gfx/krita gif
+dev-python/pyqt5 widgets declarative gui network
+dev-qt/qtbase:6 libproxy accessibility
+dev-qt/qtdeclarative:6 accessibility
+dev-qt/qt5compat:6 qml
+kde-frameworks/kconfig:6 qml
+sys-auth/polkit-qt qt5
+app-dicts/myspell-en l10n_en-US
+sci-libs/gsl cblas-external -deprecated
+app-crypt/qca botan
+sys-libs/zlib minizip
 
-#firefox
-www-client/firefox lto openh264 -telemetry
-media-libs/libvpx postproc
+# Firefox
+#www-client/firefox lto openh264 -telemetry
+#media-libs/libvpx postproc
+#media-libs/libaom -examples
 net-libs/ngtcp2 gnutls
-media-libs/libaom -examples
-net-libs/nodejs -npm
+net-libs/nodejs npm
+
+# neovim
+dev-libs/libutf8proc -cjk
 

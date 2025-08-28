@@ -1,0 +1,13 @@
+diff --git a/src/3rdparty/masm/assembler/X86Assembler.h b/src/3rdparty/masm/assembler/X86Assembler.h
+index b96e8e7d..4460d022 100644
+--- a/src/3rdparty/masm/assembler/X86Assembler.h
++++ b/src/3rdparty/masm/assembler/X86Assembler.h
+@@ -43,6 +43,8 @@ inline bool CAN_SIGN_EXTEND_8_32(int32_t value) { return value == (int32_t)(sign
+ 
+ namespace X86Registers {
+     typedef enum {
++        none = -1,
++
+         eax,
+         ecx,
+         edx,

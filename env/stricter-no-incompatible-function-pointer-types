@@ -1,9 +1,0 @@
-# fix when using sys-devel/clang-common:16[strictor]
-
-COMMON_FLAG_FIX="-Wno-incompatible-function-pointer-types"
-CFLAGS="${CFLAGS} ${COMMON_FLAG_FIX}"
-CXXFLAGS="${CXXFLAGS} ${COMMON_FLAG_FIX}"
-FCFLAGS="${FCFLAGS} ${COMMON_FLAG_FIX}"
-FFLAGS="${FFLAGS} ${COMMON_FLAG_FIX}"
-LDFLAGS="${LDFLAGS} ${COMMON_FLAG_FIX}"
-

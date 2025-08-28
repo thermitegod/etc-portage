@@ -1,16 +1,9 @@
 # Mask Packages/Repos
 
-#broken build
->=sys-apps/util-linux-2.40.1-r1
-
-#other
-sys-libs/zlib::thermite
-dev-python/cython::thermite
-#dev-libs/spdlog::thermite
-
-#>=gui-wm/sway-1.9_rc1
+#>=sys-fs/zfs-2.3.0
+#>=sys-fs/zfs-kmod-2.3.0
 
 #mask newest kernel - zfs
->=sys-kernel/gentoo-sources-6.11.0
->=sys-kernel/linux-headers-6.11
+>=sys-kernel/gentoo-sources-6.13.0
+>=sys-kernel/linux-headers-6.13
 

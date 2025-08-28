@@ -1,14 +1,14 @@
 #clang toolchain
 dev-build/cmake
-sys-devel/clang
-sys-devel/clang-runtime
-sys-devel/clang-toolchain-symlinks
-sys-devel/lld
-sys-devel/llvm
-sys-devel/llvm-common
-sys-devel/llvmgold
-sys-libs/compiler-rt
-sys-libs/libcxx
-sys-libs/libcxxabi
+llvm-core/clang
+llvm-core/clang-runtime
+llvm-core/clang-toolchain-symlinks
+llvm-core/lld
+llvm-core/llvm
+llvm-core/llvm-common
+llvm-core/llvmgold
+llvm-runtimes/compiler-rt
+llvm-runtimes/libcxx
+llvm-runtimes/libcxxabi
 sys-libs/llvm-libunwind
 
